@@ -7,17 +7,17 @@ Medma Marketplace will convert your Magento Store to Multivendor Marketplace, wh
 Features
 --------
 
-No core files changed.
-Admin can set default ROLE for vendor from configuration.
-Separate section for Vendor Profile
-Can upload Avatar for Vendor Profile page
-Shows highest selling vendor product on vendor profile page
-Shows vendor products collection on vendor profile page
-Reviews with interactive star ratings and feedback system on sold products of Vendors
-Different commission rates for different vendors
-Vendors can create all different types of products which are supported by Magento from their Vendor panel.
-Admin can ask for Verification Proof from vendors while registering them in store.
-Admin can manually or automatically approve Vendors and their products as required.
+No core files changed.<br />
+Admin can set default ROLE for vendor from configuration.<br />
+Separate section for Vendor Profile.<br />
+Can upload Avatar for Vendor Profile page.<br />
+Shows highest selling vendor product on vendor profile page.<br />
+Shows vendor products collection on vendor profile page.<br />
+Reviews with interactive star ratings and feedback system on sold products of Vendors.<br />
+Different commission rates for different vendors.<br />
+Vendors can create all different types of products which are supported by Magento from their Vendor panel.<br />
+Admin can ask for Verification Proof from vendors while registering them in store.<br />
+Admin can manually or automatically approve Vendors and their products as required.<br />
 
 
 Installation

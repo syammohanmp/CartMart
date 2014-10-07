@@ -44,6 +44,9 @@ class Medma_MarketPlace_Block_Vendor_Profile_Latest extends Mage_Catalog_Block_P
 			->addAttributeToFilter('vendor', $vendorId)
 			->getAllIds();
 			
+		if(empty($productIds))
+			return null;		
+		
 		$productReportCollection = Mage::getResourceModel('reports/product_collection')
 			->addOrderedQty()
 			->addAttributeToSelect('*')

@@ -27,7 +27,7 @@ class Medma_MarketPlace_VendorController extends Mage_Core_Controller_Front_Acti
 	
 	public function profileAction()
 	{
-		$vendorId = $this->getRequest()->getParam('id');		
+		$vendorId = $this->getRequest()->getParam('id');
 		$this->loadLayout();
 		$this->renderLayout();
 	}

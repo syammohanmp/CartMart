@@ -34,7 +34,7 @@
                         <td><h2><?php echo $this->__('This is a Vendor Order Grid !!'); ?></h2></td>
                     </tr>
                     <tr>
-                        <td><?php echo $this->__('Please find your order details from ') . '<a href="' . $this->getSalesOrderUrl() . '">' . $this->__('Sales > Orders') . '</a>' . $this->__(' Page.'); ?></td>
+                        <td><?php echo $this->__('Please find your order details from <a href="%s">Sales > Orders</a> Page.', $this->getSalesOrderUrl());?></td>
                     </tr>
                 </tbody>
             </table>

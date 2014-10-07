@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+
+class Medma_MarketPlace_Block_Vendor_List extends Mage_Core_Block_Template 
+{
+    public function __construct() 
+    {
+        $this->setTemplate('marketplace/vendor/list.phtml');
+        parent::__construct();
+    }
+    
+    public function getVendorListCollection()
+    {
+		//~ $vendorCollection =  Mage::getModel('marketplace/profile')->getCollection();		
+		//~ $vendorCollection->addFieldToSelect('entity_id');
+		//~ $vendorCollection->addFieldToSelect('user_id');
+		//~ $vendorCollection->addFieldToSelect('image');	
+		
+		
+		//$userTable = Mage::getSingleton('core/resource')->getTableName('admin/user'); 
+		//$collection = Mage :: getModel('marketplace/profile')->getCollection();
+              
+		// Cannot append getSelect right here because $collection will not be a collection
+		//return $collection->getSelect()->join(array('user' => $userTable),'main_table.user_id = user.user_id','main_table.*');	
+		
+		
+		$collection = Mage::getModel('marketplace/profile')->getCollection();
+         $collection->getSelect()->joinInner( array('cat'=> Mage::getSingleton('core/resource')->getTableName('admin/user')), 'main_table.cat_id = cat.user_id', array('user_id'));
+         //echo $collection->getSelect(); die;
+         return $collection;
+			
+	}	  
+}
+
+?>

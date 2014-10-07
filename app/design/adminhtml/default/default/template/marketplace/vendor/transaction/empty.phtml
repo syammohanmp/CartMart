@@ -34,7 +34,7 @@
                         <td><h2><?php echo $this->__('This is a Vendor Transaction Grid !!'); ?></h2></td>
                     </tr>
                     <tr>
-                        <td><?php echo $this->__('Please find your vendor transaction details from ') . '<a href="' . $this->getVendorGridUrl() . '">' . $this->__('Medma > Market Place > Manage Vendors') . '</a>' . $this->__(' Page.'); ?></td>
+                        <td><?php echo $this->__('Please find your vendor transaction details from <a href="%s">Medma > Market Place > Manage Vendors</a> Page. ',$this->getVendorGridUrl()); ?></td>
                     </tr>
                 </tbody>
             </table>

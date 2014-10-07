@@ -34,7 +34,7 @@
                         <td><h2><?php echo $this->__('This is a Vendor Review Grid !!'); ?></h2></td>
                     </tr>
                     <tr>
-                        <td><?php echo $this->__('Please find your vendor reviews from ') . '<a href="' . $this->getReviewGridUrl() . '">' . $this->__('Medma > Market Place > Review and Ratings > All Ratings') . '</a>' . $this->__(' Page.'); ?></td>
+                        <td><?php echo $this->__('Please find your vendor reviews from <a href="%s">Medma > Market Place > Review and Ratings > All Ratings</a> Page.', $this->getReviewGridUrl()); ?></td>
                     </tr>
                 </tbody>
             </table>

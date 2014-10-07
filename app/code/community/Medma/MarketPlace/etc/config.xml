@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Medma_MarketPlace>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
         </Medma_MarketPlace>
     </modules>
     <global>
@@ -81,7 +81,16 @@
                 <class>Medma_MarketPlace_Helper</class>
             </marketplace>
         </helpers>
-        <events>
+        <events>		
+			<checkout_onepage_controller_success_action>
+				<observers>
+					<checkout_onepage_controller_success_action>
+						<type>singleton</type>
+						<class>Medma_MarketPlace_Model_Observer</class>
+						<method>notifyVendor</method>
+					</checkout_onepage_controller_success_action>
+				</observers>
+			</checkout_onepage_controller_success_action>
 			<catalog_product_save_before>
 				<observers> 
 					<catalog_product_save_before>
@@ -98,8 +107,17 @@
                         <method>saveDomain</method>
                     </domain>
                 </observers>
-        </medma_domain_authentication>
+			</medma_domain_authentication>
 		</events>
+		<template>
+			<email>
+				<marketplace_email_email_template module="marketplace">
+					<label>New Vendor Order</label>
+					<file>sales/new_vendor_order.html</file>
+					<type>html</type>
+				</marketplace_email_email_template>
+			</email>
+		</template>
     </global>
     <frontend>
         <routers>
@@ -118,6 +136,15 @@
                 </marketplace>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <marketplace>
+                    <files>
+                        <default>Medma_MarketPlace.csv</default>
+                    </files>
+                </marketplace>
+            </modules>
+        </translate>
     </frontend>
     <admin>
         <routers>
@@ -145,6 +172,15 @@
                 </marketplace>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <marketplace>
+                    <files>
+                        <default>Medma_MarketPlace.csv</default>
+                    </files>
+                </marketplace>
+            </modules>
+        </translate>
         <events>
             <catalog_product_collection_load_before>
                 <observers>
@@ -267,6 +303,10 @@
 			<review>
 				<page_size>3,6,9</page_size>
 			</review>
+			<email>
+				<email_sender>sales</email_sender>
+				<email_template>marketplace_email_email_template</email_template>
+			</email>
 		</marketplace>
     </default>
 </config>

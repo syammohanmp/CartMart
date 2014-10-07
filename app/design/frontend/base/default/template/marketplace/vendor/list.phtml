@@ -1,0 +1,41 @@
+<?php $vendorList = $this->getVendorListCollection(); ?>
+<h3 class="vendor-block-title"><b><?php echo $this->__('Sellers'); ?></b></h3>
+<div class="vendor-list-block">
+	<?php foreach($vendorList as $vendor): ?>
+		<?php $productCollection = $this->getProductList($vendor->getUserId()); ?>
+		<?php if($productCollection->count()): ?>
+			<div class="vendor-block">
+				<?php $vendorImage = $vendor->getImage(); ?>
+				<div class="vendor-block-header <?php echo (isset($vendorImage) ? 'has-image' : ''); ?>">
+					<?php if(isset($vendorImage)): ?>
+						<div class="vendor-image">
+							<img src="<?php echo $this->getVendorImageUrl($vendorImage); ?>" />
+						</div>
+					<?php endif; ?>
+					<div class="vendor-name">
+						<div class="vendor-name-inner">
+							<?php echo $vendor->getShopName(); ?>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="vendor-products-container">								
+					<?php foreach($productCollection as $product): ?>
+						<div class="vendor-product">
+							<a href="<?php echo $product->getProductUrl(); ?>"><img src ="<?php echo $this->getProductImage($product->getId()) ?>" /></a>
+						</div>
+					<?php endforeach; ?>
+					<div class="clear"></div>
+				</div>
+				<div class="vendor-block-footer">
+					<a href="<?php echo $this->getVendorProfileUrl($vendor->getEntityId()); ?>">
+						<div class="view-show">					
+							<?php echo $this->__('View Shop'); ?>					
+						</div>
+					</a>
+				</div>
+			</div>
+		<?php endif; ?>
+	<?php endforeach; ?>
+	<div class="clear"></div>
+</div>

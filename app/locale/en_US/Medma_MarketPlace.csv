@@ -1,0 +1,146 @@
+Orders,Orders
+General Information,General Information
+This is a Vendor Order Grid !!,This is a Vendor Order Grid !!
+"Please find your order details from <a href=""%s"">Sales > Orders</a> Page.","Please find your order details from <a href=""%s"">Sales > Orders</a> Page."
+Back,Back
+Ship,Ship
+Invoice,Invoice
+Track Order,Track Order
+Incl. Tax,Incl. Tax
+No shipping information available,No shipping information available
+Items Ordered,Items Ordered
+Order Totals,Order Totals
+the order confirmation email was sent,the order confirmation email was sent
+the order confirmation email is not sent,the order confirmation email is not sent
+Order # %s,Order # %s
+Order Date,Order Date
+Order Date (%s),Order Date (%s)
+Order Status,Order Status
+Purchased From,Purchased From
+Link to the New Order,Link to the New Order
+Link to the Previous Order,Link to the Previous Order
+Placed from IP,Placed from IP
+%s / %s rate:,%s / %s rate:
+Account Information,Account Information
+Customer Name,Customer Name
+Email,Email
+Customer Group,Customer Group
+Billing Address,Billing Address
+Shipping Address,Shipping Address
+Product,Product
+Commission Amount,Commission Amount
+Vendor Amount,Vendor Amount
+Original Price,Original Price
+Price,Price
+Qty,Qty
+Row Total,Row Total
+Total Commission,Total Commission
+Total Vendor Amount,Total Vendor Amount
+Grand Total,Grand Total
+Shipping &amp; Handling Information,Shipping &amp; Handling Information
+Payment Information,Payment Information
+Order was placed using %s,Order was placed using %s
+Shipping &amp; Handling Information,Shipping &amp; Handling Information
+Order Totals,Order Totals
+Items Ordered,Items Ordered
+Add Transaction,Add Transaction
+All Reviews,All Reviews
+"Please find your vendor reviews from <a href=""%s"">Medma > Market Place > Review and Ratings > All Ratings</a> Page.","Please find your vendor reviews from <a href=""%s"">Medma > Market Place > Review and Ratings > All Ratings</a> Page."
+Transactions,Transactions
+"Please find your vendor transaction details from <a href=""%s"">Medma > Market Place > Manage Vendors</a> Page.","Please find your vendor transaction details from <a href=""%s"">Medma > Market Place > Manage Vendors</a> Page."
+Transaction Date,Transaction Date
+Order Number,Order Number
+Information,Information
+Credit,Credit
+Debit,Debit
+Net,Net
+By ,By 
+No Transaction Found !!,No Transaction Found !!
+Please select one or more attributes.,Please select one or more attributes.
+Seller Information,Seller Information
+Add to Favourite,Add to Favourite
+Items Ordered,Items Ordered
+Product Name,Product Name
+SKU,SKU
+Subtotal,Subtotal
+order_totals,order_totals
+Close,Close
+From:,From:
+To:,To:
+Gift Message,Gift Message
+Excl. Tax,Excl. Tax
+Total,Total
+Total incl. tax,Total incl. tax
+Ordered,Ordered
+Shipped,Shipped
+Canceled,Canceled
+Refunded,Refunded
+Feedback,Feedback
+Write Your Own Review,Write Your Own Review
+You\'re reviewing: ,You\'re reviewing: 
+How do you rate this product? *,How do you rate this product? *
+Submit Review,Submit Review
+NOTE: ,NOTE: 
+This item uploaded by site admin. you can give feed back to vendor only.,This item uploaded by site admin. you can give feed back to vendor only.
+Item has not been shipped yet. You can give feedback after invoice generation.,Item has not been shipped yet. You can give feedback after invoice generation.
+My Favourite Sellers,My Favourite Sellers
+You have no sellers added.,You have no sellers added.
+Items for Sale,Items for Sale
+Contact,Contact
+Email: ,Email: 
+Phone: ,Phone: 
+Remove From Favourite,Remove From Favourite
+Sellers,Sellers
+View Shop,View Shop
+Items for Sale,Items for Sale
+Contact,Contact
+Feedback Profile,Feedback Profile
+Positive,Positive
+Neutral,Neutral
+Negative,Negative
+1 star,1 star
+2 star,2 star
+3 star,3 star
+4 star,4 star
+5 star,5 star
+ star, star
+Ratings not available to review this seller. ,Ratings not available to review this seller. 
+Request Seller,Request Seller
+Personal Information,Personal Information
+First Name,First Name
+Last Name,Last Name
+Email Address,Email Address
+Business Information,Business Information
+Shop Name,Shop Name
+Contact Number,Contact Number
+Country,Country
+Verification Proof,Verification Proof
+Proof Type,Proof Type
+Files,Files
+Add New,Add New
+Login Information,Login Information
+User Name,User Name
+Password,Password
+Confirm Password,Confirm Password
+* Required Fields,* Required Fields
+Submit,Submit
+Title,Title
+Type,Type
+Summary,Summary
+Note :,Note :
+Your feedback has been successfully submitted. It will display after vendor\'s approval.,Your feedback has been successfully submitted. It will display after vendor\'s approval.
+There are no products matching the selection.,There are no products matching the selection.
+Seller Products,Seller Products
+Add to Cart,Add to Cart
+Out of stock,Out of stock
+Learn More,Learn More
+Add to Wishlist,Add to Wishlist
+Add to Compare,Add to Compare
+Highest Selling Product,Highest Selling Product
+Latest Product Added,Latest Product Added
+Show :,Show :
+All,All
+Date,Date
+Buyer,Buyer
+Item Name,Item Name
+No reviews found !!,No reviews found !!

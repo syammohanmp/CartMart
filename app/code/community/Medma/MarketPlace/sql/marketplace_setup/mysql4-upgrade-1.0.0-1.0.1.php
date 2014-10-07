@@ -50,7 +50,7 @@ $installer->getConnection()->createTable($table);
 
 $installer->run("
 
-CREATE TABLE IF NOT EXISTS {$this->getTable(Medma_Marketplace_Model_Authenticate::MEDMA_DOMAIN_TABLE_NAME)} ( 
+CREATE TABLE IF NOT EXISTS {$this->getTable(Medma_MarketPlace_Model_Authenticate::MEDMA_DOMAIN_TABLE_NAME)} ( 
   `modules` int(11) unsigned NOT NULL auto_increment,  
   `domain_name` varchar(255),  
   `medma_module` varchar(255),

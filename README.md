@@ -23,9 +23,9 @@ Admin can manually or automatically approve Vendors and their products as requir
 Installation
 ------------
 
-Install Extension Using Magento Connect
-Log out from admin and log in admin again.
-Navigation to Medma->MarketPlace on the Navigation Menu
+Install Extension Using Magento Connect.<br />
+Log out from admin and log in admin again.<br />
+Navigation to Medma->MarketPlace on the Navigation Menu<br />
 
 
 User manual

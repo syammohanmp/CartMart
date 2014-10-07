@@ -1,10 +1,11 @@
 Medma Marketplace
-------------------
+-----------------
 
 Medma Marketplace will convert your Magento Store to Multivendor Marketplace, which will have a separate vendor / seller section for their Products. It also has inbuilt reviews and feedback system.
 
 
-Features:
+Features
+--------
 
 No core files changed.
 Admin can set default ROLE for vendor from configuration.
@@ -18,11 +19,14 @@ Vendors can create all different types of products which are supported by Magent
 Admin can ask for Verification Proof from vendors while registering them in store.
 Admin can manually or automatically approve Vendors and their products as required.
 
-Installation:
+
+Installation
+------------
 
 Install Extension Using Magento Connect
 Log out from admin and log in admin again.
 Navigation to Medma->MarketPlace on the Navigation Menu
+
 
 User manual
 -----------

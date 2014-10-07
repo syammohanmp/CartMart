@@ -1,0 +1,119 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<?php $_order = $this->getOrder() ?>
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody>
+            <tr>
+                <td style="width:50%;"><h3 class="icon-head head-sales-order"><?php echo $this->getHeaderText(); ?></h3></td>
+                <td class="form-buttons">								
+                    <button id="btnBack" title="Back" type="button" class="scalable back" 
+                            onclick="setLocation('<?php echo $this->getBackUrl() ?>')" style="">
+                        <span><?php echo $this->__('Back'); ?></span>
+                    </button>
+                    <?php if ($this->isShipButtonDisplay()): ?>
+                        <button id="btnShip" title="Ship" type="button" class="scalable go" 
+                                onclick="setLocation('<?php echo $this->getShipUrl(); ?>')" style="">
+                            <span><?php echo $this->__('Ship'); ?></span>
+                        </button>
+                    <?php endif; ?>					
+                    <?php if ($this->isInvoiceButtonDisplay()): ?>
+                        <button id="btnInvoice" title="Invoice" type="button" class="scalable go" 
+                                onclick="setLocation('<?php echo $this->getInvoiceUrl(); ?>')" style="">
+                            <span><?php echo $this->__('Invoice'); ?></span>
+                        </button>					
+                    <?php endif; ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+<div id="order-messages">
+    <?php echo $this->getChildHtml('order_messages') ?>
+</div>
+<?php echo $this->getLayout()->createBlock('marketplace/adminhtml_order_form_info')->toHtml(); ?>
+<input type="hidden" name="order_id" value="<?php echo $_order->getId() ?>"/>
+<?php if ($_order->getIsVirtual()): ?>
+    <div class="box-right">
+    <?php else: ?>
+        <div class="box-left">
+        <?php endif; ?>
+        <!--Payment Method-->
+        <div class="entry-edit">
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-payment-method"><?php echo Mage::helper('sales')->__('Payment Information') ?></h4>
+            </div>
+            <fieldset>
+                <?php echo $this->getPaymentHtml() ?>
+                <div><?php echo Mage::helper('sales')->__('Order was placed using %s', $_order->getOrderCurrencyCode()) ?></div>
+            </fieldset>
+        </div>
+    </div>
+    <?php if (!$_order->getIsVirtual()): ?>
+        <div class="box-right">
+            <!--Shipping Method-->
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                    <h4 class="icon-head head-shipping-method"><?php echo Mage::helper('sales')->__('Shipping &amp; Handling Information') ?></h4>
+                </div>
+                <fieldset>
+                    <?php if ($_order->getTracksCollection()->count()) : ?>
+                        <a href="#" id="linkId" onclick="popWin('<?php echo $this->helper('shipping')->getTrackingPopupUrlBySalesModel($_order) ?>','trackorder','width=800,height=600,resizable=yes,scrollbars=yes')" title="<?php echo $this->__('Track Order') ?>"><?php echo $this->__('Track Order') ?></a>
+                        <br/>
+                    <?php endif; ?>
+                    <?php if ($_order->getShippingDescription()): ?>
+                        <strong><?php echo $this->escapeHtml($_order->getShippingDescription()) ?></strong>
+
+                        <?php if ($this->helper('tax')->displayShippingPriceIncludingTax()): ?>
+                            <?php $_excl = $this->displayShippingPriceInclTax($_order); ?>
+                        <?php else: ?>
+                            <?php $_excl = $this->displayPriceAttribute('shipping_amount', false, ' '); ?>
+                        <?php endif; ?>
+                        <?php $_incl = $this->displayShippingPriceInclTax($_order); ?>
+
+                        <?php echo $_excl; ?>
+                        <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                            (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <?php echo $this->helper('sales')->__('No shipping information available'); ?>
+                    <?php endif; ?>
+                </fieldset>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div class="clear"></div>
+    <?php echo $this->getGiftOptionsHtml() ?>
+    <div class="clear"></div>
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-products"><?php echo Mage::helper('sales')->__('Items Ordered') ?></h4>
+        </div>
+    </div>
+    <?php echo $this->getLayout()->createBlock('marketplace/adminhtml_order_form_items')->toHtml(); ?>
+    <div class="clear"></div>
+    <div class="box-right entry-edit">
+        <div class="entry-edit-head"><h4><?php echo Mage::helper('sales')->__('Order Totals') ?></h4></div>
+        <div class="order-totals"><?php echo $this->getLayout()->createBlock('marketplace/adminhtml_order_form_totals')->toHtml(); ?></div>
+    </div>
+    <div class="clear"></div>
+</div>

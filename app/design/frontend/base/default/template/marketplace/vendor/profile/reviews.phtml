@@ -1,0 +1,75 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<?php $vendorInfo = $this->getVendorInfo();?>
+<?php $reviewCollection = $this->getReviewCollection(); ?>
+
+<div id="customer-reviews">
+	<div id="review-filter">
+		<ul>
+			<li><?php echo $this->__('Show :'); ?></li>
+			<li><a class="<?php echo $this->getActiveTypeLink(Medma_MarketPlace_Model_Review::ALL); ?>" href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::ALL); ?>"><?php echo $this->__('All'); ?></a></li>
+			<li><a class="<?php echo $this->getActiveTypeLink(Medma_MarketPlace_Model_Review::POSITIVE); ?>" href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::POSITIVE); ?>"><?php echo $this->__('Positive'); ?></a></li>
+			<li><a class="<?php echo $this->getActiveTypeLink(Medma_MarketPlace_Model_Review::NEUTRAL); ?>" href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::NEUTRAL); ?>"><?php echo $this->__('Neutral'); ?></a></li>
+			<li><a class="<?php echo $this->getActiveTypeLink(Medma_MarketPlace_Model_Review::NEGATIVE); ?>" href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::NEGATIVE); ?>"><?php echo $this->__('Negative'); ?></a></li>
+		</ul>	
+	</div>
+	<div class="clear"></div>
+	<?php echo $this->getChildHtml('pager'); ?>
+	<div id="review-data-header">
+		<ul>
+			<li><?php echo $this->__('Feedback'); ?></li>
+			<li class="review-price"><?php echo $this->__('Price'); ?></li>
+			<li class="review-date"><?php echo $this->__('Date'); ?></li>
+			<li class="clear"></li>
+		</ul>
+	</div>
+	<?php if($reviewCollection->count()): ?>
+		<?php foreach($reviewCollection as $review): ?>
+			<div class="review-data-row">
+				<div class="type-image-column <?php echo $this->getReviewTypeImageClass($review->getType()) ?>"></div>
+				<div class="review-column">
+					<div class="row1"><?php echo $review->getSummary(); ?></div>
+					<div class="row2"><b><?php echo $this->getProductData($review->getInvoiceItemId(), 'name'); ?></b></div>
+				</div>
+				<div class="price-column">
+					<div class="row1"><?php echo $this->__('Buyer'); ?></div>
+					<div class="row2"><?php echo $this->getProductData($review->getInvoiceItemId(), 'price'); ?></div>
+				</div>
+				<div class="date-column">
+					<div class="row1"><?php echo $review->getPostedDate(); ?></div>
+					<div class="row2">
+						<a href="<?php echo $this->getProductData($review->getInvoiceItemId(), 'url'); ?>">
+							<?php echo $this->__('Item Name'); ?>
+						</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		<?php endforeach; ?>
+	<?php else: ?>
+		<div class="review-data-row">			
+			<div class="review-column">
+				<div class="row1 no-review-count"><?php echo $this->__('No reviews found !!'); ?></div>				
+			</div>			
+			<div class="clear"></div>
+		</div>
+	<?php endif; ?>
+</div>

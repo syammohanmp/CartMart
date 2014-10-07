@@ -1,0 +1,84 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<?php $reviewItem = $this->getReviewItem(); ?>
+
+<?php if(is_null($reviewItem)): ?>
+	<div class="review-container">
+		<ul class="form-list">
+			<li>	
+				<label for="title_field" class="required"><em>*</em><?php echo $this->__('Title');?></label>
+				<div class="input-box">
+					<input type="text" name="title" id="title<?php echo $this->getInvoiceItemId() ?>" class="input-text required-entry" value="">				
+				</div>				
+			</li>		
+			<li>
+				<label for="type_field" class="required"><em>*</em><?php echo $this->__('Type');?></label>
+				<div class="input-box">
+					<select name="type" id="type<?php echo $this->getInvoiceItemId() ?>" class="validate-select">
+						<option value=""></option>
+						<option value="<?php echo Medma_MarketPlace_Model_Review::POSITIVE; ?>"><?php echo $this->__('Positive');?></option>
+						<option value="<?php echo Medma_MarketPlace_Model_Review::NEUTRAL; ?>"><?php echo $this->__('Neutral');?></option>
+						<option value="<?php echo Medma_MarketPlace_Model_Review::NEGATIVE; ?>"><?php echo $this->__('Negative');?></option>
+					</select>
+				</div>				
+			</li>
+			<li>
+				<label for="review_field" class="required"><em>*</em><?php echo $this->__('Summary');?></label>
+				<div class="input-box">
+					<textarea name="summary" id="summary<?php echo $this->getInvoiceItemId() ?>" class="required-entry"></textarea>
+				</div>
+			</li>
+		</ul>
+	</div>		
+<?php else: ?>
+	<?php if($reviewItem->getStatus() == Medma_MarketPlace_Model_Review::APPROVED): ?>
+		<div class="review-container">
+			<ul class="form-list">
+				<li>
+					<div><label for="title_field" class="black-label"><?php echo $this->__('Title');?></label><div class="clear"></div></div>
+					<div><?php echo $reviewItem->getTitle(); ?></div>
+				</li>		
+				<li>
+					<div><label for="title_field" class="black-label"><?php echo $this->__('Type');?></label><div class="clear"></div></div>
+					<div>
+						<?php
+							if($reviewItem->getType() == Medma_MarketPlace_Model_Review::POSITIVE)
+								echo $this->__('Positive');
+							else if($reviewItem->getType() == Medma_MarketPlace_Model_Review::NEUTRAL)
+								echo $this->__('Neutral');
+							else
+								echo $this->__('Negative');
+						?>
+					</div>
+				</li>
+				<li>
+					<div><label for="title_field" class="black-label"><?php echo $this->__('Summary');?></label><div class="clear"></div></div>
+					<div><?php echo $reviewItem->getSummary(); ?></div>
+				</li>
+			</ul>
+		</div>			
+	<?php else: ?>
+		<div class="review-container">
+			<b><?php echo $this->__('Note :');  ?></b><?php echo $this->__('Your feedback has been successfully submitted. It will display after vendor\'s approval.'); ?>
+		</div>
+	<?php endif; ?>
+<?php endif; ?>
+		

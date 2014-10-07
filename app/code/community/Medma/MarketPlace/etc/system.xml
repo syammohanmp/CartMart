@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <!--Here is the tabs definition-->
+        <medma translate="label" module="marketplace">
+            <label>Medma</label>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+        </medma>
+    </tabs>
+    <sections>
+		<marketplace translate="label" module="marketplace">
+			<class>separator-top</class>
+            <label>Market Place</label>
+            <tab>medma</tab>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>				
+                <general translate="label">
+                    <label>General information</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<vendor_role translate="label">
+                            <label>Vendor Role</label>
+                            <comment>Please select the role which will work as vendor role.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>marketplace/system_config_source_roles</source_model>
+                        </vendor_role>
+					</fields>
+				</general>
+				<review translate="label">
+		            <label>Review Options</label>				
+		            <frontend_type>select</frontend_type>
+		            <sort_order>30</sort_order>
+		            <show_in_default>1</show_in_default>
+		            <show_in_website>1</show_in_website>
+		            <show_in_store>1</show_in_store>
+		            <fields>
+						<page_size translate="label">
+							<label>Reviews per Page on Grid Allowed Values</label>
+							<comment>Enter comma separated page size.</comment>
+							<frontend_type>text</frontend_type>
+							<validate>validate-per-page-value-list input-text</validate>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>							
+		                </page_size>
+					</fields>
+				</review>
+			</groups>
+		</marketplace>
+	</sections>
+</config>

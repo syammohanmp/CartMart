@@ -1,0 +1,51 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<table cellspacing="0" width="100%">
+    <col />
+    <col width="1" />    
+    <tfoot>
+        <tr class="1">
+            <td class="label">
+                <strong><?php echo Mage::helper('marketplace')->__("Total Commission") ?></strong>
+            </td>
+            <td class="emph">
+                <strong><span class="price"><?php echo Mage::registry('supplier_total_commission'); ?></span></strong>
+            </td>
+        </tr>
+        <tr class="2">
+            <td class="label">
+                <strong><?php echo Mage::helper('marketplace')->__("Total Vendor Amount") ?></strong>
+            </td>
+            <td class="emph">
+                <strong><span class="price"><?php echo Mage::registry('supplier_total_amt'); ?></span></strong>
+            </td>
+        </tr>
+        <tr class="0">
+            <td class="label">
+                <strong><?php echo Mage::helper('marketplace')->__("Grand Total") ?></strong>
+            </td>
+            <td class="emph">
+                <strong><span class="price"><?php echo Mage::registry('supplier_grand_total'); ?></span></strong>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+

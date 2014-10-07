@@ -1,0 +1,74 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<?php $transactions = $this->getTransactions(); ?>
+
+<div id="vendorGrid">
+    <div class="grid">
+        <div class="hor-scroll">
+            <table cellspacing="0" class="data" id="vendorGrid_table">
+                <colgroup>					
+                    <col width="150">
+                    <col width="100">
+                    <col>
+                    <col width="100">
+                    <col width="100">
+                    <col width="100">
+                </colgroup>
+                <thead>
+                    <tr class="headings">
+                        <th><span class="nobr"><?php echo $this->__('Transaction Date') ?></span></th>
+                        <th><span class="nobr"><?php echo $this->__('Order Number') ?></span></th>
+                        <th><span class="nobr"><?php echo $this->__('Information') ?></span></th>
+                        <th><span class="nobr"><?php echo $this->__('Credit') ?></span></th>
+                        <th><span class="nobr"><?php echo $this->__('Debit') ?></span></th>						
+                        <th class="last"><span class="nobr"><?php echo $this->__('Net') ?></span></th>
+                    </tr>                                                
+                </thead>
+                <tbody>
+                    <?php if($transactions->count() > 0): ?>
+                        <?php $i = 0; $total = 0; ?>
+                        <?php foreach ($transactions as $transaction): $i++; ?>
+                            <tr class="<?php echo ($i % 2 == '1' ? 'even' : '') ?>">
+                                <td><?php echo $transaction->getTransactionDate(); ?></td>
+                                <td><?php echo $transaction->getOrderNumber(); ?></td>
+                                <td><?php echo $this->__('By ') . $transaction->getInformation(); ?></td>
+                                <td class="a-right"><?php echo ($transaction->getType() == 'Credit' ? $this->formatAmount($transaction->getAmount()) : ''); ?></td>
+                                <td class="a-right"><?php echo ($transaction->getType() == 'Debit' ? $this->formatAmount($transaction->getAmount()) : ''); ?></td>
+                                <?php
+                                if ($transaction->getType() == 'Credit'):
+                                    $total += $transaction->getAmount();
+                                else:
+                                    $total -= $transaction->getAmount();
+                                endif;
+                                ?>
+                                <td class="a-right"><?php echo $this->formatAmount($total); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                            <tr>
+                                <td colspan="6"><?php echo $this->__('No Transaction Found !!'); ?></td>
+                            </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

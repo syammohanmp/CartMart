@@ -1,0 +1,42 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody>
+            <tr>
+                <td style="width:50%;"><h3 class="icon-head head-sales-order"><?php echo $this->getHeaderText(); ?></h3></td>
+                <td class="form-buttons">
+                    <?php if($this->isToShowButtons()): ?>
+                    <button id="btnBack" title="Back" type="button" class="scalable back" 
+                            onclick="setLocation('<?php echo $this->getBackUrl() ?>')" style="">
+                        <span><?php echo $this->__('Back'); ?></span>
+                    </button>                    
+                    <button id="btnAdd" title="Add Transaction" type="button" class="scalable add" 
+                            onclick="setLocation('<?php echo $this->getAddUrl() ?>')" style="">
+                        <span><?php echo $this->__('Add Transaction'); ?></span>
+                    </button>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<?php echo $this->getLayout()->createBlock('marketplace/adminhtml_transaction_items')->toHtml(); ?>

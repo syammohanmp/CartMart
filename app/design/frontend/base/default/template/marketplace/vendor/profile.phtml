@@ -1,0 +1,96 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<?php $vendorInfo = $this->getVendorInfo(); ?>
+<?php $userObject = $this->getUserObject($vendorInfo->getUserId()); ?>
+<?php $vendorRating = $this->getVendorRating(); ?>
+<div id="profile_wrapper">
+    <div id="user_profile">
+        <div id="user_image">
+            <?php $profileImage = Mage::helper('marketplace')->getImagesUrl('images') . 'default.jpg'; ?>
+            <?php if ($vendorInfo->getImage()): ?>
+                <?php $profileImage = Mage::helper('marketplace')->getImagesUrl('vendor' . DS . 'images') . $vendorInfo->getImage(); ?>
+            <?php endif; ?>
+            <img src="<?php echo $profileImage; ?>" />
+        </div>
+        <div id="user_detail">
+            <h3 id="vendor_name"><b><a href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>"><?php echo $vendorInfo->getShopName(); ?></a></b></h3>
+            <div id="membership_detail">
+                <p><?php echo $this->getMessage($vendorInfo, $userObject); ?></p>
+            </div>
+            <div id="option_wrapper">
+                <a href="<?php echo $this->getVendorItemsUrl($vendorInfo->getId()); ?>" class="items"><?php echo $this->__('Items for Sale'); ?></a>
+                <a href="javascript: void(0);" class="contact"><?php echo $this->__('Contact'); ?></a>
+                <div class="contact-details-container">
+					<div class="contact-details"><b><?php echo $this->__('Email: '); ?></b><?php echo $userObject->getEmail(); ?></div>
+					<div class="contact-details"><b><?php echo $this->__('Phone: '); ?></b><?php echo $vendorInfo->getContactNumber(); ?></div>
+                </div>
+            </div>
+            <div>
+                <button type="button" title="Add to Favourite" class="button" 
+                        onclick="setLocation('<?php echo $this->getAddFavouriteUrl($vendorInfo->getId()); ?>');">
+                    <span><span><?php echo $this->__('Add to Favourite'); ?></span></span>
+                </button>
+            </div>
+        </div>
+        <div id="feedback_profile">
+			<?php if(count($vendorRating)): ?>
+				<p class="feedback_header"><b><?php echo $this->__('Feedback Profile'); ?></b></p>            
+				<?php foreach($vendorRating as $rating): ?>
+					<div class="rating-container">
+						<div class="rating-graphics-container">
+							<div class="rating-blank"></div>
+							<div class="rating-filled" style="width: <?php echo $rating['value'] ?>%"></div>
+						</div>
+						<div class="rating-totals"><?php echo str_pad($rating['records'], 3, "0", STR_PAD_LEFT); ?></div>
+						<div class="rating-name"><span><?php echo $rating['name']; ?></span></div>					
+						<div class="clear"></div>
+					</div>
+				<?php endforeach; ?>
+			<?php endif; ?>
+			<div class="review_overview">
+				<div class="review_container">
+					<a href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::POSITIVE); ?>" class="review_link positive_review_link">
+						<span class="review_count"><?php echo $this->getReviewCount($userObject->getId(), Medma_MarketPlace_Model_Review::POSITIVE); ?></span>
+						<span class="review_label"><?php echo $this->__('Positive'); ?></span>
+					</a>
+				</div>
+				<div class="review_container">
+					<a href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::NEUTRAL); ?>" class="review_link neutral_review_link">
+						<span class="review_count"><?php echo $this->getReviewCount($userObject->getId(), Medma_MarketPlace_Model_Review::NEUTRAL); ?></span>
+						<span class="review_label"><?php echo $this->__('Neutral'); ?></span>
+					</a>
+				</div>
+				<div class="review_container">
+					<a href="<?php echo $this->getTypeUrl($vendorInfo->getId(), Medma_MarketPlace_Model_Review::NEGATIVE); ?>" class="review_link negative_review_link">
+						<span class="review_count"><?php echo $this->getReviewCount($userObject->getId(), Medma_MarketPlace_Model_Review::NEGATIVE); ?></span>
+						<span class="review_label"><?php echo $this->__('Negative'); ?></span>
+					</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+        </div>        
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="profile_bottom_link_wrapper">
+    <span class="first">Member Since: <b><?php echo date("M j, Y", strtotime($userObject->getCreated())); ?></b></span>
+    <span class="last location"><?php echo $this->getCountryName($vendorInfo->getCountry()); ?></span>
+</div>

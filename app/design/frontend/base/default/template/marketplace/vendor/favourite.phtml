@@ -1,0 +1,63 @@
+<?php
+/**
+ * Medma Marketplace
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Medma
+ * @package     Medma_MarketPlace
+**/
+?>
+<?php $favouriteVendor = $this->getFavouriteVendors(); ?>
+
+<div class="page-title">
+    <h1><?php echo $this->__('My Favourite Sellers'); ?></h1>
+</div>
+
+<?php if ($favouriteVendor->count() == 0): ?>
+    <p><?php echo $this->__('You have no sellers added.'); ?></p>
+<?php else: ?>
+    <?php foreach ($favouriteVendor as $vendorInfo): ?>
+        <?php $userObject = $this->getUserObject($vendorInfo->getUserId()); ?>
+        <div class="account_profile_wrapper">
+            <div id="user_image">
+                <?php $profileImage = Mage::helper('marketplace')->getImagesUrl('images') . 'default.jpg'; ?>
+                <?php if ($vendorInfo->getImage()): ?>
+                    <?php $profileImage = Mage::helper('marketplace')->getImagesUrl('vendor' . DS . 'images') . $vendorInfo->getImage(); ?>
+                <?php endif; ?>
+                <img src="<?php echo $profileImage; ?>" />
+            </div>
+            <div id="user_detail">
+                <h3 id="vendor_name"><b><a href="<?php echo $this->getVendorProfileUrl($vendorInfo->getId()); ?>"><?php echo $vendorInfo->getShopName(); ?></a></b></h3>
+                <div id="membership_detail">
+                    <p><?php echo $this->getMessage($vendorInfo, $userObject); ?></p>
+                </div>
+                <div id="option_wrapper">
+                    <a href="<?php echo $this->getVendorItemsUrl($vendorInfo->getId()); ?>" class="items"><?php echo $this->__('Items for Sale'); ?></a>
+                    <a href="javascript: void(0);" class="contact"><?php echo $this->__('Contact'); ?></a>
+                    <div class="contact-details-container">
+						<div class="contact-details"><b><?php echo $this->__('Email: '); ?></b><?php echo $userObject->getEmail(); ?></div>
+						<div class="contact-details"><b><?php echo $this->__('Phone: '); ?></b><?php echo $vendorInfo->getContactNumber(); ?></div>
+					</div>
+                </div>
+                <div>
+                    <button type="button" title="<?php echo $this->__('Remove From Favourite'); ?>" class="button" 
+                            onclick="setLocation('<?php echo $this->getRemoveFavouriteUrl($vendorInfo->getId()); ?>');">
+                        <span><span><?php echo $this->__('Remove From Favourite'); ?></span></span>
+                    </button>
+                </div>
+            </div>            
+            <div class="clear"></div>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>

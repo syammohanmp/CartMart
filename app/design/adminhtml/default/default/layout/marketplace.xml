@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <adminhtml_catalog_product_new>
+        <reference name="product_edit">
+            <action method="setTemplate">
+                <template>marketplace/catalog/product/edit.phtml</template>
+            </action> 
+        </reference>
+    </adminhtml_catalog_product_new>
+    <adminhtml_catalog_product_edit>
+        <reference name="product_edit">
+            <action method="setTemplate">
+                <template>marketplace/catalog/product/edit.phtml</template>
+            </action> 
+        </reference>
+    </adminhtml_catalog_product_edit>
+</layout>

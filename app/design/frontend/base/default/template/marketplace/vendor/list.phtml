@@ -21,9 +21,16 @@
 				</div>
 				<div class="vendor-products-container">								
 					<?php foreach($productCollection as $product): ?>
-						<div class="vendor-product">
-							<a href="<?php echo $product->getProductUrl(); ?>"><img src ="<?php echo $this->getProductImage($product->getId()) ?>" /></a>
-						</div>
+						<?php $product->load('status');?>
+						<?php if($product->getStatus()==2):?>
+							<div class="vendor-product">
+								<img src ="<?php echo $this->getProductImage($product->getId()) ?>" />
+							</div>
+						<?php else:?>
+							<div class="vendor-product">
+								<a href="<?php echo $product->getProductUrl(); ?>"><img src ="<?php echo $this->getProductImage($product->getId()) ?>" /></a>
+							</div>
+						<?php endif;?>
 					<?php endforeach; ?>
 					<div class="clear"></div>
 				</div>

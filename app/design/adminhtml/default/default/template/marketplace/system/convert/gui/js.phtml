@@ -1,0 +1,41 @@
+<?php
+//$isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+?>
+
+<script type="text/javascript">
+	//var isVendor = '<?php //echo $isVendor?>';
+	Event.observe(window, 'load', function(){
+			var profileName = document.getElementById('profile_name').value;
+			//alert(profileName);
+			if(profileName == 'Vendor Import Products' || profileName == 'Vendor Export Products')
+			{
+					document.getElementById('profile_name').disabled = true;
+					document.getElementById('profile_entity_type').disabled = true;
+					document.getElementById('profile_direction').disabled = true;
+					document.getElementById('profile_store_id').disabled = true;
+					document.getElementById('profile_number_of_records').disabled = true;
+					document.getElementById('profile_decimal_separator').disabled = true;
+					document.getElementById('profile_data_transfer').disabled = true;
+					document.getElementById('file_type').disabled = true;
+					document.getElementById('file_filename').disabled = true;
+					document.getElementById('file_path').disabled = true;
+					document.getElementById('parse_type').disabled = true;
+					document.getElementById('parse_delimiter').disabled = true;
+					document.getElementById('parse_enclose').disabled = true;
+					document.getElementById('parse_fieldnames').disabled = true;
+					document.getElementById('map_only_specified').disabled = true;
+					
+					
+					document.getElementById('product_filter_name').disabled = true;
+					document.getElementById('product_filter_sku').disabled = true;
+					document.getElementById('product_filter_type').disabled = true;
+					document.getElementById('product_filter_attribute_set').disabled = true;
+					document.getElementById('product_filter_price_from').disabled = true;
+					document.getElementById('product_filter_price_to').disabled = true;
+					document.getElementById('product_filter_qty_from').disabled = true;
+					document.getElementById('product_filter_qty_to').disabled = true;
+					document.getElementById('product_filter_visibility').disabled = true;
+					document.getElementById('product_filter_status').disabled = true;
+			}
+	});
+</script> 

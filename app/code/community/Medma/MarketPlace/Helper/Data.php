@@ -54,5 +54,45 @@ class Medma_MarketPlace_Helper_Data extends Mage_Core_Helper_Abstract
 		
 		return $proofType;
 	}
+	
+	
+	/**Check current user is a vendor**/
+	public function isVendor()
+	{
+			$result = '';
+			
+			/**Fetch Current User Id**/    
+      $user = Mage::getSingleton('admin/session');
+			$userId = $user->getUser()->getUserId();
+			
+			/**Fetch Parent Id For Current Role**/
+			$role = Mage::getModel('admin/role')
+										->getCollection()
+										->addFieldToFilter('user_id',$userId)
+										->getFirstItem();
+										
+			$parentId = $role->getParentId();
+			
+			
+			/**Fetch Role Name of current parent id**/
+			
+			$parentRole = Mage::getModel('admin/role')
+										->getCollection()
+										->addFieldToFilter('role_id',$parentId)
+										->getFirstItem();
+										
+			$roleName = $parentRole->getRoleName();
+			
+			if($roleName == 'VENDORS')
+			{
+					$result = true;
+			}
+			else
+			{
+					$result = false;
+			}
+			
+			return $result;
+	}
 }
 ?>

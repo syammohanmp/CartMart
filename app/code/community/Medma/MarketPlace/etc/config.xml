@@ -2,11 +2,16 @@
 <config>
     <modules>
         <Medma_MarketPlace>
-            <version>2.0.3</version>
+            <version>2.0.5</version>
         </Medma_MarketPlace>
     </modules>
     <global>
         <models>
+        		<dataflow>
+        				<rewrite>
+        						<profile>Medma_MarketPlace_Model_Dataflow_Profile</profile>
+        				</rewrite>
+        		</dataflow>
             <marketplace>
                 <class>Medma_MarketPlace_Model</class>
                 <resourceModel>marketplace_mysql4</resourceModel>
@@ -73,6 +78,8 @@
                 <rewrite>
                     <system_account_edit_form>Medma_MarketPlace_Block_Adminhtml_System_Account_Edit_Form</system_account_edit_form>
                     <catalog_product_grid>Medma_MarketPlace_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
+                    <system_convert_gui_grid>Medma_MarketPlace_Block_Adminhtml_System_Convert_Gui_Grid</system_convert_gui_grid>
+                    <system_convert_profile_edit_tab_run>Medma_MarketPlace_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run</system_convert_profile_edit_tab_run>
                 </rewrite>
             </adminhtml>
         </blocks>
@@ -148,13 +155,13 @@
     </frontend>
     <admin>
         <routers>
-            <marketplace>
+            <admin_marketplace>
                 <use>admin</use>
                 <args>
                     <module>Medma_MarketPlace</module>
                     <frontName>admin_marketplace</frontName>
                 </args>
-            </marketplace>
+            </admin_marketplace>
             <adminhtml>
                 <args>
                     <modules>

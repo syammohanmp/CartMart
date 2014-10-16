@@ -1,6 +1,5 @@
 .clear { clear: both; }
 .vendor-info .shop-info { padding: 8px 10px 10px; }
-.vendor-info button.button span { border-color: #406a83; background: #618499; }
 
 #user_profile { padding: 10px; background: #FFFFFF; opacity: 0.9; filter: alpha(opacity=90); box-shadow: 0px 0px 5px 2px rgba(119, 119, 119, 0.5); -moz-box-shadow: 0px 0px 5px 2px rgba(119, 119, 119, 0.5); -webkit-box-shadow: 0px 0px 5px 2px rgba(119, 119, 119, 0.5); }
 #user_image { float: left; height: 160px; width: 160px; padding: 5px; margin-right: 10px; }

@@ -45,6 +45,35 @@ class Medma_MarketPlace_Model_Product_Attribute_Source_Vendor extends Mage_Eav_M
         }
         return $options;
     }
+	/**
+	 * Get options in "key-value" format
+	 *
+	 * @return array
+	 */
+	public function toArray()
+	{
+        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+
+        $role = Mage::getModel('admin/roles')->load($roleId);
+
+        $current_user = Mage::getSingleton('admin/session')->getUser();
+
+        if ($current_user->getRole()->getRoleId() == $role->getRoleId())
+            $options[$current_user->getId()] = $current_user->getName();
+        else {
+
+            $userIds = Mage::getResourceModel('admin/roles')->getRoleUsers($role);
+
+            $collection = Mage::getModel('admin/user')
+                ->getCollection()
+                ->addFieldToFilter('is_active', 1)
+                ->addFieldToFilter('user_id', array('in' => $userIds));
+
+            foreach ($collection as $user)
+                $options[$user->getId()] = $user->getName();
+        }
+        return $options;
+	}
 
 }
 

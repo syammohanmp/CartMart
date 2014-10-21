@@ -30,7 +30,7 @@ class Medma_MarketPlace_Helper_Data extends Mage_Core_Helper_Abstract
 	
 	public function getImagesUrl($type)
 	{
-		return Mage::getBaseUrl('media') . 'marketplace' . DS . 'vendor' . DS . $type . DS;	
+		return Mage::getBaseUrl('media') . 'marketplace' . '/' . 'vendor' . '/' . $type . '/';	
 	}
 	
 	public function getCountryName($countryCode)

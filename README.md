@@ -1,7 +1,9 @@
-Medma Marketplace
+Cart Mart
 -----------------
 
-Medma Marketplace will convert your Magento Store to Multivendor Marketplace, which will have a separate vendor / seller section for their Products. It also has inbuilt reviews and feedback system.
+Cart Mart will convert your Magento Store to Multivendor Marketplace, which will have a separate vendor / seller section for their Products. It also has inbuilt reviews and feedback system.
+
+Cart Mart was the result of a fork of Medma_MarketPlace on Oct 07, 2014. At that time, the Medma_MarketPlace was a free opensource extension.
 
 
 Features
@@ -23,18 +25,3 @@ Features
   <li>Vendors can import &amp; update their products in bulk.</li>
   <li>Vendors can export all their products in a CSV file.</li>
 </ul>
-
-
-Installation
-------------
-
-Install Extension Using Magento Connect.<br />
-Log out from admin and log in admin again.<br />
-Navigation to Medma->MarketPlace on the Navigation Menu<br />
-
-
-User manual
------------
-
-http://magento.medma.tv/magentodev/download/Medma_MarketPlace_User_Manual.pdf
-

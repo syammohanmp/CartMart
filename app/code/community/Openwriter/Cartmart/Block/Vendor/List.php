@@ -23,7 +23,7 @@ class OpenWriter_Cartmart_Block_Vendor_List extends Mage_Core_Block_Template
 {
     public function __construct() 
     {
-        $this->setTemplate('marketplace/vendor/list.phtml');
+        $this->setTemplate('cartmart/vendor/list.phtml');
         parent::__construct();
     }
     
@@ -33,7 +33,7 @@ class OpenWriter_Cartmart_Block_Vendor_List extends Mage_Core_Block_Template
 			->addFieldToFilter('is_active', 1);		
 				
 		$userCollection->getSelect()->join(
-			array('user_profile' => Mage::getSingleton('core/resource')->getTableName('marketplace/profile')), 
+			array('user_profile' => Mage::getSingleton('core/resource')->getTableName('cartmart/profile')), 
 			'user_profile.user_id = main_table.user_id', array('user_profile.*')
 		);		
 		
@@ -53,12 +53,12 @@ class OpenWriter_Cartmart_Block_Vendor_List extends Mage_Core_Block_Template
 	
 	public function getVendorProfileUrl($vendorId) 
 	{
-        return $this->getUrl('marketplace/vendor/profile', array('id' => $vendorId));
+        return $this->getUrl('cartmart/vendor/profile', array('id' => $vendorId));
     }
     
     public function getViewAllProduct($vendorId)
     {
-		return $this->getUrl('marketplace/vendor/items', array('id' => $vendorId));
+		return $this->getUrl('cartmart/vendor/items', array('id' => $vendorId));
 	}
 	
 	public function getVendorImageUrl($vendorImageName)

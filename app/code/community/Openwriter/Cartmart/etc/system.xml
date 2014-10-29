@@ -2,7 +2,7 @@
 <config>
     <tabs>
         <!--Here is the tabs definition-->
-        <openwriter translate="label" module="marketplace">
+        <openwriter translate="label" module="cartmart">
             <label>Openwriter</label>
             <sort_order>100</sort_order>
             <show_in_default>1</show_in_default>
@@ -11,7 +11,7 @@
         </openwriter>
     </tabs>
     <sections>
-		<marketplace translate="label" module="marketplace">
+		<cartmart translate="label" module="cartmart">
 			<class>separator-top</class>
             <label>Cart Mart</label>
             <tab>openwriter</tab>
@@ -36,7 +36,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <source_model>marketplace/system_config_source_roles</source_model>
+                            <source_model>cartmart/system_config_source_roles</source_model>
                         </vendor_role>
 					</fields>
 				</general>

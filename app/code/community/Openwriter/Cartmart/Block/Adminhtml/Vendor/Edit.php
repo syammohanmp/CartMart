@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Edit extends Mage_Adminhtml_Blo
     public function __construct() {
         parent::__construct();
         $this->_objectId = 'user_id';
-        $this->_blockGroup = 'marketplace';
+        $this->_blockGroup = 'cartmart';
         $this->_controller = 'adminhtml_vendor';
         $this->_updateButton('save', 'label', 'Save Vendor');
         $this->_updateButton('delete', 'label', 'Delete Vendor');

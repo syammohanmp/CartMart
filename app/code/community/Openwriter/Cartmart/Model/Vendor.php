@@ -25,7 +25,7 @@ class OpenWriter_Cartmart_Model_Vendor {
     const ROLE_TYPE = 'G';
 
     protected function _construct() {
-        $this->_init('marketplace/vendor');
+        $this->_init('cartmart/vendor');
     }
 
 }

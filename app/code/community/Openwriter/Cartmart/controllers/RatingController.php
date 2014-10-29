@@ -27,7 +27,7 @@ class OpenWriter_Cartmart_RatingController extends Mage_Core_Controller_Front_Ac
 		
 		if(isset($postData['title']))
 		{
-			$reviewModel = Mage::getModel('marketplace/review')
+			$reviewModel = Mage::getModel('cartmart/review')
 					->setData($postData)
 					->setInvoiceItemId($invoice_item_id)
 					->setPostedDate(Mage::getModel('core/date')->timestamp(time()))
@@ -39,7 +39,7 @@ class OpenWriter_Cartmart_RatingController extends Mage_Core_Controller_Front_Ac
 		{		
 			foreach($postData['ratings'] as $key => $value)
 			{
-				Mage::getModel('marketplace/rate')
+				Mage::getModel('cartmart/rate')
 					->setRatingId($key)
 					->setInvoiceItemId($invoice_item_id)
 					->setValue($value)

@@ -22,7 +22,7 @@
 $installer = $this;
 $installer->startSetup();
 
-$table = $installer->getConnection()->newTable($installer->getTable('marketplace/prooftype'))
+$table = $installer->getConnection()->newTable($installer->getTable('cartmart/prooftype'))
 	->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 			'identity' => true,
 			'unsigned' => true,
@@ -41,7 +41,7 @@ $installer->getConnection()->createTable($table);
 
 $installer->getConnection()
 	->addColumn(
-		$installer->getTable('marketplace/profile'),  'proof_type', array(
+		$installer->getTable('cartmart/profile'),  'proof_type', array(
 			'type'      => Varien_Db_Ddl_Table::TYPE_INTEGER,         
 			'nullable'  => true,
 			'comment'   => 'Proof Type',
@@ -50,7 +50,7 @@ $installer->getConnection()
 
 $installer->getConnection()
 	->addColumn(
-		$installer->getTable('marketplace/profile'),  'varification_files', array(
+		$installer->getTable('cartmart/profile'),  'varification_files', array(
 			'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,
 			'nullable'  => true,
 			'comment'   => 'Varification Files',
@@ -58,7 +58,7 @@ $installer->getConnection()
 	);
 
 $table = $installer->getConnection()
-	->newTable($installer->getTable('marketplace/review'))
+	->newTable($installer->getTable('cartmart/review'))
 		->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 				'auto_increment' => true,
 				'unsigned' => true,

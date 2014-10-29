@@ -20,31 +20,31 @@
 class OpenWriter_Cartmart_Adminhtml_ProoftypeController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/manage_verification/manage_type');
+        $this->loadLayout()->_setActiveMenu('openwriter/cartmart/manage_verification/manage_type');
         return $this;
     }
 
     public function indexAction() {
         $this->_initAction();
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_prooftype'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_prooftype'));
         $this->renderLayout();
     }
 
     public function editAction() {
         $testId = $this->getRequest()->getParam('id');
-        $testModel = Mage::getModel('marketplace/prooftype')->load($testId);
+        $testModel = Mage::getModel('cartmart/prooftype')->load($testId);
         if ($testModel->getId() || $testId == 0) {
             Mage::register('type_data', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('openwriter/marketplace/manage_verification/manage_type');
+            $this->_setActiveMenu('openwriter/cartmart/manage_verification/manage_type');
             $this->_addBreadcrumb('Type Manager', 'Type Manager');
             $this->_addBreadcrumb('Type Description', 'Type Description');
             $this->getLayout()->getBlock('head')
                     ->setCanLoadExtJs(true);
             $this->_addContent($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_prooftype_edit'))
+                            ->createBlock('cartmart/adminhtml_prooftype_edit'))
                     ->_addLeft($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_prooftype_edit_tabs')
+                            ->createBlock('cartmart/adminhtml_prooftype_edit_tabs')
             );
             $this->renderLayout();
         } else {
@@ -63,7 +63,7 @@ class OpenWriter_Cartmart_Adminhtml_ProoftypeController extends Mage_Adminhtml_C
             try {
                 $postData = $this->getRequest()->getPost();
 
-                $testModel = Mage::getModel('marketplace/prooftype');
+                $testModel = Mage::getModel('cartmart/prooftype');
                 $id = $this->getRequest()->getParam('id');
 
                 $testModel->addData($postData)
@@ -94,7 +94,7 @@ class OpenWriter_Cartmart_Adminhtml_ProoftypeController extends Mage_Adminhtml_C
     public function deleteAction() {
         if ($this->getRequest()->getParam('id') > 0) {
             try {
-                $testModel = Mage::getModel('marketplace/prooftype');
+                $testModel = Mage::getModel('cartmart/prooftype');
                 $testModel->setId($this->getRequest()
                                 ->getParam('id'))
                         ->delete();

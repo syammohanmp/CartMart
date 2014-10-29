@@ -23,7 +23,7 @@ class OpenWriter_Cartmart_Model_System_Config_Source_Roles
 {
 	protected function _construct() 
 	{
-		$this->_init('marketplace/system_config_source_roles');	
+		$this->_init('cartmart/system_config_source_roles');	
 	}
     
 	public function toOptionArray()

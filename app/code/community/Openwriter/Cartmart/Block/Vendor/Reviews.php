@@ -21,13 +21,13 @@ class OpenWriter_Cartmart_Block_Vendor_Reviews extends Mage_Core_Block_Template
 {
     public function __construct() 
     {
-        $this->setTemplate('marketplace/vendor/reviews.phtml');
+        $this->setTemplate('cartmart/vendor/reviews.phtml');
         parent::__construct();
     }    
 	
 	public function getReviewItem()
 	{
-		$reviewCollection = Mage::getModel('marketplace/review')->getCollection()
+		$reviewCollection = Mage::getModel('cartmart/review')->getCollection()
 			->addFieldToFilter('invoice_item_id', $this->getInvoiceItemId());			
 			
 		if($reviewCollection->count() > 0)

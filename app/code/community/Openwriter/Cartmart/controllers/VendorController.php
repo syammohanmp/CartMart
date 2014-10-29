@@ -104,7 +104,7 @@ class OpenWriter_Cartmart_VendorController extends Mage_Core_Controller_Front_Ac
 
                 $user->save();
                 
-                $profile = Mage::getModel('marketplace/profile')
+                $profile = Mage::getModel('cartmart/profile')
 					->setTotalAdminCommission(0)
 					->setTotalVendorAmount(0)
 					->setTotalVendorPaid(0);                

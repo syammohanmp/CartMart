@@ -33,13 +33,13 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
         }
 
         $this->loadLayout()->_setActiveMenu('vendor/orders');
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_order'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_order'));
         $this->renderLayout();
     }
 
     public function emptyAction() {
         $this->loadLayout()->_setActiveMenu('vendor/orders');
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_order_empty'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_order_empty'));
         $this->renderLayout();
     }
 
@@ -51,7 +51,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
             Mage::register('current_order', Mage::getModel('sales/order')->load($id));
 
             $this->loadLayout()->_setActiveMenu('vendor/orders');
-            $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_order_form'));
+            $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_order_form'));
             $this->renderLayout();
         } else {
             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cartmart')->__('Item does not exist'));
@@ -71,7 +71,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
 
             $current_user_id = Mage::getSingleton('admin/session')->getUser()->getId();
 
-            $profile = Mage::getModel('marketplace/profile')->getCollection()->addFieldToFilter('user_id', $current_user_id)->getFirstItem();
+            $profile = Mage::getModel('cartmart/profile')->getCollection()->addFieldToFilter('user_id', $current_user_id)->getFirstItem();
             $admin_commission_percentage = $profile->getAdminCommissionPercentage();
 
             $total_admin_commission = $profile->getData('total_admin_commission');
@@ -99,7 +99,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
                 $vendor_amount += ($total_price - $total_commission);
             }
                     
-            $transactionCollection = Mage::getModel('marketplace/transaction')
+            $transactionCollection = Mage::getModel('cartmart/transaction')
 				->getCollection()
 				->addFieldToFilter('order_number', $order->getIncrementId())
 				->addFieldToFilter('vendor_id', $current_user_id);
@@ -110,7 +110,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
                     ->setData('total_vendor_amount', $total_vendor_amount)
                     ->save();
                     
-				$transaction = Mage::getModel('marketplace/transaction');
+				$transaction = Mage::getModel('cartmart/transaction');
 				$transaction->setData('vendor_id', $current_user_id)
 					->setData('transaction_date', date("Y-m-d H:i:s", Mage::getModel('core/date')->timestamp(time())))
 					->setData('order_number', $order->getIncrementId())

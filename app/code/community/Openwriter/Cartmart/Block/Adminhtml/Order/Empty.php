@@ -21,7 +21,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Empty extends Mage_Core_Block_Te
 {
     protected function _prepareLayout()
     {
-        $this->setTemplate('marketplace/sales/order/empty.phtml');
+        $this->setTemplate('cartmart/sales/order/empty.phtml');
         return parent::_prepareLayout();
     }
     

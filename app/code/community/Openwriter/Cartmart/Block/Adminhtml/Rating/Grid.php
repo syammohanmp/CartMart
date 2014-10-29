@@ -28,7 +28,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Rating_Grid extends Mage_Adminhtml_Blo
     }   
 
     protected function _prepareCollection() {
-        $collection = Mage::getModel('marketplace/rating')->getCollection();
+        $collection = Mage::getModel('cartmart/rating')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }

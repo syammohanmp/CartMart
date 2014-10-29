@@ -21,7 +21,7 @@ class OpenWriter_Cartmart_Helper_Data extends Mage_Core_Helper_Abstract
 {
 	public function getImagesDir($type)
 	{
-		$path = Mage::getBaseDir('media') . DS . 'marketplace' . DS . 'vendor' . DS . $type . DS;
+		$path = Mage::getBaseDir('media') . DS . 'cartmart' . DS . 'vendor' . DS . $type . DS;
 		if(!is_dir($path))
 			mkdir($path, 0777, true);
 			
@@ -30,7 +30,7 @@ class OpenWriter_Cartmart_Helper_Data extends Mage_Core_Helper_Abstract
 	
 	public function getImagesUrl($type)
 	{
-		return Mage::getBaseUrl('media') . 'marketplace' . '/' . 'vendor' . '/' . $type . '/';	
+		return Mage::getBaseUrl('media') . 'cartmart' . '/' . 'vendor' . '/' . $type . '/';	
 	}
 	
 	public function getCountryName($countryCode)
@@ -40,14 +40,14 @@ class OpenWriter_Cartmart_Helper_Data extends Mage_Core_Helper_Abstract
 	
 	public function getConfig($group, $field)
 	{
-		return Mage::getStoreConfig('marketplace/' . $group . '/' . $field, Mage::app()->getStore());
+		return Mage::getStoreConfig('cartmart/' . $group . '/' . $field, Mage::app()->getStore());
 	}
 	
 	public function getVarificationProofTypeList()
 	{
 		$proofType[''] = '';
 		
-		$prooftypeCollection = Mage::getModel('marketplace/prooftype')->getCollection()->addFieldToFilter('status', 1);
+		$prooftypeCollection = Mage::getModel('cartmart/prooftype')->getCollection()->addFieldToFilter('status', 1);
 		
 		foreach($prooftypeCollection as $prooftype)		
 			$proofType[$prooftype->getId()] = $prooftype->getName();

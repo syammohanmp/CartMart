@@ -3,20 +3,20 @@
     <adminhtml_catalog_product_new>
         <reference name="product_edit">
             <action method="setTemplate">
-                <template>marketplace/catalog/product/edit.phtml</template>
+                <template>cartmart/catalog/product/edit.phtml</template>
             </action> 
         </reference>
     </adminhtml_catalog_product_new>
     <adminhtml_catalog_product_edit>
         <reference name="product_edit">
             <action method="setTemplate">
-                <template>marketplace/catalog/product/edit.phtml</template>
+                <template>cartmart/catalog/product/edit.phtml</template>
             </action> 
         </reference>
     </adminhtml_catalog_product_edit>
     <adminhtml_system_convert_gui_edit>
 				<reference name="content">
-						<block type="core/template" template="marketplace/system/convert/gui/js.phtml"/>
+						<block type="core/template" template="cartmart/system/convert/gui/js.phtml"/>
 				</reference>
 		</adminhtml_system_convert_gui_edit>
 		<cartmart_adminhtml_system_convert_profile_run>

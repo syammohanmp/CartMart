@@ -20,12 +20,12 @@
 class OpenWriter_Cartmart_Block_Vendor_Ratings extends Mage_Core_Block_Template {
 
     public function __construct() {
-        $this->setTemplate('marketplace/vendor/ratings.phtml');
+        $this->setTemplate('cartmart/vendor/ratings.phtml');
         parent::__construct();
     }
 
     public function getRatings() {		
-        return Mage::getModel('marketplace/rating')->getCollection()
+        return Mage::getModel('cartmart/rating')->getCollection()
 			->addFieldToFilter('status', 1)
 			->setOrder('sort_order', 'ASC');
     }
@@ -34,7 +34,7 @@ class OpenWriter_Cartmart_Block_Vendor_Ratings extends Mage_Core_Block_Template 
     {
 		$invoiceItemId = $this->getInvoiceItemId();
 		
-		$rateCollection = Mage::getModel('marketplace/rate')
+		$rateCollection = Mage::getModel('cartmart/rate')
 			->getCollection()
 			->addFieldToFilter('rating_id', $ratingId)
 			->addFieldToFilter('invoice_item_id', $invoiceItemId);

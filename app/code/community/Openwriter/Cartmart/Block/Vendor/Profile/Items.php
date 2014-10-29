@@ -28,7 +28,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Items extends Mage_Catalog_Block_
 	
 	protected function _getProductCollection()
     {
-		$profileCollection = Mage::getModel('marketplace/profile')->getCollection();
+		$profileCollection = Mage::getModel('cartmart/profile')->getCollection();
 				
 		$profileCollection->getSelect()
 			->reset(Zend_Db_Select::COLUMNS)
@@ -50,7 +50,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Items extends Mage_Catalog_Block_
 		$collection->addAttributeToSelect('vendor')
 			->addAttributeToFilter('vendor', array(array('in' => $userIds), array('null' => true)));
 			
-		if($this->getRequest()->getRouteName() == 'marketplace' && 
+		if($this->getRequest()->getRouteName() == 'cartmart' && 
 			$this->getRequest()->getControllerName() == 'vendor' && 
 			$this->getRequest()->getActionName() == 'items') 
 		{
@@ -58,7 +58,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Items extends Mage_Catalog_Block_
 			
 			if(isset($profileId))
 			{
-				$vendorId = Mage::getModel('marketplace/profile')->load($profileId)->getUserId();	
+				$vendorId = Mage::getModel('cartmart/profile')->load($profileId)->getUserId();	
 			
 				$collection->addAttributeToSelect('vendor')
 					->addAttributeToFilter('vendor', $vendorId);

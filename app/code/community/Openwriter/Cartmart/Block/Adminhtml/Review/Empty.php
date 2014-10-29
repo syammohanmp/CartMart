@@ -21,13 +21,13 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Empty extends Mage_Core_Block_T
 {
     protected function _prepareLayout()
     {
-        $this->setTemplate('marketplace/vendor/review/empty.phtml');
+        $this->setTemplate('cartmart/vendor/review/empty.phtml');
         return parent::_prepareLayout();
     }
     
     public function getReviewGridUrl()
     {
-        return Mage::helper('adminhtml')->getUrl('marketplace/adminhtml_review/index', array('_current' => true));
+        return Mage::helper('adminhtml')->getUrl('cartmart/adminhtml_review/index', array('_current' => true));
     }
 }
 ?>

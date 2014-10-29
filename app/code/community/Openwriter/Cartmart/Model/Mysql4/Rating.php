@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Mysql4_Rating extends Mage_Core_Model_Resource_Db_Abstract {
 
     protected function _construct() {
-        $this->_init('marketplace/rating', 'entity_id');
+        $this->_init('cartmart/rating', 'entity_id');
     }
 
 }

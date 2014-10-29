@@ -27,7 +27,7 @@ $role = Mage::getModel('admin/roles')
 	->addFieldToFilter('role_name', OpenWriter_Cartmart_Model_Vendor::ROLE)
 	->getFirstItem();
 
-Mage::getConfig()->saveConfig('marketplace/general/vendor_role', $role->getId());
+Mage::getConfig()->saveConfig('cartmart/general/vendor_role', $role->getId());
 Mage::getConfig()->reinit();
 Mage::app()->reinitStores();
 

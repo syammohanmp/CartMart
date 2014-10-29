@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review extends Mage_Adminhtml_Block_Wi
 	public function __construct()
 	{		
 		$this->_controller = 'adminhtml_review';
-		$this->_blockGroup = 'marketplace';
+		$this->_blockGroup = 'cartmart';
 		if(Mage::getSingleton('core/session')->getReviewType() != OpenWriter_Cartmart_Model_Review::PENDING) 
 			$this->_headerText = 'All Reviews';
 		else

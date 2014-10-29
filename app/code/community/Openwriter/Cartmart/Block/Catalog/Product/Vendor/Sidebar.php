@@ -30,7 +30,7 @@ class OpenWriter_Cartmart_Block_Catalog_Product_Vendor_Sidebar extends Mage_Core
     public function getVendorInfo() {
         $userId = $this->getProduct()->getVendor();
 
-        $vendorProfileCollection = Mage::getModel('marketplace/profile')->getCollection()
+        $vendorProfileCollection = Mage::getModel('cartmart/profile')->getCollection()
                 ->addFieldToFilter('user_id', $userId);
 
         if ($vendorProfileCollection->count() > 0)
@@ -40,11 +40,11 @@ class OpenWriter_Cartmart_Block_Catalog_Product_Vendor_Sidebar extends Mage_Core
     }
 
     public function getVendorProfileUrl($vendorId) {
-        return $this->getUrl('marketplace/vendor/profile', array('id' => $vendorId));
+        return $this->getUrl('cartmart/vendor/profile', array('id' => $vendorId));
     }
 
     public function getAddFavouriteUrl($vendorId) {
-        return $this->getUrl('marketplace/favourite/add', array('id' => $vendorId));
+        return $this->getUrl('cartmart/favourite/add', array('id' => $vendorId));
     }
 
     public function getProductId() {

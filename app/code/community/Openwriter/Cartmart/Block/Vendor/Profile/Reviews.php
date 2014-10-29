@@ -47,7 +47,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 	
 	public function getVendorInfo() {
         $profileId = $this->getRequest()->getParam('id');
-        return Mage::getModel('marketplace/profile')->load($profileId);
+        return Mage::getModel('cartmart/profile')->load($profileId);
     }
 
     public function getUserObject($userId) {
@@ -67,11 +67,11 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 				->getAllIds();
 					
 			if($type == OpenWriter_Cartmart_Model_Review::ALL)
-				$this->_myCollection = Mage::getModel('marketplace/review')->getCollection()
+				$this->_myCollection = Mage::getModel('cartmart/review')->getCollection()
 					->addFieldToFilter('invoice_item_id', array('in' => $invoiceItemIds))					
 					->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::APPROVED);			
 			else			
-				$this->_myCollection = Mage::getModel('marketplace/review')->getCollection()
+				$this->_myCollection = Mage::getModel('cartmart/review')->getCollection()
 					->addFieldToFilter('invoice_item_id', array('in' => $invoiceItemIds))
 					->addFieldToFilter('type', $type)
 					->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::APPROVED);			
@@ -121,7 +121,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 	
 	public function getTypeUrl($vendorId, $linkType)
 	{
-		return Mage::getUrl('marketplace/vendor/profile', array('id' => $vendorId, 'type'=> $linkType));
+		return Mage::getUrl('cartmart/vendor/profile', array('id' => $vendorId, 'type'=> $linkType));
 	}
 }
 

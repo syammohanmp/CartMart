@@ -3,13 +3,13 @@
     <default>
         <reference name="head">			
             <action method="addCss">
-                <stylesheet>marketplace/css/styles.css</stylesheet>
+                <stylesheet>cartmart/css/styles.css</stylesheet>
             </action>
         </reference>        
         <reference name="footer_links">
 			<action method="addLink" translate="label title">
 				<label>Request Seller</label>
-                <url>marketplace/vendor/register</url>
+                <url>cartmart/vendor/register</url>
                 <title>Request Seller</title>
                 <prepare>true</prepare>
                 <urlParams helper="core/url/getHomeUrl"/>
@@ -24,14 +24,14 @@
             </action>            
         </reference>		
         <reference name="right">
-            <block type="marketplace/catalog_product_vendor_sidebar" before="cart_sidebar" name="marketplace.catalog.product.vendor.sidebar" as="seller_profile" template="marketplace/catalog/product/vendor/sidebar.phtml" />
+            <block type="cartmart/catalog_product_vendor_sidebar" before="cart_sidebar" name="cartmart.catalog.product.vendor.sidebar" as="seller_profile" template="cartmart/catalog/product/vendor/sidebar.phtml" />
         </reference>        
     </catalog_product_view>    
     <customer_account>
         <reference name="customer_account_navigation">
-            <action method="addLink" translate="label" module="marketplace">
+            <action method="addLink" translate="label" module="cartmart">
                 <name>My Favourite Sellers</name>
-                <path>marketplace/favourite</path>					
+                <path>cartmart/favourite</path>					
                 <label>My Favourite Sellers</label>
             </action>
         </reference>
@@ -39,7 +39,7 @@
     <cartmart_favourite_index>		
         <update handle="customer_account"/>		
         <reference name="content">
-            <block type="marketplace/vendor_favourite" name="marketplace.vendor.favourite" template="marketplace/vendor/favourite.phtml" />
+            <block type="cartmart/vendor_favourite" name="cartmart.vendor.favourite" template="cartmart/vendor/favourite.phtml" />
         </reference>
     </cartmart_favourite_index>
     <cartmart_vendor_profile>
@@ -49,9 +49,9 @@
             </action>
         </reference>
         <reference name="content">
-            <block type="marketplace/vendor_profile" name="marketplace.vendor.profile" template="marketplace/vendor/profile.phtml" />
-            <block type="marketplace/vendor_profile_reviews" name="marketplace.vendor.profile.reviews" template="marketplace/vendor/profile/reviews.phtml" />
-            <block type="marketplace/vendor_profile_latest" name="marketplace.vendor.profile.latest" template="marketplace/vendor/profile/latest.phtml" />
+            <block type="cartmart/vendor_profile" name="cartmart.vendor.profile" template="cartmart/vendor/profile.phtml" />
+            <block type="cartmart/vendor_profile_reviews" name="cartmart.vendor.profile.reviews" template="cartmart/vendor/profile/reviews.phtml" />
+            <block type="cartmart/vendor_profile_latest" name="cartmart.vendor.profile.latest" template="cartmart/vendor/profile/latest.phtml" />
         </reference>
     </cartmart_vendor_profile>
     <cartmart_vendor_items>
@@ -61,8 +61,8 @@
             </action>
         </reference>
         <reference name="content">
-			<block type="marketplace/vendor_profile" name="marketplace.vendor.profile" template="marketplace/vendor/profile.phtml" />
-            <block type="marketplace/vendor_profile_items" name="marketplace.vendor.profile.items" template="marketplace/vendor/profile/items.phtml">
+			<block type="cartmart/vendor_profile" name="cartmart.vendor.profile" template="cartmart/vendor/profile.phtml" />
+            <block type="cartmart/vendor_profile_items" name="cartmart.vendor.profile.items" template="cartmart/vendor/profile/items.phtml">
 				<action method="setColumnCount"><count>5</count></action>
             </block>
         </reference>        
@@ -70,10 +70,10 @@
     <sales_order_view>
         <reference name="order_items">
             <action method="setTemplate">
-                <template>marketplace/sales/order/items.phtml</template>
+                <template>cartmart/sales/order/items.phtml</template>
             </action>
-            <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>marketplace/sales/order/items/renderer/default.phtml</template></action>
-            <action method="addItemRender"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>marketplace/sales/order/items/renderer/default.phtml</template></action>
+            <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>cartmart/sales/order/items/renderer/default.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>cartmart/sales/order/items/renderer/default.phtml</template></action>
             <reference name="order_totals">
                 <action method="setLabelProperties"><value>colspan="5" class="a-right"</value></action>
             </reference>
@@ -86,7 +86,7 @@
             </action>            
         </reference>
         <reference name="content">
-            <block type="marketplace/vendor_register" name="marketplace.vendor.register" template="marketplace/vendor/register.phtml" />            
+            <block type="cartmart/vendor_register" name="cartmart.vendor.register" template="cartmart/vendor/register.phtml" />            
         </reference>
     </cartmart_vendor_register>
 </layout>

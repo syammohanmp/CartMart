@@ -104,10 +104,10 @@ class OpenWriter_Cartmart_Model_Observer
 	public function sendTransactionalEmail($email, $vars)
 	{
 		// Transactional Email Template's ID
-		$templateId = Mage::getStoreConfig('marketplace/email/email_template');		
+		$templateId = Mage::getStoreConfig('cartmart/email/email_template');		
 		
 		// Set sender information
-		$senderInfo = Mage::getStoreConfig('marketplace/email/email_sender');		
+		$senderInfo = Mage::getStoreConfig('cartmart/email/email_sender');		
 		$senderName = Mage::getStoreConfig('trans_email/ident_'.$senderInfo.'/name');
 		$senderEmail = Mage::getStoreConfig('trans_email/ident_'.$senderInfo.'/email');
 	  

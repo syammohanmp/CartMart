@@ -25,7 +25,7 @@ class OpenWriter_Cartmart_Model_Transaction extends Mage_Core_Model_Abstract {
 	const DEBIT = 'Debit';
 	
     protected function _construct() {
-        $this->_init('marketplace/transaction');
+        $this->_init('cartmart/transaction');
     }
 
 }

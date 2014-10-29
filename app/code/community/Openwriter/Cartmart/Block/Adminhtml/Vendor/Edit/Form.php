@@ -22,10 +22,10 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtm
     protected function _prepareForm() {
         $model = Mage::registry('vendor_user');
 
-        $profileCollection = Mage::getModel('marketplace/profile')
+        $profileCollection = Mage::getModel('cartmart/profile')
                         ->getCollection()->addFieldToFilter('user_id', $this->getRequest()->getParam('id'));
 
-        $profile = Mage::getModel('marketplace/profile');
+        $profile = Mage::getModel('cartmart/profile');
         if ($profileCollection->count() > 0)
             $profile->load($profileCollection->getFirstItem()->getId());
        
@@ -276,7 +276,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtm
 	protected function _getFiles($proofType, $fileList)
 	{
 		$fileListArray = json_decode($fileList, true);
-		$proofTypeModel = Mage::getModel('marketplace/prooftype')->load($proofType);
+		$proofTypeModel = Mage::getModel('cartmart/prooftype')->load($proofType);
 		$proofName = $proofTypeModel->getName();
 		if(isset($proofName))
 		{

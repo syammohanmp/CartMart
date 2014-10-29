@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Rate extends Mage_Core_Model_Abstract {
 
     protected function _construct() {
-        $this->_init('marketplace/rate');
+        $this->_init('cartmart/rate');
     }
 
 }

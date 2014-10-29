@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Mysql4_Prooftype_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract {
 
     public function _construct() {
-        $this->_init('marketplace/prooftype');
+        $this->_init('cartmart/prooftype');
     }
 
 }

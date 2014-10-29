@@ -25,7 +25,7 @@ $table = $installer->getTable('dataflow/profile');
 
 $data[0] = array(
 							'name' => 'Vendor Export Products',
-							'actions_xml' => "<action type=\"marketplace/convert_adapter_product\" method=\"load\">
+							'actions_xml' => "<action type=\"cartmart/convert_adapter_product\" method=\"load\">
 												<var name=\"store\"><![CDATA[0]]></var>
 										</action>
 
@@ -43,7 +43,7 @@ $data[0] = array(
 												<var name=\"fieldnames\">true</var>
 										</action>
 
-										<action type=\"marketplace/dataflow_convert_adapter_io\" method=\"save\">
+										<action type=\"cartmart/dataflow_convert_adapter_io\" method=\"save\">
 												<var name=\"type\">file</var>
 												<var name=\"path\">var/export</var>
 												<var name=\"filename\"><![CDATA[export_product.csv]]></var>
@@ -70,7 +70,7 @@ $data[1] = array(
     <var name=\"store\"><![CDATA[0]]></var>
     <var name=\"number_of_records\">1</var>
     <var name=\"decimal_separator\"><![CDATA[.]]></var>
-    <var name=\"adapter\">marketplace/convert_adapter_product</var>
+    <var name=\"adapter\">cartmart/convert_adapter_product</var>
     <var name=\"method\">parse</var>
 </action>",
 										

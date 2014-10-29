@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Mysql4_Transaction_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract {
 
     public function _construct() {
-        $this->_init('marketplace/transaction');
+        $this->_init('cartmart/transaction');
     }
 
 }

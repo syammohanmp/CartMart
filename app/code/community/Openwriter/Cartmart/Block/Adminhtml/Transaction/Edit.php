@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Transaction_Edit extends Mage_Adminhtm
     public function __construct() {
         parent::__construct();
         $this->_objectId = 'user_id';
-        $this->_blockGroup = 'marketplace';
+        $this->_blockGroup = 'cartmart';
         $this->_controller = 'adminhtml_transaction';
         $this->_updateButton('save', 'label', 'Save Transaction');
         $this->_updateButton('delete', 'label', 'Delete Transaction');

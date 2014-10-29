@@ -41,7 +41,7 @@ class OpenWriter_Cartmart_FavouriteController extends Mage_Core_Controller_Front
 			
 		$vendorId = $this->getRequest()->getParam('id');
 		
-		$profileModel = Mage::getModel('marketplace/profile')->load($vendorId);
+		$profileModel = Mage::getModel('cartmart/profile')->load($vendorId);
 		$favourites = $profileModel->getFavourites();
 		$customerId = Mage::getSingleton('customer/session')->getCustomer()->getId();
 				
@@ -77,7 +77,7 @@ class OpenWriter_Cartmart_FavouriteController extends Mage_Core_Controller_Front
 			
 		$vendorId = $this->getRequest()->getParam('id');
 		
-		$profileModel = Mage::getModel('marketplace/profile')->load($vendorId);
+		$profileModel = Mage::getModel('cartmart/profile')->load($vendorId);
 		$favourites = $profileModel->getFavourites();
 		$customerId = Mage::getSingleton('customer/session')->getCustomer()->getId();
 				

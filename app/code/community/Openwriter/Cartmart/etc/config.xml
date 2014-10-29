@@ -118,7 +118,7 @@
 		</events>
 		<template>
 			<email>
-				<cartmart_email_email_template module="marketplace">
+				<cartmart_email_email_template module="cartmart">
 					<label>New Vendor Order</label>
 					<file>sales/new_vendor_order.html</file>
 					<type>html</type>
@@ -132,14 +132,14 @@
                 <use>standard</use>
                 <args>
                     <module>OpenWriter_Cartmart</module>
-                    <frontName>marketplace</frontName>
+                    <frontName>cartmart</frontName>
                 </args>
             </cartmart>
         </routers>
         <layout>
             <updates>
                 <cartmart>
-                    <file>marketplace.xml</file>
+                    <file>cartmart.xml</file>
                 </cartmart>
             </updates>
         </layout>
@@ -175,7 +175,7 @@
         <layout>
             <updates>
                 <cartmart>
-                    <file>marketplace.xml</file>
+                    <file>cartmart.xml</file>
                 </cartmart>
             </updates>
         </layout>

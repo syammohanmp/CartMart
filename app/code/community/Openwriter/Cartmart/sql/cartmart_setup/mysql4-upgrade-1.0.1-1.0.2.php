@@ -31,7 +31,7 @@ $setup->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'vendor', array(
     'label'             => 'Vendor',
     'input'             => 'select',
     'class'             => '',
-    'source'            => 'marketplace/product_attribute_source_vendor',
+    'source'            => 'cartmart/product_attribute_source_vendor',
     'global'            => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
     'visible'           => true,
     'required'          => false,

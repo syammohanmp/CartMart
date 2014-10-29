@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Block_Adminhtml_Order_Form_Items extends Mage_Adminhtml_Block_Template {
 
     public function __construct() {
-        $this->setTemplate('marketplace/sales/order/view/form/items.phtml');
+        $this->setTemplate('cartmart/sales/order/view/form/items.phtml');
         parent::__construct();
     }
 
@@ -53,7 +53,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form_Items extends Mage_Adminhtm
         $product = Mage::getModel('catalog/product')->load($product_id);
         if (!is_null($product)) {
             $vendor_id = $product->getData('vendor');
-            $profile = Mage::getModel('marketplace/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
+            $profile = Mage::getModel('cartmart/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
             if (!is_null($profile)) {
                 $commission_percentage = $profile->getAdminCommissionPercentage();
                 $commission_amount = (($item->getPriceInclTax() * $item->getQtyOrdered()) * $commission_percentage) / 100;
@@ -68,7 +68,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form_Items extends Mage_Adminhtm
         $product = Mage::getModel('catalog/product')->load($product_id);
         if (!is_null($product)) {
             $vendor_id = $product->getData('vendor');
-            $profile = Mage::getModel('marketplace/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
+            $profile = Mage::getModel('cartmart/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
             if (!is_null($profile)) {
                 $commission_percentage = $profile->getAdminCommissionPercentage();
                 $total_price = ($item->getPriceInclTax() * $item->getQtyOrdered());

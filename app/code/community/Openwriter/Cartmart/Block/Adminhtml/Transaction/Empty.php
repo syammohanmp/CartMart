@@ -21,7 +21,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Transaction_Empty extends Mage_Core_Bl
 {
     protected function _prepareLayout()
     {
-        $this->setTemplate('marketplace/vendor/transaction/empty.phtml');
+        $this->setTemplate('cartmart/vendor/transaction/empty.phtml');
         return parent::_prepareLayout();
     }
     

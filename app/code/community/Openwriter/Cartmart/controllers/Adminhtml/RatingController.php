@@ -20,31 +20,31 @@
 class OpenWriter_Cartmart_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/reviews_ratings/manage_ratings');
+        $this->loadLayout()->_setActiveMenu('openwriter/cartmart/reviews_ratings/manage_ratings');
         return $this;
     }
 
     public function indexAction() {
         $this->_initAction();
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_rating'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_rating'));
         $this->renderLayout();
     }
 
     public function editAction() {
         $testId = $this->getRequest()->getParam('id');
-        $testModel = Mage::getModel('marketplace/rating')->load($testId);
+        $testModel = Mage::getModel('cartmart/rating')->load($testId);
         if ($testModel->getId() || $testId == 0) {
             Mage::register('rating_data', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('openwriter/marketplace/reviews_ratings/manage_ratings');
+            $this->_setActiveMenu('openwriter/cartmart/reviews_ratings/manage_ratings');
             $this->_addBreadcrumb('Rating Manager', 'RatingManager');
             $this->_addBreadcrumb('Rating Description', 'Rating Description');
             $this->getLayout()->getBlock('head')
                     ->setCanLoadExtJs(true);
             $this->_addContent($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_rating_edit'))
+                            ->createBlock('cartmart/adminhtml_rating_edit'))
                     ->_addLeft($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_rating_edit_tabs')
+                            ->createBlock('cartmart/adminhtml_rating_edit_tabs')
             );
             $this->renderLayout();
         } else {
@@ -63,7 +63,7 @@ class OpenWriter_Cartmart_Adminhtml_RatingController extends Mage_Adminhtml_Cont
             try {
                 $postData = $this->getRequest()->getPost();
 
-                $testModel = Mage::getModel('marketplace/rating');
+                $testModel = Mage::getModel('cartmart/rating');
                 $id = $this->getRequest()->getParam('id');
 
                 $testModel->addData($postData)
@@ -94,7 +94,7 @@ class OpenWriter_Cartmart_Adminhtml_RatingController extends Mage_Adminhtml_Cont
     public function deleteAction() {
         if ($this->getRequest()->getParam('id') > 0) {
             try {
-                $testModel = Mage::getModel('marketplace/rating');
+                $testModel = Mage::getModel('cartmart/rating');
                 $testModel->setId($this->getRequest()
                                 ->getParam('id'))
                         ->delete();

@@ -21,7 +21,7 @@ class OpenWriter_Cartmart_Block_Vendor_Register extends Mage_Core_Block_Template
         
 	public function getPostActionUrl()
 	{
-		return $this->getUrl('marketplace/vendor/save');
+		return $this->getUrl('cartmart/vendor/save');
 	}
 	
 	public function getCountryList()
@@ -38,7 +38,7 @@ class OpenWriter_Cartmart_Block_Vendor_Register extends Mage_Core_Block_Template
 	
 	public function getProofTypeList()
 	{
-		return Mage::getModel('marketplace/prooftype')->getCollection()->addFieldToFilter('status', 1);
+		return Mage::getModel('cartmart/prooftype')->getCollection()->addFieldToFilter('status', 1);
 	}
 }
 

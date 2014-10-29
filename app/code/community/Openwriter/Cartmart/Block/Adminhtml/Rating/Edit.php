@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Rating_Edit extends Mage_Adminhtml_Blo
     public function __construct() {
         parent::__construct();
         $this->_objectId = 'entity_id';
-        $this->_blockGroup = 'marketplace';
+        $this->_blockGroup = 'cartmart';
         $this->_controller = 'adminhtml_rating';
         $this->_updateButton('save', 'label', 'Save Rating');
         $this->_updateButton('delete', 'label', 'Delete Rating');        

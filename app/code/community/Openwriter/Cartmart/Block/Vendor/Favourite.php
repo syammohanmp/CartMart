@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Block_Vendor_Favourite extends Mage_Core_Block_Template {
 
     public function getFavouriteVendors() {
-        $profileCollection = Mage::getModel('marketplace/profile')->getCollection();
+        $profileCollection = Mage::getModel('cartmart/profile')->getCollection();
 
         $customerId = Mage::getSingleton('customer/session')->getCustomer()->getId();
 
@@ -39,7 +39,7 @@ class OpenWriter_Cartmart_Block_Vendor_Favourite extends Mage_Core_Block_Templat
 			->addFieldToFilter('is_active', 1)
 			->getAllIds();
 
-        $profileCollection = Mage::getModel('marketplace/profile')->getCollection()
+        $profileCollection = Mage::getModel('cartmart/profile')->getCollection()
                 ->addFieldToFilter('entity_id', array('in' => $profiles))
                 ->addFieldToFilter('user_id', array('in' => $userIds));
 
@@ -51,7 +51,7 @@ class OpenWriter_Cartmart_Block_Vendor_Favourite extends Mage_Core_Block_Templat
     }
 
     public function getRemoveFavouriteUrl($vendorId) {
-        return $this->getUrl('marketplace/favourite/remove', array('id' => $vendorId));
+        return $this->getUrl('cartmart/favourite/remove', array('id' => $vendorId));
     }
 
     public function getCountryName($countryCode) {
@@ -59,11 +59,11 @@ class OpenWriter_Cartmart_Block_Vendor_Favourite extends Mage_Core_Block_Templat
     }
 
     public function getVendorProfileUrl($vendorId) {
-        return $this->getUrl('marketplace/vendor/profile', array('id' => $vendorId));
+        return $this->getUrl('cartmart/vendor/profile', array('id' => $vendorId));
     }
     
     public function getVendorItemsUrl($profileId) {
-        return $this->getUrl('marketplace/vendor/items', array('id' => $profileId));
+        return $this->getUrl('cartmart/vendor/items', array('id' => $profileId));
     }
     
     public function getMessage($vendorInfo, $userObject)

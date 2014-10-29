@@ -24,10 +24,10 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Latest extends Mage_Catalog_Block
     public function getItems() {
         $profileId = $this->getRequest()->getParam('id');
 
-        $vendorId = Mage::getModel('marketplace/profile')->load($profileId)->getUserId();
+        $vendorId = Mage::getModel('cartmart/profile')->load($profileId)->getUserId();
 
         if (is_null($this->_itemCollection)) {
-            $this->_itemCollection = Mage::getModel('marketplace/profile_products')->getItemsCollection($vendorId);
+            $this->_itemCollection = Mage::getModel('cartmart/profile_products')->getItemsCollection($vendorId);
         }
 
         return $this->_itemCollection;
@@ -37,7 +37,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Latest extends Mage_Catalog_Block
     {
 		$profileId = $this->getRequest()->getParam('id');
 
-        $vendorId = Mage::getModel('marketplace/profile')->load($profileId)->getUserId();
+        $vendorId = Mage::getModel('cartmart/profile')->load($profileId)->getUserId();
         
         $productIds = Mage::getModel('catalog/product')->getCollection()
 			->addFieldToFilter('status', 1)

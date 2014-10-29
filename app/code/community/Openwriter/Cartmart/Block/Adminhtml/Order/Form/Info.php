@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Block_Adminhtml_Order_Form_Info extends Mage_Adminhtml_Block_Template {
 
     public function __construct() {
-        $this->setTemplate('marketplace/sales/order/view/form/info.phtml');
+        $this->setTemplate('cartmart/sales/order/view/form/info.phtml');
         parent::__construct();
     }
 

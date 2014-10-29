@@ -28,7 +28,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Prooftype_Grid extends Mage_Adminhtml_
     }   
 
     protected function _prepareCollection() {
-        $collection = Mage::getModel('marketplace/prooftype')->getCollection();
+        $collection = Mage::getModel('cartmart/prooftype')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }

@@ -20,12 +20,12 @@
 class OpenWriter_Cartmart_Block_Adminhtml_Transaction_Items extends Mage_Adminhtml_Block_Template {
     
     public function __construct() {
-        $this->setTemplate('marketplace/vendor/transaction/items.phtml');
+        $this->setTemplate('cartmart/vendor/transaction/items.phtml');
         parent::__construct();
     }
     
     public function getTransactions() {
-        return Mage::getModel('marketplace/transaction')
+        return Mage::getModel('cartmart/transaction')
             ->getCollection()
             ->addFieldToFilter('vendor_id', Mage::registry('vendor_user')->getId());
     }

@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Block_Adminhtml_Transaction extends Mage_Adminhtml_Block_Template {
 
     public function __construct() {
-        $this->setTemplate('marketplace/vendor/transaction.phtml');
+        $this->setTemplate('cartmart/vendor/transaction.phtml');
         parent::__construct();
     }
 

@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Profile extends Mage_Core_Model_Abstract {
 
     protected function _construct() {
-        $this->_init('marketplace/profile');
+        $this->_init('cartmart/profile');
     }
 
 }

@@ -23,7 +23,7 @@ $installer = $this;
 $installer->startSetup();
 $installer->getConnection()
 	->addColumn(
-		$installer->getTable('marketplace/profile'),  'message', array(
+		$installer->getTable('cartmart/profile'),  'message', array(
 			'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,                
 			'nullable'  => true,
 			'comment'   => 'Message',
@@ -31,7 +31,7 @@ $installer->getConnection()
 	);
 $installer->getConnection()
 	->addColumn(
-		$installer->getTable('marketplace/profile'),  'contact_number', array(
+		$installer->getTable('cartmart/profile'),  'contact_number', array(
 			'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,                
 			'nullable'  => true,
 			'comment'   => 'Contact Number',
@@ -39,7 +39,7 @@ $installer->getConnection()
 	);
 $installer->getConnection()
 	->addColumn(
-		$installer->getTable('marketplace/profile'),  'country', array(
+		$installer->getTable('cartmart/profile'),  'country', array(
 			'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,                
 			'nullable'  => true,
 			'comment'   => 'Country',

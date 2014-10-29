@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Mysql4_Profile extends Mage_Core_Model_Resource_Db_Abstract {
 
     protected function _construct() {
-        $this->_init('marketplace/profile', 'entity_id');
+        $this->_init('cartmart/profile', 'entity_id');
     }
 
 }

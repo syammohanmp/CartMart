@@ -33,7 +33,7 @@ class OpenWriter_Cartmart_Model_Dataflow_Profile extends Mage_Dataflow_Model_Pro
 												<var name="store"><![CDATA[0]]></var>
 												<var name="number_of_records">1</var>
 												<var name="decimal_separator"><![CDATA[.]]></var>
-												<var name="adapter">marketplace/convert_adapter_product</var>
+												<var name="adapter">cartmart/convert_adapter_product</var>
 												<var name="method">parse</var>
 										</action>';
         		
@@ -45,7 +45,7 @@ class OpenWriter_Cartmart_Model_Dataflow_Profile extends Mage_Dataflow_Model_Pro
         {
         		$this->setGuiData($p);
         		
-        		$xml = '<action type="marketplace/convert_adapter_product" method="load">
+        		$xml = '<action type="cartmart/convert_adapter_product" method="load">
 												<var name="store"><![CDATA[0]]></var>
 										</action>
 

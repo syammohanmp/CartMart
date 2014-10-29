@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Prooftype_Edit extends Mage_Adminhtml_
     public function __construct() {
         parent::__construct();
         $this->_objectId = 'entity_id';
-        $this->_blockGroup = 'marketplace';
+        $this->_blockGroup = 'cartmart';
         $this->_controller = 'adminhtml_prooftype';
         $this->_updateButton('save', 'label', 'Save Type');
         $this->_updateButton('delete', 'label', 'Delete Type');        

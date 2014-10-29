@@ -331,8 +331,8 @@
 						<h2><?php echo $this->__('Write Your Own Review'); ?></h2>
 						<p><?php echo $this->__('You\'re reviewing: '); ?><a href="<?php echo $this->getVendorProfileUrl($vendorProfile->getId()); ?>"><b><?php echo $vendorProfile->getShopName(); ?></b></a></p>
 						<p><b><?php echo $this->__('How do you rate this product? *'); ?></b></p>
-						<?php echo $this->getLayout()->createBlock('marketplace/vendor_ratings')->setData('invoice_item_id', $invoiceItemId)->toHtml(); ?>
-						<?php echo $this->getLayout()->createBlock('marketplace/vendor_reviews')->setData('invoice_item_id', $invoiceItemId)->toHtml(); ?>
+						<?php echo $this->getLayout()->createBlock('cartmart/vendor_ratings')->setData('invoice_item_id', $invoiceItemId)->toHtml(); ?>
+						<?php echo $this->getLayout()->createBlock('cartmart/vendor_reviews')->setData('invoice_item_id', $invoiceItemId)->toHtml(); ?>
 						<div class="feedback-buttons-set">
 							<button type="submit" title="<?php echo $this->__('Submit Review'); ?>" class="button">
 								<span><span><?php echo $this->__('Submit Review'); ?></span></span>

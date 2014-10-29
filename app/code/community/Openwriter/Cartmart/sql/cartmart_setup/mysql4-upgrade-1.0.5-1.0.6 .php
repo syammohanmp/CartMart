@@ -23,7 +23,7 @@ $installer = $this;
 $installer->startSetup();
 $installer->getConnection()
 	->addColumn(
-		$installer->getTable('marketplace/profile'),  'favourites', array(
+		$installer->getTable('cartmart/profile'),  'favourites', array(
 			'type'      => Varien_Db_Ddl_Table::TYPE_TEXT,                
 			'nullable'  => true,
 			'comment'   => 'Favourites',

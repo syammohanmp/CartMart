@@ -50,7 +50,7 @@
 <div id="order-messages">
     <?php echo $this->getChildHtml('order_messages') ?>
 </div>
-<?php echo $this->getLayout()->createBlock('marketplace/adminhtml_order_form_info')->toHtml(); ?>
+<?php echo $this->getLayout()->createBlock('cartmart/adminhtml_order_form_info')->toHtml(); ?>
 <input type="hidden" name="order_id" value="<?php echo $_order->getId() ?>"/>
 <?php if ($_order->getIsVirtual()): ?>
     <div class="box-right">
@@ -109,11 +109,11 @@
             <h4 class="icon-head head-products"><?php echo Mage::helper('sales')->__('Items Ordered') ?></h4>
         </div>
     </div>
-    <?php echo $this->getLayout()->createBlock('marketplace/adminhtml_order_form_items')->toHtml(); ?>
+    <?php echo $this->getLayout()->createBlock('cartmart/adminhtml_order_form_items')->toHtml(); ?>
     <div class="clear"></div>
     <div class="box-right entry-edit">
         <div class="entry-edit-head"><h4><?php echo Mage::helper('sales')->__('Order Totals') ?></h4></div>
-        <div class="order-totals"><?php echo $this->getLayout()->createBlock('marketplace/adminhtml_order_form_totals')->toHtml(); ?></div>
+        <div class="order-totals"><?php echo $this->getLayout()->createBlock('cartmart/adminhtml_order_form_totals')->toHtml(); ?></div>
     </div>
     <div class="clear"></div>
 </div>

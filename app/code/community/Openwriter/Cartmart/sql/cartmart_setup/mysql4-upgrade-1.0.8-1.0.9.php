@@ -21,7 +21,7 @@
 
 $installer = $this;
 $installer->startSetup();
-$table = $installer->getConnection()->newTable($installer->getTable('marketplace/rate'))
+$table = $installer->getConnection()->newTable($installer->getTable('cartmart/rate'))
 	->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 			'identity' => true,
 			'unsigned' => true,
@@ -37,12 +37,12 @@ $table = $installer->getConnection()->newTable($installer->getTable('marketplace
 	->addColumn('value', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 			'nullable' => false,
 		), 'Value')		
-	->addIndex($installer->getIdxName('marketplace/rating', array('rating_id')),
+	->addIndex($installer->getIdxName('cartmart/rating', array('rating_id')),
 			array('rating_id')
 		)
-	->addForeignKey($installer->getFkName('marketplace/rate', 'rating_id', 'marketplace/rating', 'entity_id'),
+	->addForeignKey($installer->getFkName('cartmart/rate', 'rating_id', 'cartmart/rating', 'entity_id'),
 			'rating_id', 
-			$installer->getTable('marketplace/rating'), 
+			$installer->getTable('cartmart/rating'), 
 			'entity_id', 
 			Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE
 		) 

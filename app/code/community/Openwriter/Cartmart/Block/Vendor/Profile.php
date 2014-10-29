@@ -21,7 +21,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
 
     public function getVendorInfo() {
         $profileId = $this->getRequest()->getParam('id');
-        return Mage::getModel('marketplace/profile')->load($profileId);
+        return Mage::getModel('cartmart/profile')->load($profileId);
     }
 
     public function getUserObject($userId) {
@@ -29,7 +29,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
     }
 
     public function getAddFavouriteUrl($vendorId) {
-        return $this->getUrl('marketplace/favourite/add', array('id' => $vendorId));
+        return $this->getUrl('cartmart/favourite/add', array('id' => $vendorId));
     }
 
     public function getCountryName($countryCode) {
@@ -37,11 +37,11 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
     }
 
     public function getVendorProfileUrl($vendorId) {
-        return $this->getUrl('marketplace/vendor/profile', array('id' => $vendorId));
+        return $this->getUrl('cartmart/vendor/profile', array('id' => $vendorId));
     }
     
     public function getVendorItemsUrl($profileId) {
-        return $this->getUrl('marketplace/vendor/items', array('id' => $profileId));
+        return $this->getUrl('cartmart/vendor/items', array('id' => $profileId));
     }
     
     public function getMessage($vendorInfo, $userObject)
@@ -58,7 +58,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
     
     public function getVendorRating()
     {
-		$ratingCollection = Mage::getModel('marketplace/rating')->getCollection()			
+		$ratingCollection = Mage::getModel('cartmart/rating')->getCollection()			
 			->setOrder('sort_order', 'ASC');
 			
 		$vendorId = $this->getVendorInfo()->getUserId();
@@ -78,7 +78,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
 			
 		foreach($ratingCollection as $rating)
 		{
-			$rateCollection = Mage::getModel('marketplace/rate')
+			$rateCollection = Mage::getModel('cartmart/rate')
 				->getCollection()
 				->addFieldToSelect('rating_id')
 				->addFieldToSelect('value')
@@ -122,7 +122,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
 		$invoiceItemIds = Mage::getModel('sales/order_invoice_item')->getCollection()
 			->addFieldToFilter('product_id', array('in' => $productIds))->getAllIds();
 						
-		$reviewModel = Mage::getModel('marketplace/review')->getCollection()
+		$reviewModel = Mage::getModel('cartmart/review')->getCollection()
 				->addFieldToFilter('invoice_item_id', array('in' => $invoiceItemIds))
 				->addFieldToFilter('type', $type);
 				
@@ -131,7 +131,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template 
 	
 	public function getTypeUrl($vendorId, $linkType)
 	{
-		return Mage::getUrl('marketplace/vendor/profile', array('id' => $vendorId, 'type'=> $linkType));
+		return Mage::getUrl('cartmart/vendor/profile', array('id' => $vendorId, 'type'=> $linkType));
 	}
 }
 

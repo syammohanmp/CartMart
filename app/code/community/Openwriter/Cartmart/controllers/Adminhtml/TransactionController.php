@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/manage_vendors');
+        $this->loadLayout()->_setActiveMenu('openwriter/cartmart/manage_vendors');
         return $this;
     }
     
@@ -40,32 +40,32 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
         Mage::register('vendor_user', $current_user);
 
         $this->loadLayout()->_setActiveMenu('vendor/orders');
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_transaction'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_transaction'));
         $this->renderLayout();
     }
 
     public function emptyAction() {
         $this->loadLayout()->_setActiveMenu('vendor/orders');
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_transaction_empty'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_transaction_empty'));
         $this->renderLayout();
     }
 
     public function indexAction() {
         $vendor_id = $this->getRequest()->getParam('id');
-        $transactionCollection = Mage::getModel('marketplace/transaction')->getCollection()->addFieldToFilter('vendor_id', $vendor_id);
+        $transactionCollection = Mage::getModel('cartmart/transaction')->getCollection()->addFieldToFilter('vendor_id', $vendor_id);
         $testModel = Mage::getModel('admin/user')->load($vendor_id);
 
         if ($transactionCollection->count() > 0) {
             $data = Mage::getSingleton('adminhtml/session')->getUserData(true);
             Mage::register('vendor_user', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('openwriter/marketplace/manage_vendors');
+            $this->_setActiveMenu('openwriter/cartmart/manage_vendors');
             $this->_addBreadcrumb('Vendor Manager', 'Vendor Manager');
             $this->_addBreadcrumb('Vendor Description', 'Vendor Description');
             $this->getLayout()->getBlock('head')
                     ->setCanLoadExtJs(true);
             $this->_addContent($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_transaction'));
+                            ->createBlock('cartmart/adminhtml_transaction'));
             $this->renderLayout();
         } else {
             Mage::getSingleton('adminhtml/session')
@@ -79,19 +79,19 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
         $testModel = Mage::getModel('admin/user')->load($vendor_id);
         Mage::register('vendor_user', $testModel);
 
-        $profileModel = Mage::getModel('marketplace/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
+        $profileModel = Mage::getModel('cartmart/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
         Mage::register('vendor_profile', $profileModel);
 
         $this->loadLayout();
-        $this->_setActiveMenu('openwriter/marketplace/manage_vendors');
+        $this->_setActiveMenu('openwriter/cartmart/manage_vendors');
         $this->_addBreadcrumb('Transaction Manager', 'Transaction Manager');
         $this->_addBreadcrumb('Transaction Description', 'Transaction Description');
         $this->getLayout()->getBlock('head')
                 ->setCanLoadExtJs(true);
         $this->_addContent($this->getLayout()
-                        ->createBlock('marketplace/adminhtml_transaction_edit'))
+                        ->createBlock('cartmart/adminhtml_transaction_edit'))
                 ->_addLeft($this->getLayout()
-                        ->createBlock('marketplace/adminhtml_transaction_edit_tabs')
+                        ->createBlock('cartmart/adminhtml_transaction_edit_tabs')
         );
         $this->renderLayout();
     }
@@ -102,7 +102,7 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
                 $vendor_id = $this->getRequest()->getParam('vendor_id');
                 $postData = $this->getRequest()->getPost();
 
-                $profileModel = Mage::getModel('marketplace/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
+                $profileModel = Mage::getModel('cartmart/profile')->getCollection()->addFieldToFilter('user_id', $vendor_id)->getFirstItem();
                 $remaining_amount = ($profileModel->getTotalVendorAmount() - $profileModel->getTotalVendorPaid());
 
                 if ($remaining_amount < $postData['amount']) {
@@ -124,7 +124,7 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
                 $profileModel->setData('total_vendor_paid', $amount_paid)
                         ->save();
 
-                $transaction = Mage::getModel('marketplace/transaction');
+                $transaction = Mage::getModel('cartmart/transaction');
                 $transaction->setData('vendor_id', $vendor_id)
                         ->setData('transaction_date', date("Y-m-d H:i:s", Mage::getModel('core/date')->timestamp(time())))
                         ->setData('order_number', '')

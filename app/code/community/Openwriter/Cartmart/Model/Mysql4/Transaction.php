@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Mysql4_Transaction extends Mage_Core_Model_Resource_Db_Abstract {
 
     protected function _construct() {
-        $this->_init('marketplace/transaction', 'entity_id');
+        $this->_init('cartmart/transaction', 'entity_id');
     }
 
 }

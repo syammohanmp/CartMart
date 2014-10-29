@@ -79,12 +79,12 @@ class OpenWriter_Cartmart_Adminhtml_Core_System_AccountController extends Mage_A
                 else
                     $image = $this->getRequest()->getParam('old_image', false);
 
-                $profileCollection = Mage::getModel('marketplace/profile')->getCollection()->addFieldToFilter('user_id', $userId);
+                $profileCollection = Mage::getModel('cartmart/profile')->getCollection()->addFieldToFilter('user_id', $userId);
 
                 if ($profileCollection->count() > 0)
-                    $profile = Mage::getModel('marketplace/profile')->load($profileCollection->getFirstItem()->getId());
+                    $profile = Mage::getModel('cartmart/profile')->load($profileCollection->getFirstItem()->getId());
                 else
-                    $profile = Mage::getModel('marketplace/profile')->setTotalAdminCommission(0)->setTotalVendorAmount(0)->setTotalVendorPaid(0);
+                    $profile = Mage::getModel('cartmart/profile')->setTotalAdminCommission(0)->setTotalVendorAmount(0)->setTotalVendorPaid(0);
 
                 if (!is_null($image))
                     $profile->setImage($image);

@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Sales_Order_Item_Renderer_Default extends Mage_S
     public function getVendorProfile()
     {
         $productModel = Mage::getModel('catalog/product')->load($this->getItem()->getProductId());
-        return Mage::getModel('marketplace/profile')
+        return Mage::getModel('cartmart/profile')
                 ->getCollection()
                 ->addFieldToFilter('user_id', $productModel->getVendor())
                 ->getFirstItem();
@@ -30,13 +30,13 @@ class OpenWriter_Cartmart_Block_Sales_Order_Item_Renderer_Default extends Mage_S
     
     public function getRatingSaveUrl($invoiceItemId, $orderId)
     {
-		return $this->getUrl('marketplace/rating/save', 
+		return $this->getUrl('cartmart/rating/save', 
 			array('invoice_item_id' => $invoiceItemId, 'order_id' => $orderId)
 		);
 	}
 	
 	public function getVendorProfileUrl($vendorId) {
-        return $this->getUrl('marketplace/vendor/profile', array('id' => $vendorId));
+        return $this->getUrl('cartmart/vendor/profile', array('id' => $vendorId));
     }
 	
 	public function getInvoiceItemId()

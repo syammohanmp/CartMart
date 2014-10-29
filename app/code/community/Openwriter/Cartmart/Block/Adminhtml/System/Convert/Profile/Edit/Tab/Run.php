@@ -12,7 +12,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run ex
 
         if($isVendor && $model->getDirection()=='export')
         {
-        		$this->setTemplate('marketplace/system/convert/profile/run.phtml');
+        		$this->setTemplate('cartmart/system/convert/profile/run.phtml');
         }
     }
     

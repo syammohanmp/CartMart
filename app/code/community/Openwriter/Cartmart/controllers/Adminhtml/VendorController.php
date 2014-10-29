@@ -20,13 +20,13 @@
 class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/manage_vendors');
+        $this->loadLayout()->_setActiveMenu('openwriter/cartmart/manage_vendors');
         return $this;
     }
 
     public function indexAction() {
         $this->_initAction();
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_vendor'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_vendor'));
         $this->renderLayout();
     }
 
@@ -42,15 +42,15 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
             }
             Mage::register('vendor_user', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('openwriter/marketplace/manage_vendors');
+            $this->_setActiveMenu('openwriter/cartmart/manage_vendors');
             $this->_addBreadcrumb('Vendor Manager', 'Vendor Manager');
             $this->_addBreadcrumb('Vendor Description', 'Vendor Description');
             $this->getLayout()->getBlock('head')
                     ->setCanLoadExtJs(true);
             $this->_addContent($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_vendor_edit'))
+                            ->createBlock('cartmart/adminhtml_vendor_edit'))
                     ->_addLeft($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_vendor_edit_tabs')
+                            ->createBlock('cartmart/adminhtml_vendor_edit_tabs')
             );
             $this->renderLayout();
         } else {
@@ -120,14 +120,14 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                 else
                     $image = $this->getRequest()->getParam('old_image', false);
 
-                $profileCollection = Mage::getModel('marketplace/profile')
+                $profileCollection = Mage::getModel('cartmart/profile')
                         ->getCollection()
                         ->addFieldToFilter('user_id', $model->getUserId());
 
                 if ($profileCollection->count() > 0)
-                    $profile = Mage::getModel('marketplace/profile')->load($profileCollection->getFirstItem()->getId());
+                    $profile = Mage::getModel('cartmart/profile')->load($profileCollection->getFirstItem()->getId());
                 else
-                    $profile = Mage::getModel('marketplace/profile')
+                    $profile = Mage::getModel('cartmart/profile')
                             ->setTotalAdminCommission(0)
                             ->setTotalVendorAmount(0)
                             ->setTotalVendorPaid(0);

@@ -22,8 +22,8 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     public function indexAction() {
 		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::APPROVED); 		
 		$this->loadLayout()
-			->_setActiveMenu('openwriter/marketplace/reviews_ratings/all_reviews');        
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_review'));
+			->_setActiveMenu('openwriter/cartmart/reviews_ratings/all_reviews');        
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_review'));
         $this->renderLayout();
     }
     
@@ -39,39 +39,39 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
         
 		$this->loadLayout()
 			->_setActiveMenu('vendor/review');        
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_review'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_review'));
         $this->renderLayout();
     }
     
     public function emptyAction() {
         $this->loadLayout()->_setActiveMenu('vendor/review');
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_review_empty'));
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_review_empty'));
         $this->renderLayout();
     }
     
     public function pendingAction() {
 		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::PENDING); 
 		$this->loadLayout()
-			->_setActiveMenu('openwriter/marketplace/reviews_ratings/pending_reviews');        
-        $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_review'));
+			->_setActiveMenu('openwriter/cartmart/reviews_ratings/pending_reviews');        
+        $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_review'));
         $this->renderLayout();
     }
 
     public function editAction() {
         $testId = $this->getRequest()->getParam('id');
-        $testModel = Mage::getModel('marketplace/review')->load($testId);
+        $testModel = Mage::getModel('cartmart/review')->load($testId);
         if ($testModel->getId() || $testId == 0) {
             Mage::register('review_data', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('openwriter/marketplace/reviews_ratings');
+            $this->_setActiveMenu('openwriter/cartmart/reviews_ratings');
             $this->_addBreadcrumb('Review Manager', 'ReviewManager');
             $this->_addBreadcrumb('Review Description', 'Review Description');
             $this->getLayout()->getBlock('head')
                     ->setCanLoadExtJs(true);
             $this->_addContent($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_review_edit'))
+                            ->createBlock('cartmart/adminhtml_review_edit'))
                     ->_addLeft($this->getLayout()
-                            ->createBlock('marketplace/adminhtml_review_edit_tabs')
+                            ->createBlock('cartmart/adminhtml_review_edit_tabs')
             );
             $this->renderLayout();
         } else {
@@ -90,7 +90,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
             try {
                 $postData = $this->getRequest()->getPost();
 
-                $testModel = Mage::getModel('marketplace/review');
+                $testModel = Mage::getModel('cartmart/review');
                 $id = $this->getRequest()->getParam('id');
 
                 $testModel->addData($postData)
@@ -121,7 +121,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     public function deleteAction() {
         if ($this->getRequest()->getParam('id') > 0) {
             try {
-                $testModel = Mage::getModel('marketplace/review');
+                $testModel = Mage::getModel('cartmart/review');
                 $testModel->setId($this->getRequest()
                                 ->getParam('id'))
                         ->delete();
@@ -149,7 +149,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
 		{
 			try 
 			{
-				$reviewModel = Mage::getModel('marketplace/review');
+				$reviewModel = Mage::getModel('cartmart/review');
 				foreach ($reviewIds as $reviewId) 
 				{
 					$reviewModel->load($reviewId)->setStatus(OpenWriter_Cartmart_Model_Review::PENDING)->save();
@@ -176,7 +176,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
 		{
 			try 
 			{
-				$reviewModel = Mage::getModel('marketplace/review');
+				$reviewModel = Mage::getModel('cartmart/review');
 				foreach ($reviewIds as $reviewId) 
 				{
 					$reviewModel->load($reviewId)->setStatus(OpenWriter_Cartmart_Model_Review::APPROVED)->save();
@@ -203,7 +203,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
 		{
 			try 
 			{
-				$reviewModel = Mage::getModel('marketplace/review');
+				$reviewModel = Mage::getModel('cartmart/review');
 				foreach ($reviewIds as $reviewId) 
 				{
 					$reviewModel->load($reviewId)->setStatus(OpenWriter_Cartmart_Model_Review::CANCEL)->save();

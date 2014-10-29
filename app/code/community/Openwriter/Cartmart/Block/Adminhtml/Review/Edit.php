@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Edit extends Mage_Adminhtml_Blo
     public function __construct() {
         parent::__construct();
         $this->_objectId = 'entity_id';
-        $this->_blockGroup = 'marketplace';
+        $this->_blockGroup = 'cartmart';
         $this->_controller = 'adminhtml_review';
         $this->_updateButton('save', 'label', 'Save Review');
         $this->_updateButton('delete', 'label', 'Delete Review');        

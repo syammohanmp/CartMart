@@ -50,7 +50,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
 	}
 
     protected function _prepareCollection() {
-        $collection = Mage::getModel('marketplace/review')->getCollection();       
+        $collection = Mage::getModel('cartmart/review')->getCollection();       
         
         if(Mage::getSingleton('core/session')->getReviewType() == OpenWriter_Cartmart_Model_Review::PENDING) 
 			$collection->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::PENDING);

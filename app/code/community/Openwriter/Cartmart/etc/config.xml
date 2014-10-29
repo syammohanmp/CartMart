@@ -20,22 +20,22 @@
                 <class>Openwriter_Cartmart_Model_Mysql4</class>
                 <entities>
                     <profile>
-                        <table>openWriter_cartmart_profile</table>
+                        <table>openwriter_cartmart_profile</table>
                     </profile>
                     <transaction>
-                        <table>openWriter_cartmart_transaction</table>
+                        <table>openwriter_cartmart_transaction</table>
                     </transaction>
                     <rating>
-                        <table>openWriter_cartmart_rating</table>
+                        <table>openwriter_cartmart_rating</table>
                     </rating>
                     <rate>
-                        <table>openWriter_cartmart_rate</table>
+                        <table>openwriter_cartmart_rate</table>
                     </rate>
                     <prooftype>
-                        <table>openWriter_cartmart_prooftype</table>
+                        <table>openwriter_cartmart_prooftype</table>
                     </prooftype>
                     <review>
-                        <table>openWriter_cartmart_review</table>
+                        <table>openwriter_cartmart_review</table>
                     </review>
                 </entities>
             </cartmart_mysql4>

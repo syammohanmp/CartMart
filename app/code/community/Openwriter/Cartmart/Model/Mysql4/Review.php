@@ -1,12 +1,12 @@
 <?php
 
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -15,11 +15,11 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
 
-class OpenWriter_Cartmart_Model_Mysql4_Review extends Mage_Core_Model_Resource_Db_Abstract {
+class Openwriter_Cartmart_Model_Mysql4_Review extends Mage_Core_Model_Resource_Db_Abstract {
 
     protected function _construct() {
         $this->_init('cartmart/review', 'entity_id');

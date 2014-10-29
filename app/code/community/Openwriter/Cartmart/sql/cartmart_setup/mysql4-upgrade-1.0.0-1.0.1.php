@@ -1,12 +1,12 @@
 <?php
 
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -15,8 +15,8 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
 
 $installer = $this;
@@ -50,7 +50,7 @@ $installer->getConnection()->createTable($table);
 
 $installer->run("
 
-CREATE TABLE IF NOT EXISTS {$this->getTable(OpenWriter_Cartmart_Model_Authenticate::MEDMA_DOMAIN_TABLE_NAME)} ( 
+CREATE TABLE IF NOT EXISTS {$this->getTable(Openwriter_Cartmart_Model_Authenticate::MEDMA_DOMAIN_TABLE_NAME)} ( 
   `modules` int(11) unsigned NOT NULL auto_increment,  
   `domain_name` varchar(255),  
   `openwriter_module` varchar(255),

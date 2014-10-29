@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,10 +14,10 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_Template {
+class Openwriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_Template {
 	
 	protected function _prepareLayout()
 	{
@@ -25,7 +25,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 
 		$type = $this->getRequest()->getParam('type');
 		if(!isset($type))
-			$type = OpenWriter_Cartmart_Model_Review::ALL;
+			$type = Openwriter_Cartmart_Model_Review::ALL;
 					
 		$vendorId = $this->getVendorInfo()->getUserId();
 
@@ -66,15 +66,15 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 				->addFieldToFilter('product_id', array('in' => $productIds))
 				->getAllIds();
 					
-			if($type == OpenWriter_Cartmart_Model_Review::ALL)
+			if($type == Openwriter_Cartmart_Model_Review::ALL)
 				$this->_myCollection = Mage::getModel('cartmart/review')->getCollection()
 					->addFieldToFilter('invoice_item_id', array('in' => $invoiceItemIds))					
-					->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::APPROVED);			
+					->addFieldToFilter('status', Openwriter_Cartmart_Model_Review::APPROVED);			
 			else			
 				$this->_myCollection = Mage::getModel('cartmart/review')->getCollection()
 					->addFieldToFilter('invoice_item_id', array('in' => $invoiceItemIds))
 					->addFieldToFilter('type', $type)
-					->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::APPROVED);			
+					->addFieldToFilter('status', Openwriter_Cartmart_Model_Review::APPROVED);			
 		} 
 		return $this->_myCollection;
 	}
@@ -94,9 +94,9 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 	
 	public function getReviewTypeImageClass($type)
 	{
-		if($type == OpenWriter_Cartmart_Model_Review::POSITIVE)
+		if($type == Openwriter_Cartmart_Model_Review::POSITIVE)
 			return 'positive-type-image';
-		else if($type == OpenWriter_Cartmart_Model_Review::NEUTRAL)
+		else if($type == Openwriter_Cartmart_Model_Review::NEUTRAL)
 			return 'neutral-type-image';
 		else
 			return 'negative-type-image';
@@ -113,7 +113,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 			else
 				return '';
 		}
-		else if($linkType == OpenWriter_Cartmart_Model_Review::ALL)
+		else if($linkType == Openwriter_Cartmart_Model_Review::ALL)
 			return 'active';
 		else
 			return '';

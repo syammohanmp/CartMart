@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <OpenWriter_Cartmart>
+        <Openwriter_Cartmart>
             <version>2.0.5</version>
-        </OpenWriter_Cartmart>
+        </Openwriter_Cartmart>
     </modules>
     <global>
         <models>
         		<dataflow>
         				<rewrite>
-        						<profile>OpenWriter_Cartmart_Model_Dataflow_Profile</profile>
+        						<profile>Openwriter_Cartmart_Model_Dataflow_Profile</profile>
         				</rewrite>
         		</dataflow>
             <cartmart>
-                <class>OpenWriter_Cartmart_Model</class>
+                <class>Openwriter_Cartmart_Model</class>
                 <resourceModel>cartmart_mysql4</resourceModel>
             </cartmart>
             <cartmart_mysql4>
-                <class>OpenWriter_Cartmart_Model_Mysql4</class>
+                <class>Openwriter_Cartmart_Model_Mysql4</class>
                 <entities>
                     <profile>
                         <table>openWriter_cartmart_profile</table>
@@ -43,7 +43,7 @@
         <resources>
             <cartmart_setup>
                 <setup>
-                    <module>OpenWriter_Cartmart</module>
+                    <module>Openwriter_Cartmart</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
@@ -62,30 +62,30 @@
         </resources>
         <blocks>
             <cartmart>
-                <class>OpenWriter_Cartmart_Block</class>
+                <class>Openwriter_Cartmart_Block</class>
             </cartmart>
             <sales>
                 <rewrite>
-                    <order_item_renderer_default>OpenWriter_Cartmart_Block_Sales_Order_Item_Renderer_Default</order_item_renderer_default>                    
+                    <order_item_renderer_default>Openwriter_Cartmart_Block_Sales_Order_Item_Renderer_Default</order_item_renderer_default>                    
                 </rewrite>
             </sales>
             <catalog>
                 <rewrite>
-                    <product_list>OpenWriter_Cartmart_Block_Vendor_Profile_Items</product_list>
+                    <product_list>Openwriter_Cartmart_Block_Vendor_Profile_Items</product_list>
                 </rewrite>
             </catalog>
             <adminhtml>
                 <rewrite>
-                    <system_account_edit_form>OpenWriter_Cartmart_Block_Adminhtml_System_Account_Edit_Form</system_account_edit_form>
-                    <catalog_product_grid>OpenWriter_Cartmart_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
-                    <system_convert_gui_grid>OpenWriter_Cartmart_Block_Adminhtml_System_Convert_Gui_Grid</system_convert_gui_grid>
-                    <system_convert_profile_edit_tab_run>OpenWriter_Cartmart_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run</system_convert_profile_edit_tab_run>
+                    <system_account_edit_form>Openwriter_Cartmart_Block_Adminhtml_System_Account_Edit_Form</system_account_edit_form>
+                    <catalog_product_grid>Openwriter_Cartmart_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
+                    <system_convert_gui_grid>Openwriter_Cartmart_Block_Adminhtml_System_Convert_Gui_Grid</system_convert_gui_grid>
+                    <system_convert_profile_edit_tab_run>Openwriter_Cartmart_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run</system_convert_profile_edit_tab_run>
                 </rewrite>
             </adminhtml>
         </blocks>
         <helpers>
             <cartmart>
-                <class>OpenWriter_Cartmart_Helper</class>
+                <class>Openwriter_Cartmart_Helper</class>
             </cartmart>
         </helpers>
         <events>		
@@ -93,7 +93,7 @@
 				<observers>
 					<checkout_onepage_controller_success_action>
 						<type>singleton</type>
-						<class>OpenWriter_Cartmart_Model_Observer</class>
+						<class>Openwriter_Cartmart_Model_Observer</class>
 						<method>notifyVendor</method>
 					</checkout_onepage_controller_success_action>
 				</observers>
@@ -102,7 +102,7 @@
 				<observers> 
 					<catalog_product_save_before>
 						<type>singleton</type>
-						<class>OpenWriter_Cartmart_Model_Observer</class>
+						<class>Openwriter_Cartmart_Model_Observer</class>
 						<method>catalogProductSaveBefore</method>
 					</catalog_product_save_before>
 				</observers> 
@@ -110,7 +110,7 @@
             <openwriter_domain_authentication>
                 <observers>
                     <domain>
-                        <class>OpenWriter_Cartmart_Model_Authenticate</class>
+                        <class>Openwriter_Cartmart_Model_Authenticate</class>
                         <method>saveDomain</method>
                     </domain>
                 </observers>
@@ -131,7 +131,7 @@
             <cartmart>
                 <use>standard</use>
                 <args>
-                    <module>OpenWriter_Cartmart</module>
+                    <module>Openwriter_Cartmart</module>
                     <frontName>cartmart</frontName>
                 </args>
             </cartmart>
@@ -147,7 +147,7 @@
             <modules>
                 <cartmart>
                     <files>
-                        <default>OpenWriter_Cartmart.csv</default>
+                        <default>Openwriter_Cartmart.csv</default>
                     </files>
                 </cartmart>
             </modules>
@@ -158,14 +158,14 @@
             <admin_cartmart>
                 <use>admin</use>
                 <args>
-                    <module>OpenWriter_Cartmart</module>
+                    <module>Openwriter_Cartmart</module>
                     <frontName>admin_cartmart</frontName>
                 </args>
             </admin_cartmart>
             <adminhtml>
                 <args>
                     <modules>
-                        <OpenWriter_Cartmart_Adminhtml_Core before="Mage_Adminhtml">OpenWriter_Cartmart_Adminhtml_Core</OpenWriter_Cartmart_Adminhtml_Core>
+                        <Openwriter_Cartmart_Adminhtml_Core before="Mage_Adminhtml">Openwriter_Cartmart_Adminhtml_Core</Openwriter_Cartmart_Adminhtml_Core>
                     </modules>
                 </args>
             </adminhtml>
@@ -183,7 +183,7 @@
             <modules>
                 <cartmart>
                     <files>
-                        <default>OpenWriter_Cartmart.csv</default>
+                        <default>Openwriter_Cartmart.csv</default>
                     </files>
                 </cartmart>
             </modules>
@@ -193,7 +193,7 @@
                 <observers>
                     <catalog_product_collection_load_before>
                         <type>singleton</type>
-                        <class>OpenWriter_Cartmart_Model_Product_Observer</class>
+                        <class>Openwriter_Cartmart_Model_Product_Observer</class>
                         <method>filterProductCollection</method>
                     </catalog_product_collection_load_before>
                 </observers>

@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,13 +14,13 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Controller_Action {   
+class Openwriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Controller_Action {   
 
     public function indexAction() {
-		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::APPROVED); 		
+		Mage::getSingleton("core/session")->setReviewType(Openwriter_Cartmart_Model_Review::APPROVED); 		
 		$this->loadLayout()
 			->_setActiveMenu('openwriter/cartmart/reviews_ratings/all_reviews');        
         $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_review'));
@@ -28,7 +28,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     }
     
     public function vendorAction() {
-		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::APPROVED); 
+		Mage::getSingleton("core/session")->setReviewType(Openwriter_Cartmart_Model_Review::APPROVED); 
 		
 		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
         $current_user = Mage::getSingleton('admin/session')->getUser();
@@ -50,7 +50,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     }
     
     public function pendingAction() {
-		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::PENDING); 
+		Mage::getSingleton("core/session")->setReviewType(Openwriter_Cartmart_Model_Review::PENDING); 
 		$this->loadLayout()
 			->_setActiveMenu('openwriter/cartmart/reviews_ratings/pending_reviews');        
         $this->_addContent($this->getLayout()->createBlock('cartmart/adminhtml_review'));
@@ -152,7 +152,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
 				$reviewModel = Mage::getModel('cartmart/review');
 				foreach ($reviewIds as $reviewId) 
 				{
-					$reviewModel->load($reviewId)->setStatus(OpenWriter_Cartmart_Model_Review::PENDING)->save();
+					$reviewModel->load($reviewId)->setStatus(Openwriter_Cartmart_Model_Review::PENDING)->save();
 				}
 				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('tax')->__('Total of %d record(s) were pending.', count($reviewIds)));
 			} 
@@ -179,7 +179,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
 				$reviewModel = Mage::getModel('cartmart/review');
 				foreach ($reviewIds as $reviewId) 
 				{
-					$reviewModel->load($reviewId)->setStatus(OpenWriter_Cartmart_Model_Review::APPROVED)->save();
+					$reviewModel->load($reviewId)->setStatus(Openwriter_Cartmart_Model_Review::APPROVED)->save();
 				}
 				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('tax')->__('Total of %d record(s) were approve.', count($reviewIds)));
 			} 
@@ -206,7 +206,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
 				$reviewModel = Mage::getModel('cartmart/review');
 				foreach ($reviewIds as $reviewId) 
 				{
-					$reviewModel->load($reviewId)->setStatus(OpenWriter_Cartmart_Model_Review::CANCEL)->save();
+					$reviewModel->load($reviewId)->setStatus(Openwriter_Cartmart_Model_Review::CANCEL)->save();
 				}
 				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('tax')->__('Total of %d record(s) were cancel.', count($reviewIds)));
 			} 

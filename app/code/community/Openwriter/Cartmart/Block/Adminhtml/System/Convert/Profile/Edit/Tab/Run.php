@@ -1,5 +1,5 @@
 <?php
-class OpenWriter_Cartmart_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run extends Mage_Adminhtml_Block_System_Convert_Profile_Edit_Tab_Run
+class Openwriter_Cartmart_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run extends Mage_Adminhtml_Block_System_Convert_Profile_Edit_Tab_Run
 {
     public function __construct()
     {

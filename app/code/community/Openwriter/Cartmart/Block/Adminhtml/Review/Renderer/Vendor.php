@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,10 +14,10 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_Block_Adminhtml_Review_Renderer_Vendor extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
+class Openwriter_Cartmart_Block_Adminhtml_Review_Renderer_Vendor extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
     public function render(Varien_Object $row)
     {

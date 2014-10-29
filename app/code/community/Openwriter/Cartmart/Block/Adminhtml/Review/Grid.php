@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,10 +14,10 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Block_Widget_Grid {    
+class Openwriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Block_Widget_Grid {    
 
     public function __construct() {
         parent::__construct();
@@ -52,8 +52,8 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
     protected function _prepareCollection() {
         $collection = Mage::getModel('cartmart/review')->getCollection();       
         
-        if(Mage::getSingleton('core/session')->getReviewType() == OpenWriter_Cartmart_Model_Review::PENDING) 
-			$collection->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::PENDING);
+        if(Mage::getSingleton('core/session')->getReviewType() == Openwriter_Cartmart_Model_Review::PENDING) 
+			$collection->addFieldToFilter('status', Openwriter_Cartmart_Model_Review::PENDING);
 		
 		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
         $current_user = Mage::getSingleton('admin/session')->getUser();
@@ -90,7 +90,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
 				'header' => Mage::helper('adminhtml')->__('Vendor Name'),
 				'align' => 'left',
 				'index' => 'invoice_item_id',
-				'renderer' => 'OpenWriter_Cartmart_Block_Adminhtml_Review_Renderer_Vendor'            
+				'renderer' => 'Openwriter_Cartmart_Block_Adminhtml_Review_Renderer_Vendor'            
 			));
         }
         
@@ -98,7 +98,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
             'header' => Mage::helper('adminhtml')->__('Product Name'),
             'align' => 'left',
             'index' => 'invoice_item_id',
-            'renderer' => 'OpenWriter_Cartmart_Block_Adminhtml_Review_Renderer_Product'
+            'renderer' => 'Openwriter_Cartmart_Block_Adminhtml_Review_Renderer_Product'
         ));
         
         $this->addColumn('title', array(
@@ -126,13 +126,13 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
             'width' => '90px',
             'type' => 'options',
             'options' => array(
-                OpenWriter_Cartmart_Model_Review::POSITIVE => Mage::helper('adminhtml')->__('Positive'), 
-				OpenWriter_Cartmart_Model_Review::NEUTRAL => Mage::helper('adminhtml')->__('Neutral'), 
-				OpenWriter_Cartmart_Model_Review::NEGATIVE => Mage::helper('adminhtml')->__('Negative')
+                Openwriter_Cartmart_Model_Review::POSITIVE => Mage::helper('adminhtml')->__('Positive'), 
+				Openwriter_Cartmart_Model_Review::NEUTRAL => Mage::helper('adminhtml')->__('Neutral'), 
+				Openwriter_Cartmart_Model_Review::NEGATIVE => Mage::helper('adminhtml')->__('Negative')
             ),
         ));     
 
-		if(Mage::getSingleton('core/session')->getReviewType() != OpenWriter_Cartmart_Model_Review::PENDING) 
+		if(Mage::getSingleton('core/session')->getReviewType() != Openwriter_Cartmart_Model_Review::PENDING) 
 		{			
 			$this->addColumn('status', array(
 				'header' => Mage::helper('adminhtml')->__('Status'),
@@ -141,9 +141,9 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
 				'width' => '90px',
 				'type' => 'options',
 				'options' => array(
-					OpenWriter_Cartmart_Model_Review::PENDING => Mage::helper('adminhtml')->__('Pending'), 
-					OpenWriter_Cartmart_Model_Review::APPROVED => Mage::helper('adminhtml')->__('Approved'), 
-					OpenWriter_Cartmart_Model_Review::CANCEL => Mage::helper('adminhtml')->__('Cancel')
+					Openwriter_Cartmart_Model_Review::PENDING => Mage::helper('adminhtml')->__('Pending'), 
+					Openwriter_Cartmart_Model_Review::APPROVED => Mage::helper('adminhtml')->__('Approved'), 
+					Openwriter_Cartmart_Model_Review::CANCEL => Mage::helper('adminhtml')->__('Cancel')
 				),
 			));
 		}

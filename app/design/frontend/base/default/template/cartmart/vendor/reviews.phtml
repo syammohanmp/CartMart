@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,8 +14,8 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
 ?>
 <?php $reviewItem = $this->getReviewItem(); ?>
@@ -34,9 +34,9 @@
 				<div class="input-box">
 					<select name="type" id="type<?php echo $this->getInvoiceItemId() ?>" class="validate-select">
 						<option value=""></option>
-						<option value="<?php echo OpenWriter_Cartmart_Model_Review::POSITIVE; ?>"><?php echo $this->__('Positive');?></option>
-						<option value="<?php echo OpenWriter_Cartmart_Model_Review::NEUTRAL; ?>"><?php echo $this->__('Neutral');?></option>
-						<option value="<?php echo OpenWriter_Cartmart_Model_Review::NEGATIVE; ?>"><?php echo $this->__('Negative');?></option>
+						<option value="<?php echo Openwriter_Cartmart_Model_Review::POSITIVE; ?>"><?php echo $this->__('Positive');?></option>
+						<option value="<?php echo Openwriter_Cartmart_Model_Review::NEUTRAL; ?>"><?php echo $this->__('Neutral');?></option>
+						<option value="<?php echo Openwriter_Cartmart_Model_Review::NEGATIVE; ?>"><?php echo $this->__('Negative');?></option>
 					</select>
 				</div>				
 			</li>
@@ -49,7 +49,7 @@
 		</ul>
 	</div>		
 <?php else: ?>
-	<?php if($reviewItem->getStatus() == OpenWriter_Cartmart_Model_Review::APPROVED): ?>
+	<?php if($reviewItem->getStatus() == Openwriter_Cartmart_Model_Review::APPROVED): ?>
 		<div class="review-container">
 			<ul class="form-list">
 				<li>
@@ -60,9 +60,9 @@
 					<div><label for="title_field" class="black-label"><?php echo $this->__('Type');?></label><div class="clear"></div></div>
 					<div>
 						<?php
-							if($reviewItem->getType() == OpenWriter_Cartmart_Model_Review::POSITIVE)
+							if($reviewItem->getType() == Openwriter_Cartmart_Model_Review::POSITIVE)
 								echo $this->__('Positive');
-							else if($reviewItem->getType() == OpenWriter_Cartmart_Model_Review::NEUTRAL)
+							else if($reviewItem->getType() == Openwriter_Cartmart_Model_Review::NEUTRAL)
 								echo $this->__('Neutral');
 							else
 								echo $this->__('Negative');

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -15,18 +15,18 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
 
 $roleCollection = Mage::getModel('admin/roles')
         ->getCollection()
-        ->addFieldToFilter('role_name', OpenWriter_Cartmart_Model_Vendor::ROLE);
+        ->addFieldToFilter('role_name', Openwriter_Cartmart_Model_Vendor::ROLE);
 
 if ($roleCollection->count() == 0) {
     $role = Mage::getModel('admin/roles')
-            ->setName(OpenWriter_Cartmart_Model_Vendor::ROLE)
-            ->setRoleType(OpenWriter_Cartmart_Model_Vendor::ROLE_TYPE)
+            ->setName(Openwriter_Cartmart_Model_Vendor::ROLE)
+            ->setRoleType(Openwriter_Cartmart_Model_Vendor::ROLE_TYPE)
             ->save();
 
     Mage::getModel('admin/rules')

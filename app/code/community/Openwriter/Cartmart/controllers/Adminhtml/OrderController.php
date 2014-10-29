@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,10 +14,10 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Controller_action {
+class Openwriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Controller_action {
 
     public function indexAction() {
 
@@ -116,7 +116,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
 					->setData('order_number', $order->getIncrementId())
 					->setData('information', 'Order')
 					->setData('amount', $vendor_amount)
-					->setData('type', OpenWriter_Cartmart_Model_Transaction::CREDIT)
+					->setData('type', Openwriter_Cartmart_Model_Transaction::CREDIT)
 					->save();
 			}
 			

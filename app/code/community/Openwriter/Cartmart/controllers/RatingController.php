@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,10 +14,10 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_RatingController extends Mage_Core_Controller_Front_Action
+class Openwriter_Cartmart_RatingController extends Mage_Core_Controller_Front_Action
 {
 	public function saveAction()
 	{
@@ -31,7 +31,7 @@ class OpenWriter_Cartmart_RatingController extends Mage_Core_Controller_Front_Ac
 					->setData($postData)
 					->setInvoiceItemId($invoice_item_id)
 					->setPostedDate(Mage::getModel('core/date')->timestamp(time()))
-					->setStatus(OpenWriter_Cartmart_Model_Review::PENDING)
+					->setStatus(Openwriter_Cartmart_Model_Review::PENDING)
 					->save();
 		}
 		

@@ -2,7 +2,7 @@
 
 require_once(Mage::getModuleDir('controllers', 'Mage_Adminhtml') . DS . 'System/Convert' . DS . 'ProfileController.php');
 
-class OpenWriter_Cartmart_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_System_Convert_ProfileController
+class Openwriter_Cartmart_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_System_Convert_ProfileController
 {
 		public function runAction()
     {

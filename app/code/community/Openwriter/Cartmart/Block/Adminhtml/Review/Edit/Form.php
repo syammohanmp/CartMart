@@ -1,11 +1,11 @@
 <?php
 /**
- * OpenWriter Cartmart
+ * Openwriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of OpenWriter.
+ * that is bundled with this package of Openwriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,10 +14,10 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    OpenWriter
- * @package     OpenWriter_Cartmart
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
 **/
-class OpenWriter_Cartmart_Block_Adminhtml_Review_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
+class Openwriter_Cartmart_Block_Adminhtml_Review_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
 
     protected function _prepareForm() {
         $form = new Varien_Data_Form(
@@ -57,9 +57,9 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Edit_Form extends Mage_Adminhtm
             'label' => Mage::helper('adminhtml')->__('Type'),
             'title' => Mage::helper('adminhtml')->__('Type'),
             'values' => array(
-					OpenWriter_Cartmart_Model_Review::POSITIVE => Mage::helper('adminhtml')->__('Positive'), 
-					OpenWriter_Cartmart_Model_Review::NEUTRAL => Mage::helper('adminhtml')->__('Neutral'), 
-					OpenWriter_Cartmart_Model_Review::NEGATIVE => Mage::helper('adminhtml')->__('Negative')
+					Openwriter_Cartmart_Model_Review::POSITIVE => Mage::helper('adminhtml')->__('Positive'), 
+					Openwriter_Cartmart_Model_Review::NEUTRAL => Mage::helper('adminhtml')->__('Neutral'), 
+					Openwriter_Cartmart_Model_Review::NEGATIVE => Mage::helper('adminhtml')->__('Negative')
 				),            
             'style' => 'width: 100px',
         ));
@@ -70,9 +70,9 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Edit_Form extends Mage_Adminhtm
             'label' => Mage::helper('adminhtml')->__('Status'),
             'title' => Mage::helper('adminhtml')->__('Status'),
             'values' => array(
-					OpenWriter_Cartmart_Model_Review::PENDING => Mage::helper('adminhtml')->__('Pending'), 
-					OpenWriter_Cartmart_Model_Review::APPROVED => Mage::helper('adminhtml')->__('Approved'), 
-					OpenWriter_Cartmart_Model_Review::CANCEL => Mage::helper('adminhtml')->__('Cancel')
+					Openwriter_Cartmart_Model_Review::PENDING => Mage::helper('adminhtml')->__('Pending'), 
+					Openwriter_Cartmart_Model_Review::APPROVED => Mage::helper('adminhtml')->__('Approved'), 
+					Openwriter_Cartmart_Model_Review::CANCEL => Mage::helper('adminhtml')->__('Cancel')
 				),
             'style' => 'width: 100px',
         ));

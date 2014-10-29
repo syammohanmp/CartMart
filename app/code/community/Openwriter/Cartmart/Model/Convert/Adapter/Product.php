@@ -1,11 +1,11 @@
 <?php
 /**
- * Medma Marketplace
+ * OpenWriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * that is bundled with this package of OpenWriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,7 +14,7 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    Medma
+ * @category    OpenWriter
  * @package     OpenWriter_Cartmart
 **/
 class OpenWriter_Cartmart_Model_Convert_Adapter_Product extends Mage_Catalog_Model_Convert_Adapter_Product

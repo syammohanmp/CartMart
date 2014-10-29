@@ -1,11 +1,11 @@
 <?php
 /**
- * Medma Marketplace
+ * OpenWriter Cartmart
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Magento Team
- * that is bundled with this package of Medma Infomatix Pvt. Ltd.
+ * that is bundled with this package of OpenWriter.
  * =================================================================
  *                 MAGENTO EDITION USAGE NOTICE
  * =================================================================
@@ -14,7 +14,7 @@
  * on any other Magento edition except Magento COMMUNITY edition.
  * =================================================================
  * 
- * @category    Medma
+ * @category    OpenWriter
  * @package     OpenWriter_Cartmart
 **/
 class OpenWriter_Cartmart_Block_Adminhtml_Prooftype_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {

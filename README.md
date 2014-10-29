@@ -3,7 +3,7 @@ Cart Mart
 
 Cart Mart will convert your Magento Store to Multivendor Marketplace, which will have a separate vendor / seller section for their Products. It also has inbuilt reviews and feedback system.
 
-Cart Mart was the result of a fork of Openwriter_Cartmart on Oct 07, 2014. At that time, the Openwriter_Cartmart was a free opensource extension.
+Cart Mart was the result of a fork of Medma_Marketplace on Oct 07, 2014. At that time, the Medma_Marketplace was a free opensource extension.
 
 
 Features

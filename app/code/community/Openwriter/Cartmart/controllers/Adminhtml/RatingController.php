@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('medma/marketplace/reviews_ratings/manage_ratings');
+        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/reviews_ratings/manage_ratings');
         return $this;
     }
 
@@ -36,7 +36,7 @@ class OpenWriter_Cartmart_Adminhtml_RatingController extends Mage_Adminhtml_Cont
         if ($testModel->getId() || $testId == 0) {
             Mage::register('rating_data', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('medma/marketplace/reviews_ratings/manage_ratings');
+            $this->_setActiveMenu('openwriter/marketplace/reviews_ratings/manage_ratings');
             $this->_addBreadcrumb('Rating Manager', 'RatingManager');
             $this->_addBreadcrumb('Rating Description', 'Rating Description');
             $this->getLayout()->getBlock('head')

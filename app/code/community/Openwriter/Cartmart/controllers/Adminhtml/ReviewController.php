@@ -22,7 +22,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     public function indexAction() {
 		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::APPROVED); 		
 		$this->loadLayout()
-			->_setActiveMenu('medma/marketplace/reviews_ratings/all_reviews');        
+			->_setActiveMenu('openwriter/marketplace/reviews_ratings/all_reviews');        
         $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_review'));
         $this->renderLayout();
     }
@@ -52,7 +52,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     public function pendingAction() {
 		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::PENDING); 
 		$this->loadLayout()
-			->_setActiveMenu('medma/marketplace/reviews_ratings/pending_reviews');        
+			->_setActiveMenu('openwriter/marketplace/reviews_ratings/pending_reviews');        
         $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_review'));
         $this->renderLayout();
     }
@@ -63,7 +63,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
         if ($testModel->getId() || $testId == 0) {
             Mage::register('review_data', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('medma/marketplace/reviews_ratings');
+            $this->_setActiveMenu('openwriter/marketplace/reviews_ratings');
             $this->_addBreadcrumb('Review Manager', 'ReviewManager');
             $this->_addBreadcrumb('Review Description', 'Review Description');
             $this->getLayout()->getBlock('head')

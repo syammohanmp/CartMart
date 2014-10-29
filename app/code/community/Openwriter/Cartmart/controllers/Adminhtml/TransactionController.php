@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('medma/marketplace/manage_vendors');
+        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/manage_vendors');
         return $this;
     }
     
@@ -59,7 +59,7 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
             $data = Mage::getSingleton('adminhtml/session')->getUserData(true);
             Mage::register('vendor_user', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('medma/marketplace/manage_vendors');
+            $this->_setActiveMenu('openwriter/marketplace/manage_vendors');
             $this->_addBreadcrumb('Vendor Manager', 'Vendor Manager');
             $this->_addBreadcrumb('Vendor Description', 'Vendor Description');
             $this->getLayout()->getBlock('head')
@@ -83,7 +83,7 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
         Mage::register('vendor_profile', $profileModel);
 
         $this->loadLayout();
-        $this->_setActiveMenu('medma/marketplace/manage_vendors');
+        $this->_setActiveMenu('openwriter/marketplace/manage_vendors');
         $this->_addBreadcrumb('Transaction Manager', 'Transaction Manager');
         $this->_addBreadcrumb('Transaction Description', 'Transaction Description');
         $this->getLayout()->getBlock('head')

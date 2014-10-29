@@ -107,14 +107,14 @@
 					</catalog_product_save_before>
 				</observers> 
 			</catalog_product_save_before>
-            <medma_domain_authentication>
+            <openwriter_domain_authentication>
                 <observers>
                     <domain>
                         <class>OpenWriter_Cartmart_Model_Authenticate</class>
                         <method>saveDomain</method>
                     </domain>
                 </observers>
-			</medma_domain_authentication>
+			</openwriter_domain_authentication>
 		</events>
 		<template>
 			<email>
@@ -200,7 +200,7 @@
             </catalog_product_collection_load_before>            
         </events>
         <menu>
-            <medma translate="title" module="adminhtml">
+            <openwriter translate="title" module="adminhtml">
                 <title>Openwriter</title>
                 <sort_order>80</sort_order>
                 <children>
@@ -248,7 +248,7 @@
 						</children>
 					</cartmart>                    
                 </children>
-            </medma>            
+            </openwriter>            
             <vendor translate="title" module="adminhtml">
                 <title>Vendor</title>
                 <sort_order>75</sort_order>

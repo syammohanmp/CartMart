@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('medma/marketplace/manage_vendors');
+        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/manage_vendors');
         return $this;
     }
 
@@ -42,7 +42,7 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
             }
             Mage::register('vendor_user', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('medma/marketplace/manage_vendors');
+            $this->_setActiveMenu('openwriter/marketplace/manage_vendors');
             $this->_addBreadcrumb('Vendor Manager', 'Vendor Manager');
             $this->_addBreadcrumb('Vendor Description', 'Vendor Description');
             $this->getLayout()->getBlock('head')
@@ -58,7 +58,7 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                     ->addError('Vendor does not exist');
             $this->_redirect('*/*/');
         }
-        Mage::dispatchEvent('medma_domain_authentication', array('email' => $generalEmail, 'domain_name'=>$domainName));
+        Mage::dispatchEvent('openwriter_domain_authentication', array('email' => $generalEmail, 'domain_name'=>$domainName));
         
     }
 

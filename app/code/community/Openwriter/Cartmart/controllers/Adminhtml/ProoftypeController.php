@@ -20,7 +20,7 @@
 class OpenWriter_Cartmart_Adminhtml_ProoftypeController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu('medma/marketplace/manage_verification/manage_type');
+        $this->loadLayout()->_setActiveMenu('openwriter/marketplace/manage_verification/manage_type');
         return $this;
     }
 
@@ -36,7 +36,7 @@ class OpenWriter_Cartmart_Adminhtml_ProoftypeController extends Mage_Adminhtml_C
         if ($testModel->getId() || $testId == 0) {
             Mage::register('type_data', $testModel);
             $this->loadLayout();
-            $this->_setActiveMenu('medma/marketplace/manage_verification/manage_type');
+            $this->_setActiveMenu('openwriter/marketplace/manage_verification/manage_type');
             $this->_addBreadcrumb('Type Manager', 'Type Manager');
             $this->_addBreadcrumb('Type Description', 'Type Description');
             $this->getLayout()->getBlock('head')

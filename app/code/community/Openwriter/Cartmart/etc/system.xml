@@ -2,19 +2,19 @@
 <config>
     <tabs>
         <!--Here is the tabs definition-->
-        <medma translate="label" module="marketplace">
+        <openwriter translate="label" module="marketplace">
             <label>Openwriter</label>
             <sort_order>100</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
-        </medma>
+        </openwriter>
     </tabs>
     <sections>
 		<marketplace translate="label" module="marketplace">
 			<class>separator-top</class>
             <label>Cart Mart</label>
-            <tab>medma</tab>
+            <tab>openwriter</tab>
             <sort_order>10</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>

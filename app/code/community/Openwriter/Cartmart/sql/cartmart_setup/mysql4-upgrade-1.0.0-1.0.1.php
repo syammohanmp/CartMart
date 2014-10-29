@@ -48,17 +48,6 @@ $table = $installer->getConnection()->newTable($installer->getTable('cartmart/pr
             ), 'Total Vendor Paid');
 $installer->getConnection()->createTable($table);
 
-$installer->run("
-
-CREATE TABLE IF NOT EXISTS {$this->getTable(Openwriter_Cartmart_Model_Authenticate::MEDMA_DOMAIN_TABLE_NAME)} ( 
-  `modules` int(11) unsigned NOT NULL auto_increment,  
-  `domain_name` varchar(255),  
-  `openwriter_module` varchar(255),
-  PRIMARY KEY (`modules`)
-) ENGINE = INNODB CHARSET=utf8;
-
-");
-
 $installer->endSetup();
 
 ?>

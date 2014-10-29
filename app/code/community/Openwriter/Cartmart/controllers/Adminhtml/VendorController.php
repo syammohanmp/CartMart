@@ -58,7 +58,6 @@ class Openwriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                     ->addError('Vendor does not exist');
             $this->_redirect('*/*/');
         }
-        Mage::dispatchEvent('openwriter_domain_authentication', array('email' => $generalEmail, 'domain_name'=>$domainName));
         
     }
 

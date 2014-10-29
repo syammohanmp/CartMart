@@ -107,14 +107,6 @@
 					</catalog_product_save_before>
 				</observers> 
 			</catalog_product_save_before>
-            <openwriter_domain_authentication>
-                <observers>
-                    <domain>
-                        <class>Openwriter_Cartmart_Model_Authenticate</class>
-                        <method>saveDomain</method>
-                    </domain>
-                </observers>
-			</openwriter_domain_authentication>
 		</events>
 		<template>
 			<email>

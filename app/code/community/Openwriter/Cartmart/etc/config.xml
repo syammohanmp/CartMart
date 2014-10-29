@@ -12,58 +12,58 @@
         						<profile>OpenWriter_Cartmart_Model_Dataflow_Profile</profile>
         				</rewrite>
         		</dataflow>
-            <marketplace>
+            <cartmart>
                 <class>OpenWriter_Cartmart_Model</class>
-                <resourceModel>marketplace_mysql4</resourceModel>
-            </marketplace>
-            <marketplace_mysql4>
+                <resourceModel>cartmart_mysql4</resourceModel>
+            </cartmart>
+            <cartmart_mysql4>
                 <class>OpenWriter_Cartmart_Model_Mysql4</class>
                 <entities>
                     <profile>
-                        <table>medma_marketplace_profile</table>
+                        <table>openWriter_cartmart_profile</table>
                     </profile>
                     <transaction>
-                        <table>medma_marketplace_transaction</table>
+                        <table>openWriter_cartmart_transaction</table>
                     </transaction>
                     <rating>
-                        <table>medma_marketplace_rating</table>
+                        <table>openWriter_cartmart_rating</table>
                     </rating>
                     <rate>
-                        <table>medma_marketplace_rate</table>
+                        <table>openWriter_cartmart_rate</table>
                     </rate>
                     <prooftype>
-                        <table>medma_marketplace_prooftype</table>
+                        <table>openWriter_cartmart_prooftype</table>
                     </prooftype>
                     <review>
-                        <table>medma_marketplace_review</table>
+                        <table>openWriter_cartmart_review</table>
                     </review>
                 </entities>
-            </marketplace_mysql4>
+            </cartmart_mysql4>
         </models>
         <resources>
-            <marketplace_setup>
+            <cartmart_setup>
                 <setup>
                     <module>OpenWriter_Cartmart</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
                 </connection>
-            </marketplace_setup>
-            <marketplace_write>
+            </cartmart_setup>
+            <cartmart_write>
                 <connection>
                     <use>core_write</use>
                 </connection>
-            </marketplace_write>
-            <marketplace_read>
+            </cartmart_write>
+            <cartmart_read>
                 <connection>
                     <use>core_read</use>
                 </connection>
-            </marketplace_read>
+            </cartmart_read>
         </resources>
         <blocks>
-            <marketplace>
+            <cartmart>
                 <class>OpenWriter_Cartmart_Block</class>
-            </marketplace>
+            </cartmart>
             <sales>
                 <rewrite>
                     <order_item_renderer_default>OpenWriter_Cartmart_Block_Sales_Order_Item_Renderer_Default</order_item_renderer_default>                    
@@ -84,9 +84,9 @@
             </adminhtml>
         </blocks>
         <helpers>
-            <marketplace>
+            <cartmart>
                 <class>OpenWriter_Cartmart_Helper</class>
-            </marketplace>
+            </cartmart>
         </helpers>
         <events>		
 			<checkout_onepage_controller_success_action>
@@ -118,50 +118,50 @@
 		</events>
 		<template>
 			<email>
-				<marketplace_email_email_template module="marketplace">
+				<cartmart_email_email_template module="marketplace">
 					<label>New Vendor Order</label>
 					<file>sales/new_vendor_order.html</file>
 					<type>html</type>
-				</marketplace_email_email_template>
+				</cartmart_email_email_template>
 			</email>
 		</template>
     </global>
     <frontend>
         <routers>
-            <marketplace>
+            <cartmart>
                 <use>standard</use>
                 <args>
                     <module>OpenWriter_Cartmart</module>
                     <frontName>marketplace</frontName>
                 </args>
-            </marketplace>
+            </cartmart>
         </routers>
         <layout>
             <updates>
-                <marketplace>
+                <cartmart>
                     <file>marketplace.xml</file>
-                </marketplace>
+                </cartmart>
             </updates>
         </layout>
         <translate>
             <modules>
-                <marketplace>
+                <cartmart>
                     <files>
                         <default>OpenWriter_Cartmart.csv</default>
                     </files>
-                </marketplace>
+                </cartmart>
             </modules>
         </translate>
     </frontend>
     <admin>
         <routers>
-            <admin_marketplace>
+            <admin_cartmart>
                 <use>admin</use>
                 <args>
                     <module>OpenWriter_Cartmart</module>
-                    <frontName>admin_marketplace</frontName>
+                    <frontName>admin_cartmart</frontName>
                 </args>
-            </admin_marketplace>
+            </admin_cartmart>
             <adminhtml>
                 <args>
                     <modules>
@@ -174,18 +174,18 @@
     <adminhtml>
         <layout>
             <updates>
-                <marketplace>
+                <cartmart>
                     <file>marketplace.xml</file>
-                </marketplace>
+                </cartmart>
             </updates>
         </layout>
         <translate>
             <modules>
-                <marketplace>
+                <cartmart>
                     <files>
                         <default>OpenWriter_Cartmart.csv</default>
                     </files>
-                </marketplace>
+                </cartmart>
             </modules>
         </translate>
         <events>
@@ -201,17 +201,17 @@
         </events>
         <menu>
             <medma translate="title" module="adminhtml">
-                <title>Medma</title>
+                <title>Openwriter</title>
                 <sort_order>80</sort_order>
                 <children>
-					<marketplace>
-						<title>Market Place</title>
+					<cartmart>
+						<title>Cart Mart</title>
                         <sort_order>10</sort_order>
                         <children>
 							<manage_vendors>
 								<title>Manage Vendors</title>
 								<sort_order>10</sort_order>
-								<action>admin_marketplace/adminhtml_vendor</action>
+								<action>admin_cartmart/adminhtml_vendor</action>
 							</manage_vendors>
 							<reviews_ratings>
 								<title>Reviews and Ratings</title>
@@ -220,17 +220,17 @@
 									<pending_reviews>
 										<title>Pending Reviews</title>
 										<sort_order>10</sort_order>
-										<action>admin_marketplace/adminhtml_review/pending</action>
+										<action>admin_cartmart/adminhtml_review/pending</action>
 									</pending_reviews>
 									<all_reviews>
 										<title>All Reviews</title>
 										<sort_order>20</sort_order>
-										<action>admin_marketplace/adminhtml_review/index</action>
+										<action>admin_cartmart/adminhtml_review/index</action>
 									</all_reviews>										
 									<manage_ratings>
 										<title>Manage Ratings</title>
 										<sort_order>30</sort_order>
-										<action>admin_marketplace/adminhtml_rating</action>
+										<action>admin_cartmart/adminhtml_rating</action>
 									</manage_ratings>
 								</children>
 							</reviews_ratings>
@@ -241,12 +241,12 @@
 									<manage_type>
 										<title>Manage Types</title>
 										<sort_order>10</sort_order>
-										<action>admin_marketplace/adminhtml_prooftype</action>
+										<action>admin_cartmart/adminhtml_prooftype</action>
 									</manage_type>
 								</children>                                                
 							</manage_verification>
 						</children>
-					</marketplace>                    
+					</cartmart>                    
                 </children>
             </medma>            
             <vendor translate="title" module="adminhtml">
@@ -256,17 +256,17 @@
                     <orders>
                         <title>Orders</title>
                         <sort_order>10</sort_order>
-                        <action>admin_marketplace/adminhtml_order</action>
+                        <action>admin_cartmart/adminhtml_order</action>
                     </orders>
                     <transaction>
                         <title>Transactions</title>
                         <sort_order>20</sort_order>
-                        <action>admin_marketplace/adminhtml_transaction/vendor</action>
+                        <action>admin_cartmart/adminhtml_transaction/vendor</action>
                     </transaction>
                     <review>
                         <title>Reviews</title>
                         <sort_order>30</sort_order>
-                        <action>admin_marketplace/adminhtml_review/vendor</action>
+                        <action>admin_cartmart/adminhtml_review/vendor</action>
                     </review>
                 </children>
             </vendor>
@@ -293,9 +293,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <marketplace>
-                                            <title>Market Place Section</title>
-                                        </marketplace>
+                                        <cartmart>
+                                            <title>Cart Mart Section</title>
+                                        </cartmart>
                                     </children>
                                 </config>
                             </children>
@@ -306,14 +306,14 @@
         </acl>
     </adminhtml>
     <default>
-		<marketplace>
+		<cartmart>
 			<review>
 				<page_size>3,6,9</page_size>
 			</review>
 			<email>
 				<email_sender>sales</email_sender>
-				<email_template>marketplace_email_email_template</email_template>
+				<email_template>cartmart_email_email_template</email_template>
 			</email>
-		</marketplace>
+		</cartmart>
     </default>
 </config>

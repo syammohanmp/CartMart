@@ -27,7 +27,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Transaction_Empty extends Mage_Core_Bl
     
     public function getVendorGridUrl()
     {
-        return Mage::helper('adminhtml')->getUrl('admin_marketplace/adminhtml_vendor/index', array('_current' => true));
+        return Mage::helper('adminhtml')->getUrl('admin_cartmart/adminhtml_vendor/index', array('_current' => true));
     }
 }
 ?>

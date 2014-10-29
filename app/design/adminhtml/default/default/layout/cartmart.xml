@@ -19,7 +19,7 @@
 						<block type="core/template" template="marketplace/system/convert/gui/js.phtml"/>
 				</reference>
 		</adminhtml_system_convert_gui_edit>
-		<marketplace_adminhtml_system_convert_profile_run>
+		<cartmart_adminhtml_system_convert_profile_run>
         <remove name="root"/>
         <block type="adminhtml/page" name="convert_root" output="toHtml" template="page.phtml">
             <block type="adminhtml/page_head" name="convert_root_head" as="head" template="page/head.phtml">
@@ -31,5 +31,5 @@
             </block>
             <block type="adminhtml/system_convert_profile_run" name="system_convert_profile_run" template="system/convert/profile/process.phtml" output="toHtml"/>
         </block>
-    </marketplace_adminhtml_system_convert_profile_run>
+    </cartmart_adminhtml_system_convert_profile_run>
 </layout>

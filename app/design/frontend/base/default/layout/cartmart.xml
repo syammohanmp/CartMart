@@ -36,13 +36,13 @@
             </action>
         </reference>
     </customer_account>
-    <marketplace_favourite_index>		
+    <cartmart_favourite_index>		
         <update handle="customer_account"/>		
         <reference name="content">
             <block type="marketplace/vendor_favourite" name="marketplace.vendor.favourite" template="marketplace/vendor/favourite.phtml" />
         </reference>
-    </marketplace_favourite_index>
-    <marketplace_vendor_profile>
+    </cartmart_favourite_index>
+    <cartmart_vendor_profile>
         <reference name="root">
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
@@ -53,8 +53,8 @@
             <block type="marketplace/vendor_profile_reviews" name="marketplace.vendor.profile.reviews" template="marketplace/vendor/profile/reviews.phtml" />
             <block type="marketplace/vendor_profile_latest" name="marketplace.vendor.profile.latest" template="marketplace/vendor/profile/latest.phtml" />
         </reference>
-    </marketplace_vendor_profile>
-    <marketplace_vendor_items>
+    </cartmart_vendor_profile>
+    <cartmart_vendor_items>
         <reference name="root">
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
@@ -66,7 +66,7 @@
 				<action method="setColumnCount"><count>5</count></action>
             </block>
         </reference>        
-    </marketplace_vendor_items>
+    </cartmart_vendor_items>
     <sales_order_view>
         <reference name="order_items">
             <action method="setTemplate">
@@ -79,7 +79,7 @@
             </reference>
         </reference>
     </sales_order_view>
-    <marketplace_vendor_register>
+    <cartmart_vendor_register>
         <reference name="root">
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
@@ -88,5 +88,5 @@
         <reference name="content">
             <block type="marketplace/vendor_register" name="marketplace.vendor.register" template="marketplace/vendor/register.phtml" />            
         </reference>
-    </marketplace_vendor_register>
+    </cartmart_vendor_register>
 </layout>

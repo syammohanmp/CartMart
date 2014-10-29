@@ -1,7 +1,7 @@
 <script type="text/javascript">
 function runProfile(popup)
 {
-    var url = '<?php echo $this->getUrl("admin_marketplace/adminhtml_system_convert_profile/run", array("id"=>$this->getProfileId())) ?>';
+    var url = '<?php echo $this->getUrl("admin_cartmart/adminhtml_system_convert_profile/run", array("id"=>$this->getProfileId())) ?>';
     if ($('profile_direction') != undefined
         && $('profile_data_transfer') != undefined
         && getDirection() == 'import' && getTransferType() == 'interactive') {

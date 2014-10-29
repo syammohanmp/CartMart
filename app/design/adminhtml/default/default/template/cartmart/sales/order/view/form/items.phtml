@@ -1,0 +1,119 @@
+<?php
+/**
+ * Openwriter Cartmart
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Openwriter.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
+**/
+?>
+
+<?php $_order = $this->getOrder(); ?>
+<?php $currency = $_order->getOrderCurrencyCode(); ?>
+<?php $productIds = $this->getProductIdsCollection(); ?>
+
+<div class="grid np">
+    <div class="hor-scroll">
+        <table cellspacing="0" class="data order-tables">
+            <col />
+            <col width="1" />
+            <col width="1" />
+            <col width="1" />
+            <col width="1" />
+            <col width="1" />
+            <col width="1" />
+            <col width="1" />
+            <thead>
+                <tr class="headings">
+                    <th><?php echo $this->helper('cartmart')->__('Product') ?></th>
+                    <th><?php echo $this->helper('cartmart')->__('Commission Amount') ?></th>
+                    <th><?php echo $this->helper('cartmart')->__('Vendor Amount') ?></th>
+                    <th><span class="nobr"><?php echo $this->helper('cartmart')->__('Original Price') ?></span></th>
+                    <th width="100"><?php echo $this->helper('cartmart')->__('Price') ?></th>
+                    <th class="a-center"><?php echo $this->helper('cartmart')->__('Qty') ?></th>
+                    <th class="last"><span class="nobr"><?php echo $this->helper('cartmart')->__('Row Total') ?></span></th>
+                </tr>
+            </thead>        
+            <?php $_items = $this->getItemsCollection() ?>
+            <?php $total_commission = 0; $total_supplier = 0; $grand_total = 0; ?>				
+            <?php $i = 0;
+            foreach ($_items as $_item): ?>
+                <?php $productId = $_item->getProductId(); ?>			
+                <?php if (!in_array($productId, $productIds)) continue; ?>
+                <?php $product = Mage::getModel('catalog/product')->load($productId); ?>			
+                <?php if ($_item->getParentItem()) continue; else $i++; ?>
+                <tbody class="<?php echo $i % 2 ? 'even' : 'odd'; ?>">
+                    <tr class="border">
+                        <td>
+                            <div id="order_item_<?php echo $_item->getId() ?>" class="item-container">
+                                <div class="item-text">
+                                    <h5 class="title"><span id="order_item_<?php echo $_item->getId() ?>_title"><?php echo $_item->getName() ?></span></h5>
+                                    <div><strong>SKU:</strong> <?php echo $_item->getSku() ?></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="a-right"><span class="price"><?php echo Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($this->getAdminCommission($_item), 2) ?></span></td>
+                        <td class="a-right"><span class="price"><?php echo Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($this->getVendorAmount($_item), 2) ?></span></td>
+                        <td class="a-right"><span class="price"><?php echo Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($_item->getPrice(), 2) ?></span></td>
+                        <td class="a-right">
+                            <span class="price-excl-tax">
+                                <span class="label">Excl. Tax:
+                                    <span class="price"><?php echo Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format(($_item->getPriceInclTax() - $_item->getTaxAmount()), 2) ?></span>
+                                </span>
+                            </span>
+                            <br />
+                            <span class="price-incl-tax">
+                                <span class="label">Incl. Tax:
+                                    <span class="price"><?php echo Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($_item->getPriceInclTax(), 2); ?></span>						
+                                </span>                
+                            </span>
+                        </td>
+                        <td>
+                            <table cellspacing="0" class="qty-table">
+                                <tbody>
+                                    <?php
+                                    if ($_item->getQtyOrdered() > 0):
+                                        echo '<tr><td>Ordered </td><td><strong>' . intval($_item->getQtyOrdered()) . '</strong></td></tr>';
+                                    endif;
+                                    if ($_item->getQtyInvoiced() > 0):
+                                        echo '<tr><td>Invoiced </td><td><strong>' . intval($_item->getQtyInvoiced()) . '</strong></td></tr>';
+                                    endif;
+                                    if ($_item->getQtyShipped() > 0):
+                                        echo '<tr><td>Shipped </td><td><strong>' . intval($_item->getQtyShipped()) . '</strong></td></tr>';
+                                    endif;
+                                    ?>       
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="a-right last">
+                    <?php $rowPrice = number_format(($_item->getPriceInclTax() * $_item->getQtyOrdered()), 2); ?>
+                            <span class="price"><?php echo Mage::app()->getLocale()->currency($currency)->getSymbol() . $rowPrice; ?></span>    
+                        </td>
+                    </tr>
+                    <?php
+                    $total_commission = $total_commission + ($this->getAdminCommission($_item) != '' ? $this->getAdminCommission($_item) : 0);
+                    $total_vendor = $total_vendor + ($this->getVendorAmount($_item) != '' ? $this->getVendorAmount($_item) : 0);
+                    $grand_total = $grand_total + $rowPrice;
+                    ?>
+                </tbody>
+            <?php endforeach; ?>
+            <?php
+            Mage::register('supplier_total_commission', Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($total_commission, 2));
+            Mage::register('supplier_total_amt', Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($total_vendor, 2));
+            Mage::register('supplier_grand_total', Mage::app()->getLocale()->currency($currency)->getSymbol() . number_format($grand_total, 2));
+            ?>
+        </table>
+    </div>
+</div>
+<br />

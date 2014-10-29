@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+     <modules>
+        <Openwriter_Cartmart>
+            <active>true</active>
+            <codePool>community</codePool>            
+        </Openwriter_Cartmart>
+    </modules>
+</config>

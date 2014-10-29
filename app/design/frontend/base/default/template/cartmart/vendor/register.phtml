@@ -1,0 +1,172 @@
+<?php
+/**
+ * Openwriter Cartmart
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Team
+ * that is bundled with this package of Openwriter.
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Contact us Support does not guarantee correct work of this package
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * =================================================================
+ * 
+ * @category    Openwriter
+ * @package     Openwriter_Cartmart
+**/
+?>
+<?php $varificationProofList = $this->getProofTypeList(); ?>
+<?php $testData = Mage::getSingleton('core/session')->getTestData(); ?>
+<div class="account-create">
+    <div class="page-title">
+        <h1><?php echo $this->__('Request Seller') ?></h1>
+    </div>    
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data">
+        <div class="fieldset">            
+            <h2 class="legend"><?php echo $this->__('Personal Information') ?></h2>
+            <ul class="form-list">
+				<li class="fields">
+                    <div class="vendor-name">
+						<div class="field name-firstname">
+							<label for="firstname" class="required"><em>*</em><?php echo $this->__('First Name'); ?></label>
+							<div class="input-box">
+								<input type="text" id="firstname" name="firstname" title="<?php echo $this->__('First Name'); ?>" maxlength="255" class="input-text required-entry" value="<?php echo $testData['firstname']; ?>">
+							</div>
+						</div>
+						<div class="field name-lastname">
+							<label for="lastname" class="required"><em>*</em><?php echo $this->__('Last Name'); ?></label>
+							<div class="input-box">
+								<input type="text" id="lastname" name="lastname" title="<?php echo $this->__('Last Name'); ?>" maxlength="255" class="input-text required-entry" value="<?php echo $testData['lastname']; ?>">
+							</div>
+						</div>
+					</div>
+                </li>
+                <li class="wide">
+					<label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+					<div class="input-box">
+						<input type="text" name="email" id="email_address" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" value="<?php echo $testData['email']; ?>" />
+					</div>
+				</li>
+            </ul>
+        </div>    
+        <div class="fieldset">
+			<h2 class="legend"><?php echo $this->__('Business Information') ?></h2>
+            <ul class="form-list">
+				<li class="wide">
+					<label for="shop_name" class="required"><em>*</em><?php echo $this->__('Shop Name'); ?></label>
+					<div class="input-box">
+						<input type="text" name="shop_name" title="<?php echo $this->__('Shop Name'); ?>" id="shop_name" class="input-text  required-entry" value="<?php echo $testData['shop_name']; ?>">
+					</div>
+				</li>
+                <li class="fields">
+                    <div class="shop-info">						
+						<div class="field name-contact_number">
+							<label for="contact_number" class="required"><em>*</em><?php echo $this->__('Contact Number'); ?></label>
+							<div class="input-box">
+								<input type="text" id="contact_number" name="contact_number" title="<?php echo $this->__('Contact Number'); ?>" maxlength="255" class="input-text required-entry validate-phoneLax" value="<?php echo $testData['contact_number']; ?>">
+							</div>
+						</div>
+						<div class="field name-country">
+							<label for="country" class="required"><em>*</em><?php echo $this->__('Country'); ?></label>
+							<div class="input-box">
+								<select id="country" name="country" title="<?php echo $this->__('Country'); ?>" class="input-text required-entry validate-select" >
+									<?php $countryList = $this->getCountryList(); ?>
+									<?php foreach($countryList as $key => $value): ?>
+										<option value="<?php echo $key; ?>" <?php echo ($testData['country'] == $key ? 'selected': ''); ?>><?php echo $value; ?></option>
+									<?php endforeach; ?>
+								</select>
+							</div>
+						</div>
+					</div>
+                </li>
+			</ul>
+		</div>
+		<?php if($varificationProofList->count()): ?>
+			<div class="fieldset">
+				<h2 class="legend"><?php echo $this->__('Verification Proof') ?></h2>
+				<ul class="form-list">
+					<li class="fields">
+						<div>						
+							<div class="field proof_type">
+								<label for="proof_type" class="required"><em>*</em><?php echo $this->__('Proof Type'); ?></label>
+								<div class="input-box">
+									<select id="proof_type" name="proof_type" title="<?php echo $this->__('Proof Type'); ?>" class="input-text required-entry validate-select">								
+										<?php foreach($varificationProofList as $prooftype): ?>
+											<option value="<?php echo $prooftype->getId(); ?>" <?php echo ($testData['proof_type'] == $prooftype->getId() ? 'selected': ''); ?>><?php echo $prooftype->getName(); ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="varification_proof_container" class="fields">
+						<div>
+							<div class="varification_proof">
+								<label for="varification_proof" class="required"><em>*</em><?php echo $this->__('Files'); ?></label>
+								<div class="input-box">
+									<input type="file" name="varification_proof_1" id="varification_proof_1" class="required-entry" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="fields">
+						<div>
+							<div class="field name-varification_proof">								
+								<div class="input-box">
+									<input type="hidden" value="1" id="total_file_upload" name="total_file_upload" />
+									<button type="button" title="<?php echo $this->__('Add New') ?>" class="button" onclick="addNewFileUpload()">
+										<span><span><?php echo $this->__('Add New') ?></span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<?php endif; ?>
+        <div class="fieldset">
+            <h2 class="legend"><?php echo $this->__('Login Information') ?></h2>
+            <ul class="form-list">
+				<li class="wide">
+					<label for="username" class="required"><em>*</em><?php echo $this->__('User Name') ?></label>
+					<div class="input-box">
+						<input type="text" name="username" id="username" title="<?php echo $this->__('User Name') ?>" class="input-text required-entry" value="<?php echo $testData['username']; ?>" />
+					</div>
+				</li>				
+                <li class="fields">
+                    <div class="field">
+                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                        <div class="input-box">
+                            <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+                        <div class="input-box">
+                            <input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="input-text required-entry validate-cpassword" />
+                        </div>
+                    </div>
+                </li>                
+            </ul>            
+        </div>        
+        <div class="buttons-set">
+            <p class="required"><?php echo $this->__('* Required Fields') ?></p>            
+            <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+        </div>        
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('form-validate', true);
+        var count = 1;
+        function addNewFileUpload()
+        {
+			count++;			
+			$('varification_proof_container').insert({after: '<li class="fields"><div class="varification_proof"><div class="input-box"><input type="file" name="varification_proof_' + count + '" id="varification_proof_' + count + '" /></div></div></li>'});
+			$('total_file_upload').setValue(count);
+		}
+    //]]>
+    </script>
+</div>

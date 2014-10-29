@@ -47,7 +47,7 @@
     <div style="display:none"></div>
 </form>
 <!-- Hide status dropdown for vendor -->
-<?php $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role'); ?>
+<?php $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role'); ?>
 <?php $current_user = Mage::getSingleton('admin/session')->getUser(); ?>
 <?php if($current_user->getRole()->getRoleId() == $roleId): ?>		
 <script type="text/javascript">

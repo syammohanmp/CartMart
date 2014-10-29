@@ -23,8 +23,8 @@ class OpenWriter_Cartmart_Block_Adminhtml_Rating extends Mage_Adminhtml_Block_Wi
 	{		
 		$this->_controller = 'adminhtml_rating';
 		$this->_blockGroup = 'marketplace';
-		$this->_headerText = Mage::helper('marketplace')->__('Manage Ratings');
-		$this->_addButtonLabel = Mage::helper('marketplace')->__('Add Rating');
+		$this->_headerText = Mage::helper('cartmart')->__('Manage Ratings');
+		$this->_addButtonLabel = Mage::helper('cartmart')->__('Add Rating');
 		
 		parent::__construct();
 	}

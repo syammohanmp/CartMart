@@ -30,7 +30,7 @@ class OpenWriter_Cartmart_Adminhtml_ReviewController extends Mage_Adminhtml_Cont
     public function vendorAction() {
 		Mage::getSingleton("core/session")->setReviewType(OpenWriter_Cartmart_Model_Review::APPROVED); 
 		
-		$roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
         $current_user = Mage::getSingleton('admin/session')->getUser();
         if ($current_user->getRole()->getRoleId() != $roleId) {
             $this->_forward('empty');

@@ -76,7 +76,7 @@ class OpenWriter_Cartmart_Model_Convert_Adapter_Product extends Mage_Catalog_Mod
         
         
         /**Start Code For Vendor**/
-        $isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+        $isVendor = Mage::helper('cartmart')->isVendor();//current user is vendor or not
         
         if($isVendor)
         {
@@ -137,7 +137,7 @@ class OpenWriter_Cartmart_Model_Convert_Adapter_Product extends Mage_Catalog_Mod
             $product->load($productId);
             
             /**Start Code For Vendor**/
-            $isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+            $isVendor = Mage::helper('cartmart')->isVendor();//current user is vendor or not
             
             if($isVendor)
             {
@@ -164,7 +164,7 @@ class OpenWriter_Cartmart_Model_Convert_Adapter_Product extends Mage_Catalog_Mod
             $productAttributeSets = $this->getProductAttributeSets();
             
             /**Start Code For Vendor**/
-            $isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+            $isVendor = Mage::helper('cartmart')->isVendor();//current user is vendor or not
             
             if($isVendor)
             {      		

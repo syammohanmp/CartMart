@@ -60,7 +60,7 @@ class OpenWriter_Cartmart_VendorController extends Mage_Core_Controller_Front_Ac
 						$uploader->setFilesDispersion(false);
 
 						$dir_name = 'vendor' . DS . 'varifications';
-						$dir_path = Mage::helper('marketplace')->getImagesDir($dir_name);
+						$dir_path = Mage::helper('cartmart')->getImagesDir($dir_name);
 
 						$uploader->save($dir_path, $_FILES[$file_control_name]['name']);
 						$uploaded_files[] = $_FILES[$file_control_name]['name'];
@@ -96,7 +96,7 @@ class OpenWriter_Cartmart_VendorController extends Mage_Core_Controller_Front_Ac
                 
                 $user->save();
 				
-				$role_id = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+				$role_id = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 
                 $user->setRoleIds(array($role_id))
 					->setRoleUserId($user->getUserId())

@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Product_Observer {
 
     public function filterProductCollection($observer) {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 

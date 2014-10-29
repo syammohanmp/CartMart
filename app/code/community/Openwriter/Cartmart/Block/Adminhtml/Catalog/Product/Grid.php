@@ -32,7 +32,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Catalog_Product_Grid extends Mage_Admi
 
         $statuses = Mage::getSingleton('catalog/product_status')->getOptionArray();
         
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 
         $current_user = Mage::getSingleton('admin/session')->getUser();
         

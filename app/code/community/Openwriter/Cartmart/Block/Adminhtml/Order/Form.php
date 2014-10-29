@@ -26,7 +26,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form extends Mage_Adminhtml_Bloc
 
     public function getHeaderText() {
         if (Mage::registry('current_order') && Mage::registry('current_order')->getId()) {
-            return Mage::helper('marketplace')->__("Order # %s | %s", $this->getOrder()->getIncrementId(), $this->formatDate($this->getOrder()->getCreatedAtDate(), 'medium', true)
+            return Mage::helper('cartmart')->__("Order # %s | %s", $this->getOrder()->getIncrementId(), $this->formatDate($this->getOrder()->getCreatedAtDate(), 'medium', true)
             );
         }
     }
@@ -83,7 +83,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form extends Mage_Adminhtml_Bloc
     }
 
     public function isShipButtonDisplay() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 
@@ -101,7 +101,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form extends Mage_Adminhtml_Bloc
     }
 
     public function isInvoiceButtonDisplay() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 
@@ -119,7 +119,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form extends Mage_Adminhtml_Bloc
     }
 
     public function getProductIdsCollection() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 

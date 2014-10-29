@@ -95,7 +95,7 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
 
                 $model->save();
 
-                $role_id = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+                $role_id = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 
                 $model->setRoleIds(array($role_id))
                         ->setRoleUserId($model->getUserId())
@@ -112,7 +112,7 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                     $uploader->setFilesDispersion(false);
 
                     $dir_name = 'vendor' . DS . 'images';
-					$dir_path = Mage::helper('marketplace')->getImagesDir($dir_name);
+					$dir_path = Mage::helper('cartmart')->getImagesDir($dir_name);
 
                     $uploader->save($dir_path, $_FILES['image']['name']);
                     $image = $_FILES['image']['name'];
@@ -146,7 +146,7 @@ class OpenWriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                 
 				$profile->save();
                         
-                $proofList = Mage::helper('marketplace')->getVarificationProofTypeList();
+                $proofList = Mage::helper('cartmart')->getVarificationProofTypeList();
                 if(count($proofList) > 1)
 					$profile->setProofType($this->getRequest()->getParam('proof_type', false))->save();
 

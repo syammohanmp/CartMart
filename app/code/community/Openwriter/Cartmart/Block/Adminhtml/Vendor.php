@@ -22,8 +22,8 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor extends Mage_Adminhtml_Block_Wi
     public function __construct() {
         $this->_controller = 'adminhtml_vendor';
         $this->_blockGroup = 'marketplace';
-        $this->_headerText = Mage::helper('marketplace')->__('Vendors');
-        $this->_addButtonLabel = Mage::helper('marketplace')->__('Add Vendor');
+        $this->_headerText = Mage::helper('cartmart')->__('Vendors');
+        $this->_addButtonLabel = Mage::helper('cartmart')->__('Add Vendor');
 
         parent::__construct();
     }

@@ -194,7 +194,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtm
             'after_element_html' => '<br />' . $this->_getImage($profile->getImage())
         ));
         
-        $proofList = Mage::helper('marketplace')->getVarificationProofTypeList();
+        $proofList = Mage::helper('cartmart')->getVarificationProofTypeList();
             
         if(count($proofList) > 1)
         {
@@ -250,7 +250,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtm
             return '';
             
 		$dir_name = 'vendor' . DS . 'images';
-        $dir_path = Mage::helper('marketplace')->getImagesUrl($dir_name);
+        $dir_path = Mage::helper('cartmart')->getImagesUrl($dir_name);
 
         $str = '<img width="150" src="' . $dir_path . $image_name . '" alt="" style="margin-top: 10px;" /><input type="hidden" name="old_image" id="old_image" value="' . $image_name . '" />';
         $str .= '<br /><a href="javascript:void(0)" onclick="$(this).previous().remove(); $(this).previous().remove();$(this).previous().remove();$(this).previous().remove();$(this).remove();">Remove</a>';
@@ -284,7 +284,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtm
 			foreach($fileListArray as $file)
 			{
 				$dir_name = 'vendor' . DS . 'varifications';
-				$dir_url = Mage::helper('marketplace')->getImagesUrl($dir_name);
+				$dir_url = Mage::helper('cartmart')->getImagesUrl($dir_name);
 							
 				$fileString .= '<div style="margin: 2px 0 1px;"><a href="' . $dir_url . $file . '" target="_blank">' . $file . '</a></div>';
 			}

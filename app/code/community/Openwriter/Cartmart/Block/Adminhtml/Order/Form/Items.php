@@ -33,7 +33,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Form_Items extends Mage_Adminhtm
     }
 
     public function getProductIdsCollection() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 

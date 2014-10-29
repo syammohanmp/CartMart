@@ -55,7 +55,7 @@ class OpenWriter_Cartmart_Adminhtml_Core_System_AccountController extends Mage_A
         try {
             $user->save();
 
-            $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+            $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
 			// $role = Mage::getModel('admin/roles')->load($roleId);
 
@@ -71,7 +71,7 @@ class OpenWriter_Cartmart_Adminhtml_Core_System_AccountController extends Mage_A
                     $uploader->setFilesDispersion(false);
                         
 					$dir_name = 'vendor' . DS . 'images';
-					$dir_path = Mage::helper('marketplace')->getImagesDir($dir_name);
+					$dir_path = Mage::helper('cartmart')->getImagesDir($dir_name);
 
                     $uploader->save($dir_path, $_FILES['image']['name']);
                     $image = $_FILES['image']['name'];

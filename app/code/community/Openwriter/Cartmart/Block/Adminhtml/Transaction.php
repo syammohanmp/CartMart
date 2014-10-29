@@ -26,7 +26,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Transaction extends Mage_Adminhtml_Blo
 
     public function getHeaderText() {
         if (Mage::registry('vendor_user') && Mage::registry('vendor_user')->getId()) {
-            return Mage::helper('marketplace')->__("Balance sheet | %s", Mage::registry('vendor_user')->getName()
+            return Mage::helper('cartmart')->__("Balance sheet | %s", Mage::registry('vendor_user')->getName()
             );
         }
     }
@@ -41,7 +41,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Transaction extends Mage_Adminhtml_Blo
     
     public function isToShowButtons()
     {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 

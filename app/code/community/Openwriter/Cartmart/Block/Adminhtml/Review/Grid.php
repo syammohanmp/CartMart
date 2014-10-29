@@ -55,7 +55,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
         if(Mage::getSingleton('core/session')->getReviewType() == OpenWriter_Cartmart_Model_Review::PENDING) 
 			$collection->addFieldToFilter('status', OpenWriter_Cartmart_Model_Review::PENDING);
 		
-		$roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
         $current_user = Mage::getSingleton('admin/session')->getUser();
         if ($current_user->getRole()->getRoleId() == $roleId) 
 		{
@@ -74,7 +74,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
 
     protected function _prepareColumns() {
 		
-		$roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
         $current_user = Mage::getSingleton('admin/session')->getUser();
         
         $this->addColumn('entity_id', array(
@@ -158,7 +158,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Review_Grid extends Mage_Adminhtml_Blo
      */
     public function getRowUrl($row) 
     {
-		$roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
         $current_user = Mage::getSingleton('admin/session')->getUser();
         
 		if ($current_user->getRole()->getRoleId() != $roleId) 

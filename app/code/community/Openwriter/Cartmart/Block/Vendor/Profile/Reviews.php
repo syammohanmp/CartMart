@@ -31,7 +31,7 @@ class OpenWriter_Cartmart_Block_Vendor_Profile_Reviews extends Mage_Core_Block_T
 
 		$pager = $this->getLayout()->createBlock('page/html_pager', 'productlist.pager')->setTemplate('page/html/pager.phtml');
 		
-		$pageConfigOption = Mage::helper('marketplace')->getConfig('review', 'page_size');		
+		$pageConfigOption = Mage::helper('cartmart')->getConfig('review', 'page_size');		
 				
 		$pageConfigOptionArray = explode(',', $pageConfigOption);		
 		$pageCountArray = array();

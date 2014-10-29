@@ -26,7 +26,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Grid extends Mage_Adminhtml_Bloc
     }
 
     protected function _prepareCollection() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 
@@ -64,7 +64,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order_Grid extends Mage_Adminhtml_Bloc
     }
 
     protected function _prepareColumns() {
-        $hlp = Mage::helper('marketplace');
+        $hlp = Mage::helper('cartmart');
 
         $this->getIndex();
 

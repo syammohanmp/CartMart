@@ -6,7 +6,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_System_Convert_Profile_Edit_Tab_Run ex
         parent::__construct();
         
         /**Code For Vendor**/
-        $isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+        $isVendor = Mage::helper('cartmart')->isVendor();//current user is vendor or not
         
         $model = Mage::registry('current_convert_profile');
 

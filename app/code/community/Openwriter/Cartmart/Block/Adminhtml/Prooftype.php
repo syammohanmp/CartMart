@@ -23,8 +23,8 @@ class OpenWriter_Cartmart_Block_Adminhtml_Prooftype extends Mage_Adminhtml_Block
 	{		
 		$this->_controller = 'adminhtml_prooftype';
 		$this->_blockGroup = 'marketplace';
-		$this->_headerText = Mage::helper('marketplace')->__('Manage Types');
-		$this->_addButtonLabel = Mage::helper('marketplace')->__('Add Type');
+		$this->_headerText = Mage::helper('cartmart')->__('Manage Types');
+		$this->_addButtonLabel = Mage::helper('cartmart')->__('Add Type');
 		
 		parent::__construct();
 	}

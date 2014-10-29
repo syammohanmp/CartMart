@@ -26,7 +26,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_System_Convert_Gui_Grid extends Mage_A
             ->addFieldToFilter('entity_type', array('notnull'=>''));
             
             
-        $isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+        $isVendor = Mage::helper('cartmart')->isVendor();//current user is vendor or not
 				
 				if($isVendor)
 				{

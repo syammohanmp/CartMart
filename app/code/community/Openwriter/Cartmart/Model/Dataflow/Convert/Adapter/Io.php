@@ -19,7 +19,7 @@ class OpenWriter_Cartmart_Model_Dataflow_Convert_Adapter_Io extends Mage_Dataflo
         $filename = $this->getVar('filename');
         
         /**Start Code For Vendor**/
-        $isVendor = Mage::helper('marketplace')->isVendor();//current user is vendor or not
+        $isVendor = Mage::helper('cartmart')->isVendor();//current user is vendor or not
         
         if($isVendor)
         {

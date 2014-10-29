@@ -26,7 +26,7 @@ class OpenWriter_Cartmart_Adminhtml_TransactionController extends Mage_Adminhtml
     
     public function vendorAction()
     {         
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 

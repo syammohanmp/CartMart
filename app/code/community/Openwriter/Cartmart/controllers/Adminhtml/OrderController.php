@@ -21,7 +21,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
 
     public function indexAction() {
 
-		$roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 
@@ -54,7 +54,7 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
             $this->_addContent($this->getLayout()->createBlock('marketplace/adminhtml_order_form'));
             $this->renderLayout();
         } else {
-            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('marketplace')->__('Item does not exist'));
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cartmart')->__('Item does not exist'));
             $this->_redirect('*/*/');
         }
     }
@@ -141,10 +141,10 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
             $shipment->setEmailSent(true);
             $shipment->save();
 
-            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('marketplace')->__('The Shipment has been created.'));
+            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('cartmart')->__('The Shipment has been created.'));
             $this->_redirect('*/*/view', array('order_id' => $orderId));
         } catch (Exception $e) {
-            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('marketplace')->__('The Shipment cannot be created for the order.'));
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cartmart')->__('The Shipment cannot be created for the order.'));
             $this->_redirect('*/*/view', array('order_id' => $orderId));
         }
     }
@@ -193,17 +193,17 @@ class OpenWriter_Cartmart_Adminhtml_OrderController extends Mage_Adminhtml_Contr
 
             $invoice->sendEmail(true);
 
-            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('marketplace')->__('The Invoice has been created.'));
+            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('cartmart')->__('The Invoice has been created.'));
 
             $this->_redirect('*/*/view', array('order_id' => $orderId));
         } catch (Exception $e) {
-            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('marketplace')->__('The Invoice cannot be created for the order.'));
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cartmart')->__('The Invoice cannot be created for the order.'));
             $this->_redirect('*/*/view', array('order_id' => $orderId));
         }
     }
 
     public function getProductIdsCollection() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         // $role = Mage::getModel('admin/roles')->load($roleId);
 

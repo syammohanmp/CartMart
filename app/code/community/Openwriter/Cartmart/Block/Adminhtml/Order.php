@@ -23,7 +23,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Order extends Mage_Adminhtml_Block_Wid
         parent::__construct();
         $this->_controller = 'adminhtml_order';
         $this->_blockGroup = 'marketplace';
-        $this->_headerText = Mage::helper('marketplace')->__('Orders');
+        $this->_headerText = Mage::helper('cartmart')->__('Orders');
         $this->_removeButton('add');
     }
 

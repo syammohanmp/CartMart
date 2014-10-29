@@ -31,9 +31,9 @@
         <?php $userObject = $this->getUserObject($vendorInfo->getUserId()); ?>
         <div class="account_profile_wrapper">
             <div id="user_image">
-                <?php $profileImage = Mage::helper('marketplace')->getImagesUrl('images') . 'default.jpg'; ?>
+                <?php $profileImage = Mage::helper('cartmart')->getImagesUrl('images') . 'default.jpg'; ?>
                 <?php if ($vendorInfo->getImage()): ?>
-                    <?php $profileImage = Mage::helper('marketplace')->getImagesUrl('vendor' . DS . 'images') . $vendorInfo->getImage(); ?>
+                    <?php $profileImage = Mage::helper('cartmart')->getImagesUrl('vendor' . DS . 'images') . $vendorInfo->getImage(); ?>
                 <?php endif; ?>
                 <img src="<?php echo $profileImage; ?>" />
             </div>

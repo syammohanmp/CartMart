@@ -22,7 +22,7 @@
 class OpenWriter_Cartmart_Model_Product_Attribute_Source_Vendor extends Mage_Eav_Model_Entity_Attribute_Source_Abstract {
 
     public function getAllOptions() {
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         $role = Mage::getModel('admin/roles')->load($roleId);
 
@@ -52,7 +52,7 @@ class OpenWriter_Cartmart_Model_Product_Attribute_Source_Vendor extends Mage_Eav
 	 */
 	public function toArray()
 	{
-        $roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+        $roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 
         $role = Mage::getModel('admin/roles')->load($roleId);
 

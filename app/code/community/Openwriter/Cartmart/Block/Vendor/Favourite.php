@@ -55,7 +55,7 @@ class OpenWriter_Cartmart_Block_Vendor_Favourite extends Mage_Core_Block_Templat
     }
 
     public function getCountryName($countryCode) {
-        return Mage::helper('marketplace')->getCountryName($countryCode);
+        return Mage::helper('cartmart')->getCountryName($countryCode);
     }
 
     public function getVendorProfileUrl($vendorId) {

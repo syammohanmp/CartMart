@@ -29,7 +29,7 @@ class OpenWriter_Cartmart_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Blo
 
     protected function _prepareCollection() {
 		
-		$roleId = Mage::helper('marketplace')->getConfig('general', 'vendor_role');
+		$roleId = Mage::helper('cartmart')->getConfig('general', 'vendor_role');
 		
         $role = Mage::getModel('admin/roles')->load($roleId);
 

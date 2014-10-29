@@ -64,7 +64,7 @@ class OpenWriter_Cartmart_Block_Vendor_List extends Mage_Core_Block_Template
 	public function getVendorImageUrl($vendorImageName)
 	{
 		$dirPath = 'vendor' . DS . 'images';
-		return Mage::helper('marketplace')->getImagesUrl($dirPath) . $vendorImageName;
+		return Mage::helper('cartmart')->getImagesUrl($dirPath) . $vendorImageName;
 	}
 }
 

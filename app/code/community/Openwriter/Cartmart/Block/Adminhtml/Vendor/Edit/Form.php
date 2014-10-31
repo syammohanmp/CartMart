@@ -239,6 +239,28 @@ class Openwriter_Cartmart_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtm
             'after_element_html' => '<b>' . $this->formatPrice(($profile->getTotalVendorAmount() - $profile->getTotalVendorPaid())) . '</b>',
                 )
         );
+		
+		if (Mage::getSingleton('admin/session')->getUser()->getId() != $model->getUserId()) {
+            $profile_fieldset->addField('profile_order', 'text', array(
+                    'name' => 'profile_order',
+                    'label' => Mage::helper('adminhtml')->__('Profile Order'),
+                    'title' => Mage::helper('adminhtml')->__('Profile Order'),
+                    'value' => $profile->getProfileOrder()
+                )
+            );
+
+            $profile_fieldset->addField('featured', 'select', array(
+                    'name' => 'featured',
+                    'values'=>array(
+                        array('label'=>'No','value'=>0),
+                        array('label'=>'Yes','value'=>1)
+                    ),
+                    'label' => Mage::helper('adminhtml')->__('Featured'),
+                    'title' => Mage::helper('adminhtml')->__('Featured'),
+                    'value' => $profile->getFeatured()
+                )
+            );
+        }
 
         $this->setForm($form);
 

@@ -140,6 +140,12 @@ class Openwriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
 						->setContactNumber($this->getRequest()->getParam('contact_number', false))
 						->setCountry($this->getRequest()->getParam('country', false))						
                         ->setAdminCommissionPercentage($this->getRequest()->getParam('admin_commission_percentage', false));
+				
+				$profileOrder = $this->getRequest()->getParam('profile_order', false);
+                if(!empty($profileOrder)){$profile->setProfileOrder($profileOrder);}
+
+                $featured = $this->getRequest()->getParam('featured');
+                if(in_array($featured,array('0','1'))){$profile->setFeatured($featured);}
                         
                 Mage::dispatchEvent('vendor_profile_save_before', array('profile' => $profile, 'post_data' => $this->getRequest()->getPost()));
                 

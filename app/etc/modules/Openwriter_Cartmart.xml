@@ -3,7 +3,7 @@
      <modules>
         <Openwriter_Cartmart>
             <active>true</active>
-            <codePool>local</codePool>            
+            <codePool>community</codePool>            
         </Openwriter_Cartmart>
     </modules>
 </config>

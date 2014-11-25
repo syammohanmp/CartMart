@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
-    <adminhtml_catalog_product_new>
+    <!--<adminhtml_catalog_product_new>
         <reference name="product_edit">
             <action method="setTemplate">
                 <template>cartmart/catalog/product/edit.phtml</template>
@@ -13,7 +13,7 @@
                 <template>cartmart/catalog/product/edit.phtml</template>
             </action> 
         </reference>
-    </adminhtml_catalog_product_edit>
+    </adminhtml_catalog_product_edit>-->
     <adminhtml_system_convert_gui_edit>
 				<reference name="content">
 						<block type="core/template" template="cartmart/system/convert/gui/js.phtml"/>

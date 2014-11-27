@@ -19,6 +19,26 @@
 **/
 class Openwriter_Cartmart_Block_Vendor_Profile extends Mage_Core_Block_Template {
 
+	protected function _prepareLayout()
+    {
+        if($breadcrumbs = $this->getLayout()->getBlock('breadcrumbs')){
+
+            $profileId = $this->getRequest()->getParam('id');
+            if(!empty($profileId)){
+
+                $vendorProfile = Mage::getModel('cartmart/profile')->load($profileId);
+                $breadcrumbs->addCrumb('vendorName',
+                    array(
+                        'label'=> $vendorProfile->getShopName(),
+                        'title'=> $vendorProfile->getShopName(),
+                        'link'=>  $this->getVendorProfileUrl($vendorProfile->getId())
+                    )
+                );
+            }
+        }
+        return parent::_prepareLayout();
+    }
+
     public function getVendorInfo() {
         $profileId = $this->getRequest()->getParam('id');
         return Mage::getModel('cartmart/profile')->load($profileId);

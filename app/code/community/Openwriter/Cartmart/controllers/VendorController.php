@@ -28,6 +28,11 @@ class Openwriter_Cartmart_VendorController extends Mage_Core_Controller_Front_Ac
 	public function profileAction()
 	{
 		$vendorId = $this->getRequest()->getParam('id');
+        if(!empty($vendorId))
+        {
+            $vendor = Mage::getModel('cartmart/profile')->load($vendorId);
+            $this->_title($this->__('Cartmart'))->_title($vendor->getShopName());
+        }
 		$this->loadLayout();
 		$this->renderLayout();
 	}

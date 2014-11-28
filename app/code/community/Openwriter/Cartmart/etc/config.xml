@@ -3,8 +3,8 @@
     <modules>
         <Openwriter_Cartmart>
             <version>2.0.6</version>
-			<stability>stable</stability>
-			<license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+	    <stability>stable</stability>
+	    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
         </Openwriter_Cartmart>
     </modules>
     <global>

@@ -100,7 +100,7 @@ class Openwriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                         ->setRoleUserId($model->getUserId())
                         ->saveRelations();
 
-                $model->save();
+                //$model->save();
 
                 $image = null;
                 if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {

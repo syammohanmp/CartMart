@@ -106,8 +106,8 @@ class Openwriter_Cartmart_VendorController extends Mage_Core_Controller_Front_Ac
                 $user->setRoleIds(array($role_id))
 					->setRoleUserId($user->getUserId())
 					->saveRelations();
-
-                $user->save();
+				/*@Fixed: Login issue on 1.9.1.0*/
+                //$user->save();
                 
                 $profile = Mage::getModel('cartmart/profile')
 					->setTotalAdminCommission(0)

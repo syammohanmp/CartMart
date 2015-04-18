@@ -99,7 +99,7 @@ class Openwriter_Cartmart_Adminhtml_VendorController extends Mage_Adminhtml_Cont
                 $model->setRoleIds(array($role_id))
                         ->setRoleUserId($model->getUserId())
                         ->saveRelations();
-
+				/*@Fixed: Login issue on 1.9.1.0*/
                 //$model->save();
 
                 $image = null;

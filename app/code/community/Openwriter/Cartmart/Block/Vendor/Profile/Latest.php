@@ -39,14 +39,18 @@ class Openwriter_Cartmart_Block_Vendor_Profile_Latest extends Mage_Catalog_Block
 
         $vendorId = Mage::getModel('cartmart/profile')->load($profileId)->getUserId();
         
-        $productIds = Mage::getModel('catalog/product')->getCollection()
+        $productsCollection = Mage::getModel('catalog/product')->getCollection()
 			->addFieldToFilter('status', 1)
-			->addAttributeToFilter('vendor', $vendorId)
-			->getAllIds();
+			->addAttributeToFilter('vendor', $vendorId);
 			
-		if(empty($productIds))
+		if($productsCollection->count() > 0)
+			$productIds = $productsCollection->getAllIds();
+		else
 			return null;		
 		
+		if(count($productIds) == 0 )
+			return null;
+
 		$productReportCollection = Mage::getResourceModel('reports/product_collection')
 			->addOrderedQty()
 			->addAttributeToSelect('*')

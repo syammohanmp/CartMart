@@ -28,14 +28,16 @@ class Openwriter_Cartmart_Model_Product_Observer {
 
         $current_user = Mage::getSingleton('admin/session')->getUser();
 
-        if ($current_user->getRole()->getRoleId() == $roleId) {
-            if (Mage::app()->getFrontController()->getRequest()->getControllerName() == 'catalog_product') {
-                $event = $observer->getEvent();
-                $collection = $event->getCollection();
-                $collection->addAttributeToFilter('vendor', $current_user->getUserId());
-                return $this;
-            }
-        }
+		if(!empty($current_user)){
+			if ($current_user->getRole()->getRoleId() == $roleId) {
+				if (Mage::app()->getFrontController()->getRequest()->getControllerName() == 'catalog_product') {
+					$event = $observer->getEvent();
+					$collection = $event->getCollection();
+					$collection->addAttributeToFilter('vendor', $current_user->getUserId());
+					return $this;
+				}
+			}
+		}
     }
 
 }

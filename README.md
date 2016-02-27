@@ -1,6 +1,8 @@
 Cart Mart
 -----------------
 
+[![Join the chat at https://gitter.im/syamvilakudy/CartMart](https://badges.gitter.im/syamvilakudy/CartMart.svg)](https://gitter.im/syamvilakudy/CartMart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Cart Mart will convert your Magento Store to Multivendor Marketplace, which will have a separate vendor / seller section for their Products. It also has inbuilt reviews and feedback system.
 
 Cart Mart was the result of a fork of Medma_Marketplace on Oct 07, 2014. At that time, the Medma_Marketplace was a free opensource extension.
